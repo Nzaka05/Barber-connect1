@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Travel Mode - Kinyozi Elite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#241a00",
+                    "secondary-fixed": "#6dfe9c",
+                    "inverse-primary": "#735c00",
+                    "primary-fixed-dim": "#e9c349",
+                    "surface-bright": "#3a3939",
+                    "on-secondary": "#003919",
+                    "on-secondary-fixed": "#00210c",
+                    "on-background": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-tertiary": "#2f3131",
+                    "tertiary-fixed": "#e2e2e2",
+                    "surface-container": "#201f1f",
+                    "primary": "#f2ca50",
+                    "surface-container-low": "#1c1b1b",
+                    "on-surface": "#e5e2e1",
+                    "on-primary-container": "#554300",
+                    "surface-variant": "#353534",
+                    "secondary-container": "#00b55d",
+                    "on-secondary-fixed-variant": "#005227",
+                    "secondary-fixed-dim": "#4de082",
+                    "on-error": "#690005",
+                    "primary-container": "#d4af37",
+                    "surface": "#131313",
+                    "error": "#ffb4ab",
+                    "outline-variant": "#4d4635",
+                    "outline": "#99907c",
+                    "background": "#131313",
+                    "inverse-surface": "#e5e2e1",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-surface-variant": "#d0c5af",
+                    "surface-container-highest": "#353534",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary": "#4de082",
+                    "tertiary-container": "#b2b3b3",
+                    "on-tertiary-container": "#434546",
+                    "on-secondary-container": "#003e1c",
+                    "tertiary": "#cecece",
+                    "primary-fixed": "#ffe088",
+                    "on-primary": "#3c2f00",
+                    "surface-container-high": "#2a2a2a",
+                    "inverse-on-surface": "#313030",
+                    "error-container": "#93000a",
+                    "surface-tint": "#e9c349",
+                    "surface-dim": "#131313"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-margin": "24px",
+                    "unit": "8px",
+                    "gutter": "16px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Manrope"],
+                    "headline-md": ["Inter"],
+                    "body-md": ["Manrope"],
+                    "display-xl": ["Inter"],
+                    "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen relative pb-[100px] overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Shared Component: TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0A0A0A]/90 backdrop-blur-md border-b border-[#262626] shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#262626]">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A close-up portrait of a professional mobile barber, looking confident and well-groomed. The lighting is moody and cinematic, highlighting his sharp fade and tailored dark attire. The background is a blurred, premium minimalist studio environment with subtle warm gold accents, matching the high-end Kinyozi Elite brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFvCTSuTiyliFanFfra5jwJ3no3X5j2unI0kgeTrJrJhqO5Xf4-S-Mj_Zp_b_RkdBM29QweRmdit2PiwM7YlI6lfoCXq4AoM_wAyXeRKzmKHw1eRZc9k5xVENe8oISfYNyHikU41KFr3gvl4Rr4dBPSyQhw4KF6hvWbrn3ru3ydn-qyiEqs03doTnHmjxsfkWKhi1IXYFFTS8c9Yw316Te8PLq_YLEF51YADVDAqLVBb5ifvCiiyByiTKZws40lbAAq7pMV9a-mNo"/>
+</div>
+<span class="font-['Inter'] uppercase tracking-widest text-sm font-bold text-xl font-black text-[#D4AF37] tracking-tighter">Kinyozi Elite</span>
+</div>
+<button class="text-[#D4AF37] hover:text-[#D4AF37] transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</nav>
+<!-- Main Content Area: Travel Mode -->
+<main class="relative w-full h-[calc(100vh-80px)] flex flex-col justify-end">
+<!-- Map Background (Takes up upper portion) -->
+<div class="absolute inset-0 z-0 h-[574px]">
+<img alt="Map view of Nairobi route" class="w-full h-full object-cover opacity-60" data-alt="A stylized, dark-mode GPS navigation map interface displaying a route through a dense urban grid, representing Nairobi. The map features deep charcoal and obsidian tones, with the active route highlighted in a glowing, premium metallic gold line. Subtle neon and warm light accents indicate traffic flow, perfectly aligning with an exclusive, high-end mobile concierge aesthetic." data-location="Nairobi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwmKfZs4XcviairVXKbkG2Zd89sqszq2l8s9ArVOsoj5Im5uGBJwPENvLIRQpr1awyVML9xnWN6BB9Kuw9M8jGgY_FyO-NSRfOKPSaoJd4tHYmrLCT0_Eld4zujjqc0rQHSJQu4z1wP939WHLD1nRTqBFOib6wBHLO6R5XVJykoBAT9mKBjozp2khagP_Pj5ZRbR689sNMYMsZYelaAQ-jdA9hVIZg07avmFigjaHsObjbR2H7TzdUjg0FzSQm3APGWYdqIT0u1T4"/>
+<!-- Gradient Overlay to blend map into content -->
+<div class="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background z-10"></div>
+</div>
+<!-- Foreground Content: Route Info & Actions -->
+<div class="relative z-20 px-container-margin w-full max-w-lg mx-auto pb-6">
+<!-- ETA Floating Badge -->
+<div class="flex items-end justify-between mb-stack-md px-2">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Arriving In</span>
+<span class="font-display-xl text-display-xl text-primary-container drop-shadow-lg">12<span class="font-headline-md text-headline-md text-primary-container/80 ml-1">min</span></span>
+</div>
+<div class="bg-surface-container/80 backdrop-blur-sm border border-outline-variant rounded-full px-4 py-2 flex items-center gap-2 mb-2 shadow-lg">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px]">directions_car</span>
+<span class="font-label-sm text-label-sm text-on-surface">3.4 km</span>
+</div>
+</div>
+<!-- Client Appointment Card (Glassmorphism Bottom Sheet Style) -->
+<div class="bg-surface-container border border-surface-container-high rounded-[24px] p-container-margin shadow-[0_-8px_40px_rgba(0,0,0,0.4)] backdrop-blur-xl relative overflow-hidden">
+<!-- Subtle gold glow top edge -->
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary-container/50 to-transparent"></div>
+<!-- Client Header -->
+<div class="flex items-center gap-4 mb-stack-md">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-outline-variant relative">
+<img alt="Client avatar" class="w-full h-full object-cover" data-alt="A portrait of a male client waiting for a haircut, positioned against a dark, minimalist background. The lighting is soft and directional, emphasizing a modern, professional look. The color palette features deep blacks, subtle grays, and a hint of warm gold ambient light, fitting the premium aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZiIF1qYq4hEUCk4GZg7TaGcmvV8GsxTwy5Tlsyj2pgZ0qMo-6tO95nGf0IrVcjtqkBku-pYCleyLDIVRen57Fh7owhlI5RqEFaG4pAMtHJ-3oXzLSBEt3BDlaW_lCcX0S4XIpy2qy7Cv1QfYPfAc85MFiJTVxk5wkVejP1GNCePPQPGkX8A_QN9vdLasRiia89mCy45UwJy32w8kqIIFt3-zRKqxJ2ZD-8_wRNrFVEGXRFh4IfJizX2gfhE2H5VQVYiAyqnMu0A0"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-secondary-fixed rounded-full border-2 border-surface-container"></div>
+</div>
+<div class="flex-1">
+<h2 class="font-headline-md text-headline-md text-on-surface">David M.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                            Kilimani, Argwings Kodhek Rd
+                        </p>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary-container border border-outline-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">call</span>
+</button>
+</div>
+<!-- Divider -->
+<div class="h-px w-full bg-surface-container-high my-stack-sm"></div>
+<!-- Service Details -->
+<div class="py-stack-sm flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container shrink-0 mt-1">
+<span class="material-symbols-outlined text-[18px]">content_cut</span>
+</div>
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface">Executive Fade &amp; Beard Trim</h3>
+<p class="font-body-md text-body-md text-primary mt-1">KES 2,500</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-surface-container-lowest p-3 rounded-xl border border-surface-container-high">
+<span class="material-symbols-outlined text-outline text-[18px] mt-0.5">sticky_note_2</span>
+<p class="font-body-md text-body-md text-on-surface-variant italic text-[14px]">"Gate code is 4421. Please call when you are at the reception, I will come down."</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-stack-md flex gap-3">
+<button class="flex-1 bg-surface-container-high text-on-surface font-label-sm text-label-sm border border-outline-variant rounded-xl py-4 flex justify-center items-center gap-2 hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">close</span>
+                        Cancel
+                    </button>
+<button class="flex-[2] bg-gradient-to-r from-primary-container to-primary text-on-primary-fixed font-label-sm text-label-sm rounded-xl py-4 flex justify-center items-center gap-2 shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined icon-fill">location_on</span>
+                        Arrived
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Shared Component: BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-[#0A0A0A] border-t border-[#1A1A1A] shadow-[0_-4px_30px_rgba(212,175,55,0.05)] flex justify-around items-center h-20 w-full px-2">
+<!-- Explore -->
+<a class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="explore">explore</span>
+<span class="font-['Inter'] text-[10px] font-medium mt-1">Explore</span>
+</a>
+<!-- Bookings -->
+<a class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="calendar_today">calendar_today</span>
+<span class="font-['Inter'] text-[10px] font-medium mt-1">Bookings</span>
+</a>
+<!-- Travel (Active) -->
+<a class="flex flex-col items-center justify-center text-[#D4AF37] bg-[#D4AF37]/10 rounded-xl py-1 px-3 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px] icon-fill" data-icon="near_me">near_me</span>
+<span class="font-['Inter'] text-[10px] font-medium mt-1">Travel</span>
+</a>
+<!-- Analytics -->
+<a class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="query_stats">query_stats</span>
+<span class="font-['Inter'] text-[10px] font-medium mt-1">Analytics</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-medium mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>BarberConnect - Nairobi Discovery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#e9c349",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-primary-container": "#554300",
+                    "inverse-primary": "#735c00",
+                    "surface-container-highest": "#353534",
+                    "on-tertiary-container": "#434546",
+                    "background": "#131313",
+                    "secondary": "#4de082",
+                    "on-secondary-fixed": "#00210c",
+                    "secondary-container": "#00b55d",
+                    "surface-tint": "#e9c349",
+                    "on-secondary-container": "#003e1c",
+                    "secondary-fixed": "#6dfe9c",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-surface": "#e5e2e1",
+                    "primary": "#f2ca50",
+                    "surface-bright": "#3a3939",
+                    "on-error-container": "#ffdad6",
+                    "on-primary": "#3c2f00",
+                    "surface-variant": "#353534",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container": "#201f1f",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-error": "#690005",
+                    "primary-fixed": "#ffe088",
+                    "on-primary-fixed": "#241a00",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-dim": "#131313",
+                    "on-secondary": "#003919",
+                    "tertiary": "#cecece",
+                    "error-container": "#93000a",
+                    "secondary-fixed-dim": "#4de082",
+                    "outline-variant": "#4d4635",
+                    "on-tertiary": "#2f3131",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed": "#e2e2e2",
+                    "tertiary-container": "#b2b3b3",
+                    "primary-container": "#d4af37",
+                    "on-secondary-fixed-variant": "#005227",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-surface-variant": "#d0c5af",
+                    "outline": "#99907c",
+                    "inverse-surface": "#e5e2e1",
+                    "surface": "#131313",
+                    "surface-container-low": "#1c1b1b",
+                    "on-background": "#e5e2e1",
+                    "inverse-on-surface": "#313030"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "container-margin": "24px",
+                    "stack-sm": "8px",
+                    "stack-lg": "32px",
+                    "unit": "8px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "body-md": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container overflow-hidden">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 left-0 w-full flex justify-between items-center px-6 h-16 bg-[#0A0A0A]/90 backdrop-blur-md text-[#D4AF37] font-['Inter'] font-bold tracking-widest text-sm docked full-width z-50 border-b border-[#1A1A1A] shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:opacity-80 transition-opacity active:scale-95 duration-200">menu</span>
+<span class="text-[#D4AF37] font-black tracking-tighter text-xl uppercase">BARBERCONNECT</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border-2 border-primary-container overflow-hidden active:scale-95 duration-200 transition-transform">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A professional studio portrait of a stylish young Kenyan man with a crisp, modern fade haircut and a groomed beard. He is wearing a dark, minimalist shirt against a soft, charcoal grey background. The lighting is dramatic yet professional, highlighting the precision of the barber's craftsmanship and the premium aesthetic of the service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBopOif_dydR7FPpEPws-H2VLOJLJTNURoGhP2TekC-BqCl_gJf3cvsTtmkd2izZH_Q5WIQSwXJLkXWvP_mgS9e9GGCBtsYD-cQEcpNrh51ZJ_3IbJdgn9MxbqMg49e4gEQJgLix17qJpzo7sDyyZ-y9lczKWhOrfC29fH5Uutbv51dGZ_GzXT12RiUURnJYzag3iWA2o5Y4IUkuVoM8jDy7JR5IKkBd5kTuCFOw9JnS3DSYZ6-jW3zdEgDaM3oi2jXa4mpS9KPR1Y"/>
+</div>
+</div>
+</header>
+<!-- Main Discovery Canvas (Full Screen Map) -->
+<main class="relative h-screen w-full pt-16">
+<!-- Mock Map Background -->
+<div class="absolute inset-0 z-0">
+<img alt="Nairobi Discovery Map" class="w-full h-full object-cover brightness-[0.4] grayscale contrast-[1.2]" data-alt="A high-contrast, dark-themed aerial map of Nairobi city at night. The urban landscape is rendered in deep blacks and charcoals, with major roads and landmarks highlighted in subtle gold and amber glows. The visual style is sophisticated and minimalist, evoking a premium digital navigation experience with a quiet luxury aesthetic." data-location="Nairobi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcoxHGgCs2atVzrckm_glOyqAFCCi-A25QSiBtEOvdquDsIL_BOyNcxQdJMMuQ4LCPAJk5aUmlSlhyCxRC7wqle6DwGSEv5lmoX86pmcME2YeC2uwZcDCFiWMdHgxSowFlGSkw8h6wa8jXb5b7trGRUQcI73dDXBtA5hPY0Dr99TOHdAPWkjU6tSwGGb7d9FGBkWfOQhj5Gl4AYCB59eMF5DKLaTCbHO0vkNu1M0gWR9PQqfqftMBvZ1CMtibvpRSPwNWCrzYyTlk"/>
+<!-- Map Markers -->
+<!-- Marker 1 (Active) -->
+<div class="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center group">
+<div class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-[12px] font-bold shadow-lg mb-1 flex items-center gap-1 border border-primary animate-pulse">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    4.9
+                </div>
+<div class="w-10 h-10 bg-primary-container rounded-full border-2 border-white flex items-center justify-center shadow-[0_0_20px_rgba(212,175,55,0.6)]">
+<span class="material-symbols-outlined text-on-primary-container">content_cut</span>
+</div>
+</div>
+<!-- Marker 2 -->
+<div class="absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center group">
+<div class="bg-surface-container-high text-on-surface px-3 py-1 rounded-full text-[12px] font-bold shadow-lg mb-1 flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    4.7
+                </div>
+<div class="w-8 h-8 bg-surface-container-high rounded-full border-2 border-outline flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-primary text-[18px]">content_cut</span>
+</div>
+</div>
+<!-- Marker 3 -->
+<div class="absolute top-2/3 left-1/3 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center group">
+<div class="bg-surface-container-high text-on-surface px-3 py-1 rounded-full text-[12px] font-bold shadow-lg mb-1 flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    4.8
+                </div>
+<div class="w-8 h-8 bg-surface-container-high rounded-full border-2 border-outline flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-primary text-[18px]">content_cut</span>
+</div>
+</div>
+</div>
+<!-- Floating Filter Bar -->
+<div class="absolute top-20 left-0 w-full px-6 z-40">
+<div class="flex flex-col gap-4">
+<!-- Search & Toggle Row -->
+<div class="flex items-center gap-3">
+<div class="flex-1 bg-[#1A1A1A]/80 backdrop-blur-xl border border-white/10 rounded-full h-12 flex items-center px-4 shadow-xl">
+<span class="material-symbols-outlined text-primary mr-2">location_on</span>
+<input class="bg-transparent border-none text-on-surface placeholder-neutral-500 w-full focus:ring-0 text-sm font-medium" placeholder="Westlands, Nairobi" type="text"/>
+<span class="material-symbols-outlined text-neutral-400">tune</span>
+</div>
+<button class="bg-secondary-container text-on-secondary-container h-12 px-4 rounded-full flex items-center gap-2 shadow-lg active:scale-95 transition-transform">
+<div class="w-2 h-2 rounded-full bg-white animate-pulse"></div>
+<span class="text-[12px] font-bold uppercase tracking-wider">Live Now</span>
+</button>
+</div>
+<!-- Chips Row -->
+<div class="flex gap-2 overflow-x-auto hide-scrollbar pb-2">
+<button class="flex-none px-5 py-2 rounded-full bg-primary-container text-on-primary-container font-label-sm flex items-center gap-2 border border-primary/20">
+                        Rating 4.5+
+                    </button>
+<button class="flex-none px-5 py-2 rounded-full bg-surface-container-high text-on-surface font-label-sm flex items-center gap-2 border border-white/5 backdrop-blur-md">
+                        Price: KES
+                        <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<button class="flex-none px-5 py-2 rounded-full bg-surface-container-high text-on-surface font-label-sm flex items-center gap-2 border border-white/5 backdrop-blur-md">
+                        Fade Masters
+                    </button>
+<button class="flex-none px-5 py-2 rounded-full bg-surface-container-high text-on-surface font-label-sm flex items-center gap-2 border border-white/5 backdrop-blur-md">
+                        Home Service
+                    </button>
+</div>
+</div>
+</div>
+<!-- Horizontal Carousel (Selected/Nearby Barbers) -->
+<div class="absolute bottom-24 left-0 w-full z-40">
+<div class="flex gap-4 overflow-x-auto hide-scrollbar px-6 snap-x snap-mandatory">
+<!-- Card 1 -->
+<div class="flex-none w-[85%] md:w-[400px] snap-center">
+<div class="bg-[#1A1A1A]/90 backdrop-blur-2xl rounded-2xl overflow-hidden border border-white/10 shadow-2xl group transition-all duration-300 hover:border-primary-container/50">
+<div class="relative h-48">
+<img alt="The Barber Studio Westlands" class="w-full h-full object-cover" data-alt="A high-end barber shop interior in Nairobi, featuring luxury leather chairs and warm amber lighting. A professional barber is focused on a precise haircut for a client. The scene exudes an atmosphere of quiet luxury and elite craftsmanship, with a color palette of deep browns, blacks, and golden accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuZUGg1DSnmTAK-4PeODqkIgyp9VRzRtnLvr3SB9j6HKVCRjStzeUdwUByEDmaopptg4hV94X2yjojapN5g6ICaspTFLo7QOTSG3Zoe4sejo4prFGP_gjotaG2jZG528OFh_qz-XvsFARRfIwUly68JeSKbXSynafYSOhpw4PTDWPfkjKSapz-IoydT8dQYKCINwX9ep3a10NxM1mykAMcVOtEemTFZneN_N2jQxjuVmOoaLgkW96sFrp7NRRNCCM3X-wa5vpcNV8"/>
+<div class="absolute top-4 right-4 bg-[#0A0A0A]/80 backdrop-blur-md px-2 py-1 rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-white text-xs font-bold">4.9</span>
+</div>
+<div class="absolute bottom-4 left-4 bg-secondary text-on-secondary px-2 py-1 rounded text-[10px] font-black uppercase tracking-widest">
+                                Confirmed
+                            </div>
+</div>
+<div class="p-5 flex justify-between items-end">
+<div>
+<h3 class="font-headline-md text-on-surface mb-1">The Barber Studio</h3>
+<p class="text-neutral-400 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                    Westlands, Nairobi • 0.8km
+                                </p>
+<p class="text-primary font-bold mt-2 text-lg">KES 2,500 <span class="text-xs font-normal text-neutral-500">/ Executive Cut</span></p>
+</div>
+<button class="bg-primary text-on-primary w-12 h-12 rounded-xl flex items-center justify-center shadow-lg active:scale-90 transition-all">
+<span class="material-symbols-outlined">calendar_today</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex-none w-[85%] md:w-[400px] snap-center">
+<div class="bg-[#1A1A1A]/90 backdrop-blur-2xl rounded-2xl overflow-hidden border border-white/10 shadow-2xl group opacity-80">
+<div class="relative h-48">
+<img alt="Urban Kings Kilimani" class="w-full h-full object-cover" data-alt="An atmospheric barber shop with vintage aesthetics but modern equipment. A professional stylist is detailing a beard with extreme precision. The lighting highlights the sharp contrast of the dark environment and the gold-trimmed tools, creating a VIP concierge feeling consistent with a premium Nairobi service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKAy-0A8GtnfjeQ1r8Z9ogrDgmbnk7BFUt4Qew6iaIyZUjPtyleq14esBxMrUZwCH0wbMyuvuriXj2LPO1wh9VDBrtGPEgKuRpx8AjweNgI8ibgwYRuiws_CgHKF60_W5I4GZFfCWUjZsermuchyuzsYIfHtasrhe4KXl_5Fff9QgFme5bQnMDgWlyA-Wj09YhmtBd_ehoIhmPGGzWsMM766gCml-XrQPoQunGbAE_7uKB-TO-nshgA9B3JvdJrz2J4oNB0SPSZ3o"/>
+<div class="absolute top-4 right-4 bg-[#0A0A0A]/80 backdrop-blur-md px-2 py-1 rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-white text-xs font-bold">4.7</span>
+</div>
+</div>
+<div class="p-5 flex justify-between items-end">
+<div>
+<h3 class="font-headline-md text-on-surface mb-1">Urban Kings</h3>
+<p class="text-neutral-400 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                    Kilimani, Nairobi • 1.4km
+                                </p>
+<p class="text-primary font-bold mt-2 text-lg">KES 1,800 <span class="text-xs font-normal text-neutral-500">/ Sharp Fade</span></p>
+</div>
+<button class="bg-surface-container-highest text-on-surface w-12 h-12 rounded-xl flex items-center justify-center shadow-lg active:scale-90 transition-all">
+<span class="material-symbols-outlined">calendar_today</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 (Empty State/Next) -->
+<div class="flex-none w-[100px] flex items-center justify-center snap-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border border-white/10 flex items-center justify-center text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[32px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-[#0A0A0A]/95 backdrop-blur-lg border-t border-white/5 shadow-[0_-10px_40px_rgba(0,0,0,0.8)] rounded-t-2xl z-50">
+<a class="flex flex-col items-center justify-center text-[#D4AF37] drop-shadow-[0_0_8px_rgba(212,175,55,0.3)] transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">event_available</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Profile</span>
+</a>
+</nav>
+<!-- Contextual FAB (Map Recenter) -->
+<button class="fixed bottom-44 right-6 w-14 h-14 bg-primary text-on-primary rounded-2xl shadow-[0_10px_30px_rgba(212,175,55,0.4)] flex items-center justify-center active:scale-90 transition-all z-40">
+<span class="material-symbols-outlined text-[28px]">my_location</span>
+</button>
+</body></html>

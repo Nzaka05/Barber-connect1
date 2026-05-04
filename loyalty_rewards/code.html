@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BarberConnect - Loyalty &amp; Rewards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#b2b3b3",
+                      "on-tertiary-container": "#434546",
+                      "on-secondary-container": "#003e1c",
+                      "tertiary": "#cecece",
+                      "primary-fixed": "#ffe088",
+                      "on-primary": "#3c2f00",
+                      "surface-container-high": "#2a2a2a",
+                      "inverse-on-surface": "#313030",
+                      "error-container": "#93000a",
+                      "surface-tint": "#e9c349",
+                      "surface-dim": "#131313",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-surface-variant": "#d0c5af",
+                      "surface-container-highest": "#353534",
+                      "surface-container-lowest": "#0e0e0e",
+                      "secondary": "#4de082",
+                      "surface": "#131313",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#4d4635",
+                      "outline": "#99907c",
+                      "background": "#131313",
+                      "inverse-surface": "#e5e2e1",
+                      "surface-variant": "#353534",
+                      "secondary-container": "#00b55d",
+                      "on-secondary-fixed-variant": "#005227",
+                      "secondary-fixed-dim": "#4de082",
+                      "on-error": "#690005",
+                      "primary-container": "#d4af37",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "on-tertiary": "#2f3131",
+                      "tertiary-fixed": "#e2e2e2",
+                      "surface-container": "#201f1f",
+                      "primary": "#f2ca50",
+                      "surface-container-low": "#1c1b1b",
+                      "on-surface": "#e5e2e1",
+                      "on-primary-container": "#554300",
+                      "on-background": "#e5e2e1",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "on-primary-fixed-variant": "#574500",
+                      "inverse-primary": "#735c00",
+                      "primary-fixed-dim": "#e9c349",
+                      "surface-bright": "#3a3939",
+                      "on-secondary": "#003919",
+                      "on-secondary-fixed": "#00210c",
+                      "on-primary-fixed": "#241a00",
+                      "secondary-fixed": "#6dfe9c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-md": "16px",
+                      "stack-lg": "32px",
+                      "unit": "8px",
+                      "gutter": "16px",
+                      "stack-sm": "8px",
+                      "container-margin": "24px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Manrope"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Manrope"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "display-xl": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Manrope"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-panel {
+            background: rgba(42, 42, 42, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-neutral-950 dark:bg-neutral-950 docked full-width top-0 border-b border-neutral-900 shadow-none transition-opacity duration-200 sticky z-40 hidden md:flex">
+<div class="flex justify-between items-center px-6 py-3 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A close-up portrait of a sharply dressed modern Kenyan professional man looking confidently off-camera. The lighting is dramatic and cinematic, highlighting his well-groomed appearance. The background is a soft, dark blur typical of high-end portrait photography, aligning perfectly with a premium, exclusive grooming aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIh2JqXRIf-bHAO6NwZCgvZUaJn-lsjfoFn17Gb918iUFPlSoRCNxw7iXnBwVIQzuQvOECG99AGgUFHYURRCiSllfItHegV2XoioMpvX29pU2lV8iorLGMw_DWXe_X32tqciiIGiCLE4BoWWcnrZ64Dr8z4AFLE8E_3FlSphkPT3nbY6vI2U4a7GnCNIz8QEBc3WJ-CW8PsLqTjncAK-O3jXqKvADtCF8Ocj_JzN7UmF-Rzz4Dh3nErpCOIOwUfHvn6HygCig0IYQ"/>
+</div>
+<h1 class="font-inter tracking-tight text-lg font-bold text-yellow-600 dark:text-yellow-500">BarberConnect</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-neutral-400 hover:opacity-80 font-label-sm text-label-sm" href="#">Home</a>
+<a class="text-neutral-400 hover:opacity-80 font-label-sm text-label-sm" href="#">Bookings</a>
+<a class="text-neutral-400 hover:opacity-80 font-label-sm text-label-sm" href="#">Messages</a>
+<a class="text-yellow-500 hover:opacity-80 font-label-sm text-label-sm flex items-center gap-2 border-b-2 border-yellow-500 pb-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">stars</span>
+                    Rewards
+                </a>
+<a class="text-neutral-400 hover:opacity-80 font-label-sm text-label-sm" href="#">Profile</a>
+</nav>
+<button class="text-yellow-600 dark:text-yellow-500 hover:opacity-80 p-2">
+<span class="material-symbols-outlined">location_on</span>
+</button>
+</div>
+</header>
+<!-- Mobile Header (Simplified for context) -->
+<header class="md:hidden sticky top-0 z-40 bg-background/90 backdrop-blur-md px-6 py-4 flex justify-between items-center border-b border-surface-container-high">
+<h1 class="font-headline-md text-headline-md text-primary">Rewards</h1>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant">
+<img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi9gRNsl045MAZRnwOVpDfleMNpR5BhiEJKYRpeKGhEf1Co8cBzI4OnB2JMeqjAEaQWy6bGXieh0ThzEekB72BcvRVgnve953cZK77Cqq7Hqem-sUb1TUPqZKSM1RJ_x7c2P8RmSXYDa1gUmIgPoqfhj293FhVF0hEXb-KGNU7EZLwcl3MvImYdIsqi7t3PBsv0k7EAoqS4-TsqnKhn4gzW66K-rIhDDt3cqKpa2yYF2lGhh0ZBxehY1dOAWZWxc-NZnll_XJtPvk"/>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-stack-lg pb-stack-lg grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Status & Progress (Spans 8 cols on desktop) -->
+<div class="md:col-span-8 space-y-stack-lg">
+<!-- Points Balance Card -->
+<section class="glass-panel rounded-xl p-8 ambient-shadow relative overflow-hidden group">
+<!-- Decorative background elements -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all duration-700"></div>
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-stack-md">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">Elite Tier Balance</p>
+<div class="flex items-baseline gap-2">
+<span class="font-display-xl text-display-xl gold-gradient-text">850</span>
+<span class="font-headline-md text-headline-md text-primary">Pts</span>
+</div>
+<p class="font-body-md text-body-md text-tertiary-container mt-2">150 points away from next reward tier.</p>
+</div>
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-6 py-3 rounded-lg hover:bg-primary-fixed-dim transition-colors w-full md:w-auto shadow-[0_0_15px_rgba(242,202,80,0.3)]">
+                        Redeem Points
+                    </button>
+</div>
+</section>
+<!-- Progress to Free Cut -->
+<section class="bg-surface-container-high rounded-xl p-8 ambient-shadow border border-outline-variant/30">
+<div class="flex justify-between items-end mb-stack-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-1">Progress to Free Cut</h2>
+<p class="font-body-md text-body-md text-tertiary-container">Complete 5 visits to unlock a complimentary premium service.</p>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">content_cut</span>
+</div>
+</div>
+<!-- Tracker Visual -->
+<div class="mt-stack-lg">
+<div class="flex justify-between mb-4 relative">
+<!-- Connecting Line -->
+<div class="absolute top-1/2 left-0 w-full h-1 bg-surface-variant -translate-y-1/2 z-0"></div>
+<!-- Active Progress Line -->
+<div class="absolute top-1/2 left-0 w-4/5 h-1 bg-primary -translate-y-1/2 z-0 gold-glow"></div>
+<!-- Nodes -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-[0_0_10px_rgba(242,202,80,0.4)]">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-label-sm text-[10px] text-tertiary-container">Visit 1</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-[0_0_10px_rgba(242,202,80,0.4)]">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-label-sm text-[10px] text-tertiary-container">Visit 2</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-[0_0_10px_rgba(242,202,80,0.4)]">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-label-sm text-[10px] text-tertiary-container">Visit 3</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-[0_0_10px_rgba(242,202,80,0.4)]">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-label-sm text-[10px] text-tertiary-container">Visit 4</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-variant border-2 border-outline-variant flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-lg">workspace_premium</span>
+</div>
+<span class="font-label-sm text-[10px] text-primary">Free Cut</span>
+</div>
+</div>
+<div class="text-center mt-6">
+<span class="inline-block px-4 py-2 rounded-full bg-secondary-container/10 text-secondary border border-secondary/20 font-label-sm text-label-sm">
+                            4/5 visits completed
+                        </span>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Referrals & Rewards List (Spans 4 cols on desktop) -->
+<div class="md:col-span-4 space-y-stack-lg">
+<!-- Referral Section -->
+<section class="bg-surface-container-high rounded-xl p-6 border border-outline-variant/30 ambient-shadow">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-2xl">group_add</span>
+<h3 class="font-headline-md text-body-lg font-semibold text-on-surface">Refer &amp; Earn</h3>
+</div>
+<p class="font-body-md text-label-sm text-tertiary-container font-normal mb-6">
+                    Give a friend KES 200 off their first cut, and get KES 200 credit when they complete their booking.
+                </p>
+<div class="space-y-4">
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg py-3 px-4 text-on-surface font-label-sm text-label-sm tracking-widest focus:outline-none focus:border-primary transition-colors" readonly="" type="text" value="ELITE-NAI-850"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 text-primary hover:text-primary-fixed p-2 rounded-md hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+<button class="w-full border border-primary text-primary hover:bg-primary/5 font-label-sm text-label-sm py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">share</span>
+                        Share Code
+                    </button>
+</div>
+</section>
+<!-- Available Rewards List -->
+<section>
+<h3 class="font-headline-md text-body-lg font-semibold text-on-surface mb-stack-md">Available Rewards</h3>
+<div class="space-y-stack-sm">
+<!-- Reward Item 1 -->
+<div class="bg-surface-container-low rounded-lg p-4 border border-outline-variant/20 flex items-center gap-4 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-sm text-label-sm text-on-surface">Premium Beard Oil</h4>
+<p class="font-body-md text-[12px] text-tertiary-container mt-1">250 Pts</p>
+</div>
+<button class="text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Reward Item 2 -->
+<div class="bg-surface-container-low rounded-lg p-4 border border-outline-variant/20 flex items-center gap-4 hover:border-primary/50 transition-colors cursor-pointer group opacity-50 pointer-events-none">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-outline">
+<span class="material-symbols-outlined">spa</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-sm text-label-sm text-on-surface">Hot Towel Facial</h4>
+<p class="font-body-md text-[12px] text-tertiary-container mt-1">1,000 Pts (Need 150 more)</p>
+</div>
+<span class="material-symbols-outlined text-outline">lock</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-neutral-950/90 backdrop-blur-md dark:bg-neutral-950/90 docked full-width bottom-0 rounded-t-2xl border-t border-neutral-900 tonal shift via glassmorphism shadow-[0_-4px_20px_0_rgba(0,0,0,0.5)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 h-20 md:hidden">
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150 w-16" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150 w-16" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150 w-16" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150 w-16" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</body></html>

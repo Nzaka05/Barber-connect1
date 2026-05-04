@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Branch Performance - Westlands</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#241a00",
+                      "secondary-fixed": "#6dfe9c",
+                      "inverse-primary": "#735c00",
+                      "primary-fixed-dim": "#e9c349",
+                      "surface-bright": "#3a3939",
+                      "on-secondary": "#003919",
+                      "on-secondary-fixed": "#00210c",
+                      "on-background": "#e5e2e1",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "on-primary-fixed-variant": "#574500",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "on-tertiary": "#2f3131",
+                      "tertiary-fixed": "#e2e2e2",
+                      "surface-container": "#201f1f",
+                      "primary": "#f2ca50",
+                      "surface-container-low": "#1c1b1b",
+                      "on-surface": "#e5e2e1",
+                      "on-primary-container": "#554300",
+                      "surface-variant": "#353534",
+                      "secondary-container": "#00b55d",
+                      "on-secondary-fixed-variant": "#005227",
+                      "secondary-fixed-dim": "#4de082",
+                      "on-error": "#690005",
+                      "primary-container": "#d4af37",
+                      "surface": "#131313",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#4d4635",
+                      "outline": "#99907c",
+                      "background": "#131313",
+                      "inverse-surface": "#e5e2e1",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-surface-variant": "#d0c5af",
+                      "surface-container-highest": "#353534",
+                      "surface-container-lowest": "#0e0e0e",
+                      "secondary": "#4de082",
+                      "tertiary-container": "#b2b3b3",
+                      "on-tertiary-container": "#434546",
+                      "on-secondary-container": "#003e1c",
+                      "tertiary": "#cecece",
+                      "primary-fixed": "#ffe088",
+                      "on-primary": "#3c2f00",
+                      "surface-container-high": "#2a2a2a",
+                      "inverse-on-surface": "#313030",
+                      "error-container": "#93000a",
+                      "surface-tint": "#e9c349",
+                      "surface-dim": "#131313"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-margin": "24px",
+                      "unit": "8px",
+                      "gutter": "16px",
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "stack-lg": "32px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Manrope"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Manrope"
+                      ],
+                      "display-xl": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Manrope"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-safe">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0A0A0A]/90 backdrop-blur-md border-b border-[#262626] shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-on-surface hover:text-[#D4AF37] transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="text-xl font-black text-[#D4AF37] tracking-tighter">Kinyozi Elite</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#D4AF37]">notifications</span>
+<img alt="User profile photo" class="w-8 h-8 rounded-full border border-outline" data-alt="A close-up portrait of a successful, modern Kenyan businessman in a well-tailored dark suit. He has a neat, sharp haircut and is looking confidently slightly off-camera. The lighting is dramatic and cinematic, highlighting strong features against a dark, moody background, reflecting a premium and exclusive aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGk_kFzyrN28bvmmTcdJ2RaoVoSlPhV0glY2jU82QXkFhNwWVm3shZXheKv8G6kKxwTmDWRv-e0caL7oaBA9EP4IPmcZsHGjeY82sK64rPjPWSmQiwwoC59ej9UIyF4GAjDehlOrbuqbyflYN73CgGe1ZHge_3nOWgJrQoFElPWxOFOO-KZ6jnVuGW6TYIPon9bG_wNmkpqzo9Vg92dZc7XsLZFKOd6LqDNpIqJCWxCTbrIxaHpmbrcPwABJ7ua8t9HU9GYPzQ9A0"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-container-margin md:px-8 pb-32 max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-stack-md mb-stack-lg">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-unit">Westlands Branch</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                    Woodvale Grove, Nairobi
+                </p>
+</div>
+<div class="flex gap-unit">
+<button class="bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface font-label-sm text-label-sm px-4 py-2 rounded-lg border border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+                    This Week
+                </button>
+<button class="bg-primary hover:bg-primary-fixed transition-colors text-on-primary font-label-sm text-label-sm px-4 py-2 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                    Report
+                </button>
+</div>
+</div>
+<!-- KPI Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-stack-lg">
+<!-- Revenue -->
+<div class="bg-surface-container p-6 rounded-xl border border-surface-container-highest shadow-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-bl-full -mr-4 -mt-4"></div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">account_balance_wallet</span>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant">Gross Revenue</h3>
+</div>
+<div class="font-display-xl text-display-xl text-on-surface mb-2">KES 485k</div>
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+12.5% vs last week</span>
+</div>
+</div>
+<!-- Appointments -->
+<div class="bg-surface-container p-6 rounded-xl border border-surface-container-highest shadow-lg">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">content_cut</span>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant">Appointments</h3>
+</div>
+<div class="font-display-xl text-display-xl text-on-surface mb-2">342</div>
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+8% vs last week</span>
+</div>
+</div>
+<!-- Avg Ticket -->
+<div class="bg-surface-container p-6 rounded-xl border border-surface-container-highest shadow-lg">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">receipt_long</span>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant">Avg Ticket</h3>
+</div>
+<div class="font-display-xl text-display-xl text-on-surface mb-2">KES 1.4k</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">trending_flat</span>
+<span>No change</span>
+</div>
+</div>
+<!-- Walk-ins -->
+<div class="bg-surface-container p-6 rounded-xl border border-surface-container-highest shadow-lg">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">directions_walk</span>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant">Walk-ins</h3>
+</div>
+<div class="font-display-xl text-display-xl text-on-surface mb-2">89</div>
+<div class="flex items-center gap-1 text-error font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">trending_down</span>
+<span>-5% vs last week</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid for Details -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Most Requested Services (Spans 2 columns on lg) -->
+<div class="lg:col-span-2 bg-surface-container rounded-xl border border-surface-container-highest shadow-lg p-6 flex flex-col">
+<div class="flex justify-between items-center mb-stack-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Most Requested Services</h2>
+<button class="text-primary hover:text-primary-fixed transition-colors font-label-sm text-label-sm">View All</button>
+</div>
+<div class="flex-1 space-y-4">
+<!-- Service Item -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg border border-outline-variant hover:border-primary/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg overflow-hidden">
+<img alt="Elite Fade" class="w-full h-full object-cover" data-alt="Close up of a professional barber giving a precise fade haircut to a client. The image has a dark, premium aesthetic with spotlighting on the sharp lines of the haircut, showcasing craftsmanship and attention to detail in a luxury barbershop setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoDVjmvLSAmjAvyVrgNkJoEFUNy3X9HiJzc8jnKxaI4bdfqA5cNQGhYyFT2YyZ1kH8KNYdj6Wlp-AwrRrAr_hQBHgwyuQ8EUbbDzvS1usq0CGSgHG38gDjFjNOmi3yhl25qccDoGa8qGj7K00111Vb1qI-tixwyby6Btr0qiLUpdia8ZKccC9P3_uuDnHJedQwv8MIfLhzdEY_bnXHb6cbZX4S2tPyQHoUM5JJ4PTS1ug7M7i3oQqgn9z8gITPcf8POsbnsJTP0y4"/>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface">Elite Fade + Beard Trim</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">145 bookings</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-sm text-label-sm text-primary">KES 203k</div>
+<div class="font-body-md text-body-md text-secondary text-sm">42% of revenue</div>
+</div>
+</div>
+<!-- Service Item -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg border border-outline-variant hover:border-primary/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg overflow-hidden">
+<img alt="Hot Towel Shave" class="w-full h-full object-cover" data-alt="A close up of a traditional hot towel shave in progress. The scene is illuminated by warm, moody lighting, emphasizing the relaxing, premium nature of the service. A crisp white towel contrasts against the dark, moody background of the luxury barbershop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEzmJTQbjMrcCyMUx0tgJHBOsrvPBQbgg5-NQHNykGB2sbFBqxAp-tLLgifx9Z9DNkuJGimmXwEdYbBiTKHk_1HN1j-Vid1UHnbBE6jOOjYYz6PuIzLAFNu-7jDJS9fj8iN5nOKvi5ZIIve8jfz51fRGJRqkrw0t_UXU6JgWelVfr6cGA1I6uLu6Zl-yOpFRQoVf9ajM_I1Spva-pYt2HyG5ho3IjR7vDdUPGzlhb9lRvMtXxf8EFXmC8lGqpA__1vKNc1jaRUyKA"/>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface">Executive Hot Towel Shave</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">89 bookings</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-sm text-label-sm text-primary">KES 89k</div>
+<div class="font-body-md text-body-md text-secondary text-sm">18% of revenue</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Inventory Alert Column -->
+<div class="flex flex-col gap-gutter">
+<!-- Inventory Alert Card -->
+<div class="bg-[#1A1A1A] rounded-xl border border-error/30 shadow-lg p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-error/5 rounded-bl-full -mr-8 -mt-8"></div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-error">warning</span>
+<h2 class="font-headline-md text-headline-md text-error">Low Inventory</h2>
+</div>
+<ul class="space-y-3 mb-6">
+<li class="flex justify-between items-center border-b border-surface-container-highest pb-2">
+<span class="font-body-md text-body-md text-on-surface">Proraso Shaving Cream</span>
+<span class="font-label-sm text-label-sm bg-error/20 text-error px-2 py-1 rounded">2 left</span>
+</li>
+<li class="flex justify-between items-center border-b border-surface-container-highest pb-2">
+<span class="font-body-md text-body-md text-on-surface">Sandalwood Beard Oil</span>
+<span class="font-label-sm text-label-sm bg-error/20 text-error px-2 py-1 rounded">5 left</span>
+</li>
+</ul>
+<button class="w-full bg-transparent border border-error text-error hover:bg-error/10 font-label-sm text-label-sm py-2 rounded-lg transition-colors">
+                        Restock Now
+                    </button>
+</div>
+<!-- Top Barber Mini Card -->
+<div class="bg-surface-container rounded-xl border border-surface-container-highest shadow-lg p-6 flex-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">star</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Top Performer</h2>
+</div>
+<div class="flex items-center gap-4 mb-4">
+<img alt="Top Barber" class="w-16 h-16 rounded-full border-2 border-primary object-cover" data-alt="Portrait of a stylish, professional Kenyan barber looking confidently at the camera. He is wearing a dark, branded apron over a crisp shirt. The background is a blurred, high-end barbershop setting with warm ambient lighting, projecting expertise and premium service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr6p-LcBU5TxaKIxICmDoUrGXhILEyi4M4kn-7bOF0-8Kcvnt5qO2MgPwiizh45xL8JNA2Tui9JzqHyQJKnecWgKRMU-qtn8TtW67OrEJCQ8XTKVyXiSszDRAgjQgdPT5tb02ShbaQFy_DdGBImvxALlbLtt8k_ArFR1gxYM1EB9DyB9zJnIkjj6LowlY2wxM_KwwfRIOvLQQ6PKnHz7fKenfWKSHQYwDineYGpllBKJd5AcZe7YIO7enb1HIu7mnIyuByzjK7g9M"/>
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface">David M.</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Master Barber</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 text-center">
+<div class="bg-surface p-2 rounded">
+<div class="font-body-md text-body-md text-on-surface-variant text-xs">Revenue</div>
+<div class="font-label-sm text-label-sm text-primary">120k</div>
+</div>
+<div class="bg-surface p-2 rounded">
+<div class="font-body-md text-body-md text-on-surface-variant text-xs">Rating</div>
+<div class="font-label-sm text-label-sm text-primary flex items-center justify-center gap-1">
+                                4.9 <span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe border-t border-[#1A1A1A] bg-[#0A0A0A] shadow-[0_-4px_30px_rgba(212,175,55,0.05)] md:hidden">
+<div class="flex justify-around items-center h-20 w-full px-2">
+<button class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 p-2 rounded-xl">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span class="font-['Inter'] text-[10px] font-medium">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 p-2 rounded-xl">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="font-['Inter'] text-[10px] font-medium">Bookings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 p-2 rounded-xl">
+<span class="material-symbols-outlined mb-1">near_me</span>
+<span class="font-['Inter'] text-[10px] font-medium">Travel</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#D4AF37] bg-[#D4AF37]/10 rounded-xl py-1 px-3 active:scale-90 duration-150">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">query_stats</span>
+<span class="font-['Inter'] text-[10px] font-medium">Analytics</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 p-2 rounded-xl">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-['Inter'] text-[10px] font-medium">Profile</span>
+</button>
+</div>
+</nav>
+</body></html>

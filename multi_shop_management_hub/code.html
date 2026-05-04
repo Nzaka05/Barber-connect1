@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kinyozi Elite - Owner Dashboard</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed": "#241a00", "secondary-fixed": "#6dfe9c", "inverse-primary": "#735c00", "primary-fixed-dim": "#e9c349", "surface-bright": "#3a3939", "on-secondary": "#003919", "on-secondary-fixed": "#00210c", "on-background": "#e5e2e1", "on-tertiary-fixed-variant": "#454747", "on-primary-fixed-variant": "#574500", "on-error-container": "#ffdad6", "tertiary-fixed-dim": "#c6c6c7", "on-tertiary": "#2f3131", "tertiary-fixed": "#e2e2e2", "surface-container": "#201f1f", "primary": "#f2ca50", "surface-container-low": "#1c1b1b", "on-surface": "#e5e2e1", "on-primary-container": "#554300", "surface-variant": "#353534", "secondary-container": "#00b55d", "on-secondary-fixed-variant": "#005227", "secondary-fixed-dim": "#4de082", "on-error": "#690005", "primary-container": "#d4af37", "surface": "#131313", "error": "#ffb4ab", "outline-variant": "#4d4635", "outline": "#99907c", "background": "#131313", "inverse-surface": "#e5e2e1", "on-tertiary-fixed": "#1a1c1c", "on-surface-variant": "#d0c5af", "surface-container-highest": "#353534", "surface-container-lowest": "#0e0e0e", "secondary": "#4de082", "tertiary-container": "#b2b3b3", "on-tertiary-container": "#434546", "on-secondary-container": "#003e1c", "tertiary": "#cecece", "primary-fixed": "#ffe088", "on-primary": "#3c2f00", "surface-container-high": "#2a2a2a", "inverse-on-surface": "#313030", "error-container": "#93000a", "surface-tint": "#e9c349", "surface-dim": "#131313"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"
+                    },
+                    spacing: {
+                        "container-margin": "24px", "unit": "8px", "gutter": "16px", "stack-sm": "8px", "stack-md": "16px", "stack-lg": "32px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Inter"], "label-sm": ["Manrope"], "headline-md": ["Inter"], "body-md": ["Manrope"], "display-xl": ["Inter"], "body-lg": ["Manrope"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "label-sm": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "display-xl": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#0A0A0A]/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-[#262626] shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<!-- Leading Avatar placeholder -->
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A close-up portrait of a sophisticated, well-dressed male business owner in a modern, dimly lit environment. The lighting features warm gold accents against deep charcoal backgrounds, conveying a premium, high-end aesthetic. The subject looks confident and professional, suitable for an elite grooming brand's executive profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqk7vyCNy2j-ofYCWgtd62LdgnW_FCssY3fUEFefd4teTfV0wDHrMp2XSKWHK9oLt2sa04NO5gFYj8k0v3cVfnU5znshkHKTAeuMKKN1rDUK5iUvQhL9okPUJ9olW2XmLKASg46-Fxx2dLv25JEEWr9zvUghTCxA5PqFZZaxqDnk-ss59lAie9QaLhZd58fc8WhebPLMYfjkQzaqVUdK3w-n_LNc9bn1OOp5koTQrJF7EEE1VuIIdloslCg8bAtDpUQi7PCUMbjhc"/>
+</div>
+<h1 class="font-['Inter'] uppercase tracking-widest text-sm font-bold text-xl font-black text-[#D4AF37] tracking-tighter">Kinyozi Elite</h1>
+</div>
+<button class="text-[#D4AF37] hover:text-[#D4AF37] transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<div class="flex flex-1 pt-16">
+<!-- NavigationDrawer (Web Sidebar) -->
+<aside class="hidden md:flex flex-col bg-[#1A1A1A] h-[calc(100vh-4rem)] w-[280px] rounded-r-2xl shadow-2xl shadow-black divide-y divide-[#262626] py-8 fixed left-0 top-16 z-40 overflow-y-auto">
+<div class="px-6 pb-6 flex flex-col gap-2">
+<h2 class="text-[#D4AF37] font-bold font-['Inter'] text-base">Elite Grooming Ltd</h2>
+<p class="font-label-sm text-label-sm text-gray-400">Owner Dashboard</p>
+<div class="flex items-center gap-1 mt-1 text-gray-500 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>Nairobi, KE</span>
+</div>
+</div>
+<nav class="flex flex-col gap-2 pt-6 px-2">
+<!-- Active Navigation Item -->
+<a class="bg-[#D4AF37] text-black font-bold mx-2 rounded-lg flex items-center gap-3 px-4 py-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-['Inter'] text-base">Westlands Branch</span>
+</a>
+<!-- Inactive Navigation Items -->
+<a class="text-gray-300 mx-2 hover:bg-[#262626] flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined">location_city</span>
+<span class="font-['Inter'] text-base">Kilimani Branch</span>
+</a>
+<a class="text-gray-300 mx-2 hover:bg-[#262626] flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined">apartment</span>
+<span class="font-['Inter'] text-base">CBD Branch</span>
+</a>
+<a class="text-gray-300 mx-2 hover:bg-[#262626] flex items-center gap-3 px-4 py-3 rounded-lg mt-4 border-t border-[#262626] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">directions_car</span>
+<span class="font-['Inter'] text-base">Mobile Service Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-[280px] p-container-margin pb-32 md:pb-container-margin flex flex-col gap-stack-lg overflow-x-hidden">
+<!-- Global Overview Header -->
+<section class="flex flex-col gap-stack-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Global Performance</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">High-level metrics across all elite locations for today.</p>
+</section>
+<!-- Key Metrics Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Total Revenue Card -->
+<div class="col-span-1 md:col-span-2 bg-surface-container rounded-xl p-6 border border-outline-variant flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-50 z-0"></div>
+<div class="relative z-10 flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Revenue (KES)</span>
+<span class="font-display-xl text-display-xl text-primary">245,500</span>
+</div>
+<div class="bg-secondary-container/20 text-secondary px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span class="font-label-sm text-label-sm">+12.4%</span>
+</div>
+</div>
+<div class="relative z-10 mt-8 flex items-end gap-2 h-24">
+<!-- Mock Bar Chart -->
+<div class="flex-1 bg-surface-variant rounded-t-sm h-[40%]"></div>
+<div class="flex-1 bg-surface-variant rounded-t-sm h-[60%]"></div>
+<div class="flex-1 bg-surface-variant rounded-t-sm h-[30%]"></div>
+<div class="flex-1 bg-surface-variant rounded-t-sm h-[80%]"></div>
+<div class="flex-1 bg-surface-variant rounded-t-sm h-[50%]"></div>
+<div class="flex-1 bg-primary rounded-t-sm h-[100%] shadow-[0_0_15px_rgba(212,175,55,0.3)]"></div>
+</div>
+</div>
+<!-- Total Appointments -->
+<div class="col-span-1 bg-surface-container rounded-xl p-6 border border-outline-variant flex flex-col justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Appointments</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">142</span>
+</div>
+<div class="mt-6 flex flex-col gap-3">
+<div class="flex justify-between items-center font-body-md text-body-md">
+<span class="text-on-surface-variant">Completed</span>
+<span class="text-on-surface">89</span>
+</div>
+<div class="w-full bg-surface-variant h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[62%]"></div>
+</div>
+<div class="flex justify-between items-center font-body-md text-body-md mt-2">
+<span class="text-on-surface-variant">Upcoming</span>
+<span class="text-on-surface">53</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Branch Breakdown -->
+<section class="flex flex-col gap-stack-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Branch Breakdown</h3>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Westlands (Active Focus) -->
+<div class="bg-surface-container-high rounded-xl p-5 border border-primary/30 shadow-[0_0_20px_rgba(212,175,55,0.05)] flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">Westlands</h4>
+</div>
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider border border-primary/20">Flagship</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Revenue</span>
+<span class="font-label-sm text-label-sm text-primary">120K KES</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Occupancy</span>
+<span class="font-label-sm text-label-sm text-on-surface">92%</span>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Staff Online</span>
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-high bg-surface-variant"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-high bg-surface-variant"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-high bg-surface-variant"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-high bg-surface-variant flex items-center justify-center text-xs text-on-surface font-bold">+2</div>
+</div>
+</div>
+</div>
+<!-- Kilimani -->
+<div class="bg-surface-container rounded-xl p-5 border border-outline-variant flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">location_city</span>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">Kilimani</h4>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Revenue</span>
+<span class="font-label-sm text-label-sm text-on-surface">85K KES</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Occupancy</span>
+<span class="font-label-sm text-label-sm text-on-surface">78%</span>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Staff Online</span>
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface-container bg-surface-variant"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container bg-surface-variant"></div>
+</div>
+</div>
+</div>
+<!-- CBD -->
+<div class="bg-surface-container rounded-xl p-5 border border-outline-variant flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">apartment</span>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">CBD</h4>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Revenue</span>
+<span class="font-label-sm text-label-sm text-on-surface">40.5K KES</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Occupancy</span>
+<span class="font-label-sm text-label-sm text-on-surface">65%</span>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Staff Online</span>
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface-container bg-surface-variant"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container bg-surface-variant"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container bg-surface-variant"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Management Tools (Bento format) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Staffing Toggles -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant flex flex-col gap-stack-md">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface text-xl">Quick Staffing (Westlands)</h3>
+<button class="text-primary hover:text-primary-fixed transition-colors font-label-sm text-label-sm">Manage All</button>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Staff Item 1 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-surface-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Staff Member" class="w-full h-full object-cover" data-alt="A portrait of a stylish female barber with intricate dreadlocks, standing in a dimly lit, high-end grooming studio. The background is a soft blur of dark textures and subtle gold lighting accents. She wears a professional black apron, embodying the exclusive, premium aesthetic of an elite salon brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNsa1wmtDL4JOXINe8lCg9HbExkK67HSQdGtgKFAm9uyComGaWmyPdEWuDHiYXa8jbm7-WOnQIdyiYb-7qDZCNSACiUv6YvhR2cHTMEahUBmCERuxqFfjTOJQgoDmpvDpW_qmHNx2vWbAxgQpEfsWBVRyzqG8VXgxrslbophlLeGf9sj6dEgl5Zd40gMgk1TEMnc68kH-3c5pcMBtzr4WNDljdivnHB2_04eMDXzC2sno9lUUdjgQ735IOXx9S9efPc2stiOoSNqg"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">Sarah K.</span>
+<span class="font-body-md text-body-md text-sm text-on-surface-variant">Senior Master Barber</span>
+</div>
+</div>
+<!-- Custom Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary-container"></div>
+</label>
+</div>
+<!-- Staff Item 2 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-surface-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Staff Member" class="w-full h-full object-cover" data-alt="A portrait of a rugged, professional male barber with a well-groomed beard, set against a dark, moody background typical of a luxury barbershop. Subtle warm lighting highlights his features. He wears a dark uniform, projecting a sense of modern masculinity and high-tier craftsmanship suited for an elite brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWf6fv9W4QP1HaXYqtDibngnPgegNyDwykihj3TF5unrtPgm3X1XvCJlFBxLCX5qm9rL_eM5Vh7HMIThNaYb_CtYSpwyTdqsX5Z4ARRcmTOS1HAGSY04KnaXvBSbOOU1Jn22qPRjlwU23N-rS-RrG3f1p5CcoexYq-jif_QaMoBcrbAlRsHY9GD30TdFC_egnyihaQiFLa5kKq0uRyu2Gt3jFtFxGrf6StR7-JuMZL9jhGKt_TZDFo34SoxRO6yQXylI1_qfn__PY"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">David M.</span>
+<span class="font-body-md text-body-md text-sm text-on-surface-variant">Color Specialist</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface-variant after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary-container"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Inventory Alerts -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant flex flex-col gap-stack-md">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface text-xl">Inventory Alerts</h3>
+<span class="material-symbols-outlined text-error">warning</span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center p-3 rounded-lg bg-surface-container-low border border-error/20">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">Premium Gold Pomade</span>
+<span class="font-body-md text-body-md text-sm text-on-surface-variant">CBD Branch</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-error block">2 units left</span>
+<button class="text-primary hover:underline font-label-sm text-label-sm text-xs">Reorder</button>
+</div>
+</div>
+<div class="flex justify-between items-center p-3 rounded-lg bg-surface-container-low border border-surface-variant">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">Sandalwood Beard Oil</span>
+<span class="font-body-md text-body-md text-sm text-on-surface-variant">Westlands Branch</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-primary block">8 units left</span>
+<button class="text-primary hover:underline font-label-sm text-label-sm text-xs">Review</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-[#0A0A0A] fixed bottom-0 w-full z-50 pb-safe border-t border-[#1A1A1A] shadow-[0_-4px_30px_rgba(212,175,55,0.05)] flex justify-around items-center h-20 px-2">
+<button class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 w-16 rounded-xl py-1">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span class="font-['Inter'] text-[10px] font-medium">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 w-16 rounded-xl py-1">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="font-['Inter'] text-[10px] font-medium">Bookings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 w-16 rounded-xl py-1">
+<span class="material-symbols-outlined mb-1">near_me</span>
+<span class="font-['Inter'] text-[10px] font-medium">Travel</span>
+</button>
+<!-- Active Tab -->
+<button class="flex flex-col items-center justify-center text-[#D4AF37] bg-[#D4AF37]/10 rounded-xl py-1 px-3 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 w-16">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">query_stats</span>
+<span class="font-['Inter'] text-[10px] font-medium">Analytics</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 w-16 rounded-xl py-1">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-['Inter'] text-[10px] font-medium">Profile</span>
+</button>
+</nav>
+</body></html>

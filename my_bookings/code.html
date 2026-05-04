@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BarberConnect - Bookings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#d0c5af",
+                        "secondary-container": "#00b55d",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary-container": "#b2b3b3",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-tertiary-container": "#434546",
+                        "surface-tint": "#e9c349",
+                        "primary-container": "#d4af37",
+                        "secondary-fixed": "#6dfe9c",
+                        "on-secondary": "#003919",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#2f3131",
+                        "secondary": "#4de082",
+                        "primary": "#f2ca50",
+                        "on-surface": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-bright": "#3a3939",
+                        "surface-container": "#201f1f",
+                        "secondary-fixed-dim": "#4de082",
+                        "surface-container-low": "#1c1b1b",
+                        "outline": "#99907c",
+                        "inverse-primary": "#735c00",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary": "#cecece",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-variant": "#353534",
+                        "surface": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131313",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-secondary-container": "#003e1c",
+                        "surface-container-highest": "#353534",
+                        "on-primary-container": "#554300",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-dim": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-primary": "#3c2f00",
+                        "outline-variant": "#4d4635",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "primary-fixed": "#ffe088"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "stack-lg": "32px",
+                        "container-margin": "24px",
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "display-xl": ["Inter"],
+                        "label-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased pb-32">
+<!-- TopAppBar -->
+<header class="fixed bg-neutral-950 dark:bg-neutral-950 border-b border-neutral-900 shadow-none flex justify-between items-center px-6 py-3 w-full top-0 z-40">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden flex-shrink-0 border border-outline-variant/30">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close-up portrait of a modern Kenyan professional man with a sharp, fresh haircut, looking confidently slightly off-camera. The lighting is moody and cinematic, emphasizing the sleek, premium dark mode aesthetic of an exclusive grooming service. The background is a smooth, deep charcoal gradient (#1A1A1A) to ensure the subject stands out sharply." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM_MfoeCtc4fdVqdvZkUCjXscsh21PB9QEngTGYl7tDoUEqvZV1aN6nkhKm2FUjW5wrQHrnrjAgcStDhb222tPe2hedfwIwPkJLf_kbSODWAXtLNB-kUKWw9X5hwir9R7GS03ik4h3QG8qK7kKZ46Y-ekTtki_dwzPaZz2XnykmVhECjNggzARlt0dgdnw7pJG6cuD1UodeYtLgkwuDB1AGISEpiPqCiu0GmvjzsFINqT6C4MSfrEq6K-VGcQtO2JDr0WalkixJrBi"/>
+</div>
+<h1 class="text-lg font-bold text-yellow-600 dark:text-yellow-500 font-inter tracking-tight">BarberConnect</h1>
+<button class="flex items-center justify-center w-10 h-10 hover:opacity-80 transition-opacity duration-200">
+<span class="material-symbols-outlined text-yellow-600 dark:text-yellow-500" data-icon="location_on">location_on</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="pt-24 px-container-margin max-w-3xl mx-auto space-y-stack-lg">
+<!-- Header & Tabs -->
+<section class="space-y-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Bookings</h2>
+<div class="flex space-x-gutter border-b border-outline-variant/30">
+<button class="pb-unit border-b-2 border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest px-2">Upcoming</button>
+<button class="pb-unit border-b-2 border-transparent text-outline font-label-sm text-label-sm uppercase tracking-widest px-2 hover:text-on-surface transition-colors">Past</button>
+</div>
+</section>
+<!-- Booking Cards List -->
+<section class="space-y-gutter">
+<!-- Card 1: Kevin the Groomer (Confirmed) -->
+<div class="bg-surface-container rounded-xl p-gutter border border-outline-variant/20 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.2)]">
+<!-- Top Row: Info & Status -->
+<div class="flex justify-between items-start mb-stack-md">
+<div class="flex items-center space-x-gutter">
+<div class="w-14 h-14 rounded-full bg-surface-container-high overflow-hidden shrink-0 border border-outline-variant/50">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a master barber, an African man with a meticulously trimmed beard and stylish glasses. He is framed against a deep, dark studio background with subtle gold edge lighting that highlights his silhouette. The image conveys a sense of high-end craftsmanship, exclusivity, and premium service aligned with a luxury dark mode app aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD55_kTtDIbdx4sziO-E4aG5lVfftbtNsERKEeknhemfjDzgps2pq4NJDYc3b676OGsc2w9eXUMdOjuMjF2LnZxgF8ojuaYtcLdrMSO7GhHxrOppMQhtdCNm0tAxg10L3KrmQN14PFmwpcmTFDw5qM9nZRaQx8IYH6tDItnndfQoNs0tCq4UbeCWR8ujkbxjZ2um-u400w9aLgB7i0eNkk3tPaWzCkUhSsoV34QdqWKmTLle2qNvCYyU0kteNRZFwhMUmIJpb7pv-EM"/>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Kevin the Groomer</h3>
+<p class="text-on-surface-variant font-body-md text-body-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span> 
+                                14 Oct • 2:00 PM
+                            </p>
+</div>
+</div>
+<!-- Confirmed Status -->
+<div class="bg-secondary-container/10 border border-secondary-container/20 px-3 py-1.5 rounded-full flex items-center gap-2 shrink-0">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed shadow-[0_0_8px_rgba(109,254,156,0.6)]"></div>
+<span class="text-secondary-fixed font-label-sm text-[11px] uppercase tracking-wider">Confirmed</span>
+</div>
+</div>
+<!-- Service Details -->
+<div class="bg-surface-container-low rounded-lg p-3 mb-stack-md flex justify-between items-center border border-outline-variant/10">
+<span class="text-on-surface-variant font-body-md text-sm">Executive Fade &amp; Beard Sculpt</span>
+<span class="text-primary font-headline-md text-[18px]">KES 2,500</span>
+</div>
+<!-- Actions -->
+<div class="flex gap-gutter">
+<button class="flex-1 bg-transparent border border-outline text-on-surface rounded-lg py-3 font-label-sm text-label-sm uppercase hover:bg-surface-variant transition-colors">Reschedule</button>
+<button class="flex-1 bg-transparent border border-error/30 text-error rounded-lg py-3 font-label-sm text-label-sm uppercase hover:bg-error-container hover:text-on-error-container transition-colors">Cancel</button>
+</div>
+</div>
+<!-- Card 2: Style Studio (Pending) -->
+<div class="bg-surface-container rounded-xl p-gutter border border-outline-variant/20 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.2)]">
+<!-- Top Row: Info & Status -->
+<div class="flex justify-between items-start mb-stack-md">
+<div class="flex items-center space-x-gutter">
+<div class="w-14 h-14 rounded-full bg-surface-container-high overflow-hidden shrink-0 border border-outline-variant/50">
+<img class="w-full h-full object-cover" data-alt="An interior shot of an upscale, modern barber studio bathed in moody, ambient lighting. The focus is on a sleek, black leather barber chair positioned in front of a mirror with warm gold backlighting. The scene exudes a minimalist, exclusive VIP atmosphere, relying on deep shadows and rich, warm accents to match a premium dark UI style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALPSVZdIi6FgVUwfIb0_0aVATqG_PEt8fjZVA1h_sqQeReYYfJl0Q5213AHEiwVAmr3CTXdYO_KF1PLZu-7xgZ8NEer6fpkqK_JkdJpVv63JAtCqpdJA4ikZ-ap2dlmmqdf4eyc7tkF_AWshBvxDdTpeoYHTWnJp1GIhzBHue1tQRt_GegGLtvjUwYO9_2kCwOqRCmkAHbC3009Cwz8eq9t44ZhLyL0roSQe6qv4n_O-5dqg2ag3GwAKzbV-TLea3tF3Bs3i1qLN1L"/>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Style Studio</h3>
+<p class="text-on-surface-variant font-body-md text-body-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span> 
+                                18 Oct • 10:00 AM
+                            </p>
+</div>
+</div>
+<!-- Pending Status -->
+<div class="bg-surface-variant border border-outline-variant/30 px-3 py-1.5 rounded-full flex items-center gap-2 shrink-0">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+<span class="text-on-surface-variant font-label-sm text-[11px] uppercase tracking-wider">Pending</span>
+</div>
+</div>
+<!-- Service Details -->
+<div class="bg-surface-container-low rounded-lg p-3 mb-stack-md flex justify-between items-center border border-outline-variant/10">
+<span class="text-on-surface-variant font-body-md text-sm">Classic Haircut</span>
+<span class="text-primary font-headline-md text-[18px]">KES 1,500</span>
+</div>
+<!-- Actions -->
+<div class="flex gap-gutter">
+<button class="flex-1 bg-transparent border border-outline/50 text-outline rounded-lg py-3 font-label-sm text-label-sm uppercase cursor-not-allowed">Reschedule</button>
+<button class="flex-1 bg-transparent border border-error/30 text-error rounded-lg py-3 font-label-sm text-label-sm uppercase hover:bg-error-container hover:text-on-error-container transition-colors">Cancel</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 h-20 bg-neutral-950/90 backdrop-blur-md dark:bg-neutral-950/90 rounded-t-2xl border-t border-neutral-900 shadow-[0_-4px_20px_0_rgba(0,0,0,0.5)] md:hidden">
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-yellow-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Staff Suggestions Inbox - Elite Grooming</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<!-- Google Fonts for UI Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#93000a",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "surface-variant": "#353534",
+                      "secondary": "#4de082",
+                      "on-secondary-fixed-variant": "#005227",
+                      "on-primary-container": "#554300",
+                      "on-tertiary": "#2f3131",
+                      "secondary-container": "#00b55d",
+                      "on-error": "#690005",
+                      "inverse-primary": "#735c00",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-container": "#003e1c",
+                      "inverse-on-surface": "#313030",
+                      "tertiary": "#cecece",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-secondary-fixed": "#00210c",
+                      "on-surface": "#e5e2e1",
+                      "error": "#ffb4ab",
+                      "on-primary": "#3c2f00",
+                      "primary-fixed": "#ffe088",
+                      "on-primary-fixed": "#241a00",
+                      "tertiary-container": "#b2b3b3",
+                      "on-background": "#e5e2e1",
+                      "outline": "#99907c",
+                      "inverse-surface": "#e5e2e1",
+                      "background": "#131313",
+                      "surface-container": "#201f1f",
+                      "on-tertiary-container": "#434546",
+                      "surface-tint": "#e9c349",
+                      "surface-container-low": "#1c1b1b",
+                      "surface-container-high": "#2a2a2a",
+                      "surface-container-highest": "#353534",
+                      "surface": "#131313",
+                      "secondary-fixed-dim": "#4de082",
+                      "on-secondary": "#003919",
+                      "tertiary-fixed": "#e2e2e2",
+                      "surface-bright": "#3a3939",
+                      "on-primary-fixed-variant": "#574500",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "primary-container": "#d4af37",
+                      "outline-variant": "#4d4635",
+                      "primary-fixed-dim": "#e9c349",
+                      "primary": "#f2ca50",
+                      "on-surface-variant": "#d0c5af",
+                      "surface-dim": "#131313",
+                      "secondary-fixed": "#6dfe9c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "container-margin": "24px",
+                      "gutter": "16px",
+                      "unit": "8px",
+                      "stack-lg": "32px",
+                      "stack-md": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Manrope"],
+                      "headline-md": ["Inter"],
+                      "display-xl": ["Inter"],
+                      "label-sm": ["Manrope"],
+                      "body-md": ["Manrope"],
+                      "headline-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen antialiased selection:bg-primary/30 selection:text-primary">
+<!-- TopAppBar Shared Component -->
+<header class="hidden md:flex bg-black/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4 hover:bg-white/5 transition-colors active:scale-95 duration-200 rounded-full cursor-pointer p-1">
+<img alt="Barber profile picture" class="w-10 h-10 rounded-full object-cover border border-white/20" data-alt="A striking digital portrait of a stylish male barber with a well-groomed beard, set against a deep, pure black studio background. The lighting is dramatic and high-contrast, utilizing soft box illumination to highlight his features while casting deep, ambient shadows that evoke a sense of quiet luxury. His expression is professional and confident, perfectly aligning with an exclusive, premium grooming aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARZfjwyuuJACA1frXWb3-4jsIvipSpFPB6c-0hdhDjh3nu62belITk12XipB1eGWmurpUcT6G2QDRGI0M-hQvpN7kH0AnY7ypxgG_PxYVIXhC5oKU3QGMBzyevlMU2ecZKjWv5fzBX4Tse1X0gKlJlqNhrWfzj4krWBMimiFYOAGTN2ImQQe4m-9QUcyZ4NIh5SY3NryW4APmNOYwg-AtH33eiwdVQibMjnK7tljNzcu1VdPQVwkQ7lehftvBZEPEIBc3-piD3ml0"/>
+</div>
+<h1 class="font-['Inter'] font-semibold tracking-wider uppercase text-yellow-500 text-xl font-black tracking-tighter">
+            ELITE GROOMING
+        </h1>
+<button class="text-white/70 hover:bg-white/5 transition-colors active:scale-95 duration-200 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-8 pb-32 md:pt-32 md:pb-16 px-container-margin max-w-7xl mx-auto flex flex-col gap-stack-lg">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-stack-sm relative z-10">
+<div>
+<p class="font-label-sm text-label-sm text-primary mb-2 tracking-widest">ADMINISTRATION DASHBOARD</p>
+<h2 class="font-display-xl text-display-xl text-on-background">Staff Suggestions Inbox</h2>
+</div>
+<div class="flex gap-4 items-center">
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant/30 bg-surface-container-low backdrop-blur-md">
+<span class="material-symbols-outlined text-[18px]">download</span> Export Report
+                </button>
+</div>
+</header>
+<!-- Glassmorphism Filter Bar -->
+<section class="bg-surface-container-high/80 backdrop-blur-xl border border-outline-variant/20 rounded-xl p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-stack-md sticky top-4 md:top-24 z-40 shadow-xl">
+<!-- Status Filters (Pills) -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-2">Status:</span>
+<button class="font-label-sm text-label-sm px-4 py-1.5 rounded-full bg-primary text-on-primary shadow-[0_0_15px_rgba(242,202,80,0.15)] transition-all">All</button>
+<button class="font-label-sm text-label-sm px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-on-surface transition-all">New</button>
+<button class="font-label-sm text-label-sm px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-on-surface transition-all">Under Review</button>
+<button class="font-label-sm text-label-sm px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-on-surface transition-all">Implemented</button>
+</div>
+<!-- Category Filter Dropdown (Simulated) -->
+<div class="flex items-center gap-2 w-full md:w-auto border-t md:border-t-0 border-outline-variant/20 pt-4 md:pt-0">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">filter_list</span>
+<div class="relative w-full md:w-48 bg-surface-container rounded-lg border border-outline-variant overflow-hidden flex items-center justify-between px-3 py-2 cursor-pointer hover:border-primary/50 transition-colors">
+<span class="font-body-md text-body-md text-on-surface">All Categories</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Suggestions Grid (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter items-start">
+<!-- Card 1: Featured/Important (Spans 2 columns on wide screens) -->
+<article class="md:col-span-2 xl:col-span-2 bg-surface-container rounded-xl border border-outline-variant/30 p-6 flex flex-col gap-stack-md relative overflow-hidden group hover:border-primary/40 transition-colors shadow-lg">
+<!-- Ambient Depth Glow -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[80px] rounded-full pointer-events-none transition-opacity group-hover:opacity-100 opacity-50"></div>
+<div class="flex justify-between items-start relative z-10">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-on-surface-variant icon-fill">person</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Marcus K.</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Today, 09:42 AM</p>
+</div>
+</div>
+<div class="px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm tracking-wider shadow-[0_0_10px_rgba(242,202,80,0.2)]">
+                        New
+                    </div>
+</div>
+<div class="relative z-10 mt-2">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-[18px]">storefront</span>
+<span class="font-label-sm text-label-sm text-primary tracking-widest">FACILITIES &amp; EQUIPMENT</span>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-on-background text-2xl mb-3">Upgrade Waiting Lounge Seating</h4>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">The current leather sofas in the main waiting area are showing significant wear and tear from heavy daily use. Several clients have mentioned they aren't as comfortable as they look. Suggesting we look into commercial-grade modular seating that fits the high-end aesthetic but offers better durability.</p>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 relative z-10 flex justify-between items-center">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">thumb_up</span>
+<span class="font-label-sm text-label-sm">4 Staff Agreed</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:text-primary-fixed transition-colors flex items-center gap-2 py-2 px-4 rounded-lg hover:bg-primary/10">
+                        View Details <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Card 2: Standard -->
+<article class="bg-surface-container rounded-xl border border-outline-variant/30 p-6 flex flex-col gap-stack-md relative overflow-hidden group hover:border-primary/40 transition-colors shadow-lg">
+<div class="flex justify-between items-start relative z-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">visibility_off</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-base italic">Anonymous</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Oct 26, 2023</p>
+</div>
+</div>
+<div class="px-3 py-1 rounded-full bg-surface-variant text-on-surface-variant border border-outline-variant/50 font-label-sm text-label-sm tracking-wider">
+                        Under Review
+                    </div>
+</div>
+<div class="relative z-10 mt-2">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">inventory_2</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-widest">PRODUCT INVENTORY</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-background text-xl mb-2">Restock Pomade Faster</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-4">We are consistently running out of the matte clay pomade on weekends. Clients want to purchase it after their cut, but we have to turn them away. Can we adjust the automated reorder point to trigger sooner?</p>
+</div>
+<div class="mt-auto pt-6 relative z-10">
+<button class="w-full font-label-sm text-label-sm text-on-surface py-3 rounded-lg border border-outline-variant hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2">
+                        View Details
+                    </button>
+</div>
+</article>
+<!-- Card 3: Standard -->
+<article class="bg-surface-container rounded-xl border border-outline-variant/30 p-6 flex flex-col gap-stack-md relative overflow-hidden group hover:border-primary/40 transition-colors shadow-lg">
+<div class="flex justify-between items-start relative z-10">
+<div class="flex items-center gap-3">
+<img alt="Staff member profile" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A sophisticated close-up portrait of a female grooming specialist in a dimly lit, luxurious salon setting. The composition uses soft, ambient lighting to create a calm, professional mood, emphasizing deep black tonal layers and high-contrast styling. Her expression is welcoming yet focused, capturing the essence of an exclusive, high-end concierge service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFcM6vVP6n4oherR6xBKlyTfJxc60riSLuGQiSfxkK14MiMSOTcsNxdBS6GJ15mg9xVTVhTe3Je4EODDqw9EmeQBBMTSjdd2zhPjBAAP_9a1yImlubvZ-5enmyrW1e4BmRVCQ_zKji_tSCNO_kRMK5y0_aQCKIS66BOfsJYafwzbvNgbKXi_JX3tOKsaY7Dj9sEwJbaRq8acVy2Lnz9j3gr64iH1sBUmSOzdgBlh2UZOu5TfvRpQYUOl1hZMkhNyT59oqsN5pNWK8"/>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-base">Sarah L.</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Oct 22, 2023</p>
+</div>
+</div>
+<div class="px-3 py-1 rounded-full bg-secondary-container/20 text-secondary border border-secondary/30 font-label-sm text-label-sm tracking-wider">
+                        Implemented
+                    </div>
+</div>
+<div class="relative z-10 mt-2">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-secondary text-[18px]">music_note</span>
+<span class="font-label-sm text-label-sm text-secondary tracking-widest">CLIENT EXPERIENCE</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-background text-xl mb-2">Updated Playlist Rotation</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-4">The afternoon playlist is getting repetitive. I suggest curating a new 'Lo-Fi Lounge' mix for the 2PM-5PM block to keep the energy relaxed but fresh for the staff and clients.</p>
+</div>
+<div class="mt-auto pt-6 relative z-10">
+<button class="w-full font-label-sm text-label-sm text-on-surface py-3 rounded-lg border border-outline-variant hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2">
+                        View Details
+                    </button>
+</div>
+</article>
+<!-- Card 4: Standard -->
+<article class="bg-surface-container rounded-xl border border-outline-variant/30 p-6 flex flex-col gap-stack-md relative overflow-hidden group hover:border-primary/40 transition-colors shadow-lg">
+<div class="flex justify-between items-start relative z-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-base">David M.</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Oct 20, 2023</p>
+</div>
+</div>
+<div class="px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm tracking-wider shadow-[0_0_10px_rgba(242,202,80,0.2)]">
+                        New
+                    </div>
+</div>
+<div class="relative z-10 mt-2">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-[18px]">calendar_month</span>
+<span class="font-label-sm text-label-sm text-primary tracking-widest">OPERATIONS</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-background text-xl mb-2">Buffer Time Adjustments</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-4">Can we add an automatic 5-minute buffer to the booking system after chemical treatments? Cleanup takes longer and it's causing the next appointments to start slightly late.</p>
+</div>
+<div class="mt-auto pt-6 relative z-10">
+<button class="w-full font-label-sm text-label-sm text-on-surface py-3 rounded-lg border border-outline-variant hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2">
+                        View Details
+                    </button>
+</div>
+</article>
+</section>
+</main>
+<!-- BottomNavBar Shared Component -->
+<nav class="md:hidden bg-[#0A0A0A]/95 backdrop-blur-lg fixed bottom-0 w-full z-50 rounded-t-2xl border-t border-white/5 shadow-[0_-10px_40px_rgba(0,0,0,0.8)] fixed bottom-0 left-0 w-full flex justify-around items-center pt-3 pb-6 px-4">
+<!-- Dashboard (Inactive) -->
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-yellow-200 transition-all active:translate-y-[-2px] duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest">Dashboard</span>
+</a>
+<!-- Staff (Active - as this is the Staff Suggestions context) -->
+<a class="flex flex-col items-center justify-center text-yellow-500 drop-shadow-[0_0_8px_rgba(212,175,55,0.3)] hover:text-yellow-200 transition-all active:translate-y-[-2px] duration-300" href="#">
+<span class="material-symbols-outlined mb-1 icon-fill" data-icon="groups">groups</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest">Staff</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-yellow-200 transition-all active:translate-y-[-2px] duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</body></html>

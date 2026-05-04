@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mobile Barber Travel Itinerary</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<!-- Tailwind Configuration from Style Guidance -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#241a00",
+                        "secondary-fixed": "#6dfe9c",
+                        "inverse-primary": "#735c00",
+                        "primary-fixed-dim": "#e9c349",
+                        "surface-bright": "#3a3939",
+                        "on-secondary": "#003919",
+                        "on-secondary-fixed": "#00210c",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary": "#2f3131",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container": "#201f1f",
+                        "primary": "#f2ca50",
+                        "surface-container-low": "#1c1b1b",
+                        "on-surface": "#e5e2e1",
+                        "on-primary-container": "#554300",
+                        "surface-variant": "#353534",
+                        "secondary-container": "#00b55d",
+                        "on-secondary-fixed-variant": "#005227",
+                        "secondary-fixed-dim": "#4de082",
+                        "on-error": "#690005",
+                        "primary-container": "#d4af37",
+                        "surface": "#131313",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#4d4635",
+                        "outline": "#99907c",
+                        "background": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-container-highest": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary": "#4de082",
+                        "tertiary-container": "#b2b3b3",
+                        "on-tertiary-container": "#434546",
+                        "on-secondary-container": "#003e1c",
+                        "tertiary": "#cecece",
+                        "primary-fixed": "#ffe088",
+                        "on-primary": "#3c2f00",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-on-surface": "#313030",
+                        "error-container": "#93000a",
+                        "surface-tint": "#e9c349",
+                        "surface-dim": "#131313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "24px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Manrope"],
+                        "display-xl": ["Inter"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0A0A0A]/90 backdrop-blur-md border-b border-[#262626] shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-stack-sm">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#D4AF37]">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A close-up profile portrait of a confident Black male professional with a neat beard, set against a dark, moody background. The lighting is cinematic with a subtle golden edge light highlighting his features, reflecting a premium, exclusive brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf8aasDIECwrqB8S_tvRTRsg2GXQ9r3-XvukLJSJGg9nATNWBUNz38SWvdHJitYIXy-gS9Wb5yfdI_OlmTNgSy3czD5eAZu8RkZ2Oz9-LAzoyd7AoZ0QJgl38lNYb-ZXbjhLSHneHxAtxAQnwCLlkX7QKmui-hrjCuRSf3T9npuRUcl4_QIACfturRqxvjitkyZXFR-OtGeqlEhPpu2kCIhQCX26GOihLg3r2dtAswndNK1rgjbH-hhEevZA8awijk3vhbXdC5qqk"/>
+</div>
+</div>
+<div class="font-['Inter'] uppercase tracking-widest text-sm font-bold text-[#D4AF37] absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
+            Kinyozi Elite
+        </div>
+<!-- Web Navigation (Hidden on Mobile) -->
+<div class="hidden md:flex items-center gap-stack-lg absolute left-1/2 -translate-x-1/2">
+<a class="font-label-sm text-label-sm text-gray-400 hover:text-[#D4AF37] transition-colors" href="#">Explore</a>
+<a class="font-label-sm text-label-sm text-gray-400 hover:text-[#D4AF37] transition-colors" href="#">Bookings</a>
+<a class="font-label-sm text-label-sm text-[#D4AF37]" href="#">Travel</a>
+<a class="font-label-sm text-label-sm text-gray-400 hover:text-[#D4AF37] transition-colors" href="#">Analytics</a>
+</div>
+<div class="text-[#D4AF37] hover:text-[#D4AF37] transition-colors active:scale-95 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[88px] pb-[100px] px-container-margin w-full max-w-7xl mx-auto flex flex-col gap-stack-lg">
+<!-- Header Section -->
+<header class="flex flex-col gap-stack-sm">
+<h1 class="font-display-xl text-display-xl text-on-surface">Daily Logistics</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Projected travel route and earnings summary across Nairobi neighborhoods for today's mobile appointments.</p>
+</header>
+<!-- Summary Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Map Visualization Card -->
+<div class="md:col-span-8 bg-surface-container rounded-xl overflow-hidden relative min-h-[300px] border border-outline-variant shadow-lg flex flex-col group">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500" data-alt="A highly stylized, dark-mode satellite map view of a modern city grid with glowing golden route lines connecting several distinct points. The map has a sleek, minimalist aesthetic with deep black and charcoal tones, punctuated by vivid, sharp gold accents indicating a travel itinerary. The overall mood is high-tech and premium." data-location="Nairobi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4Qh7GgIdePkil4KVjQCBU_k4O102gWsBIx-PX5F1XhPq1BgSPAKy8BgGleeOyKTIGFnzRmlMKirwOjIhwQc2Z75RFX69BnEv4h38t_kdOveknF5yiXPYKx1EbzJDzCB0MeQM7WZwL4pRCdaeoFNz4WEgKtXPIxVzb8_wDX0SErqtQKpZTTyoaryw-BPPH7o_wpMCQN79JfDxJH1K0w0iIIu0stg4m8Hj0ruMdIz6BqVAbD_G6vw5tOJLrw8sNtG_4JMxpAZcSOf4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 p-6 flex justify-between items-start mt-auto bg-gradient-to-t from-[#0A0A0A] to-transparent">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-highest/80 backdrop-blur-sm border border-outline-variant mb-3">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="font-label-sm text-label-sm text-on-surface">Live Route</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Nairobi Metropolitan</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">3 Neighborhoods • 4 Appointments</p>
+</div>
+<button class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:scale-105 transition-transform">
+<span class="material-symbols-outlined filled">directions</span>
+</button>
+</div>
+</div>
+<!-- Metrics Stack -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<!-- Earnings Card -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant flex flex-col gap-stack-sm relative overflow-hidden h-full justify-center">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+<div class="flex items-center gap-3 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined">payments</span>
+<h3 class="font-label-sm text-label-sm uppercase tracking-wider">Projected Earnings</h3>
+</div>
+<div class="font-display-xl text-display-xl text-primary drop-shadow-[0_2px_10px_rgba(212,175,55,0.2)]">KES 14,500</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-secondary text-sm">trending_up</span>
+<span class="font-label-sm text-label-sm text-secondary">+12% vs Yesterday</span>
+</div>
+</div>
+<!-- Distance Card -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant flex flex-col gap-stack-sm justify-center">
+<div class="flex items-center gap-3 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined">route</span>
+<h3 class="font-label-sm text-label-sm uppercase tracking-wider">Total Distance</h3>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface">28.4 km</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Estimated fuel cost: KES 850</p>
+</div>
+</div>
+</section>
+<!-- Itinerary Timeline -->
+<section class="flex flex-col gap-stack-md mt-stack-md">
+<div class="flex items-center justify-between border-b border-surface-container-high pb-4">
+<h2 class="font-headline-md text-headline-md text-on-surface">Travel Itinerary</h2>
+<span class="font-label-sm text-label-sm text-primary cursor-pointer hover:underline">Optimize Route</span>
+</div>
+<div class="relative flex flex-col gap-gutter pl-4 md:pl-0">
+<!-- Subtle timeline vertical line for mobile -->
+<div class="absolute left-[15px] top-4 bottom-4 w-px bg-surface-container-highest md:hidden"></div>
+<!-- Stop 1 -->
+<div class="relative bg-surface-container-low backdrop-blur-md rounded-xl p-5 border border-outline-variant flex flex-col md:flex-row justify-between items-start md:items-center gap-stack-md shadow-sm ml-6 md:ml-0 group hover:border-outline transition-colors">
+<div class="absolute -left-[30px] top-6 w-3 h-3 rounded-full bg-primary ring-4 ring-background md:hidden"></div>
+<div class="flex items-center gap-4 w-full md:w-auto">
+<div class="w-14 h-14 rounded-lg bg-surface-container flex flex-col items-center justify-center border border-surface-container-highest flex-shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface">09:00</span>
+<span class="text-[10px] text-on-surface-variant uppercase">AM</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Westlands</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Executive Grooming Package</p>
+</div>
+</div>
+<div class="flex items-center justify-between w-full md:w-auto gap-stack-lg border-t border-surface-container-highest md:border-none pt-4 md:pt-0 mt-2 md:mt-0">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a mature Caucasian male client with a modern haircut, set against a dark grey seamless background. The lighting is crisp and sophisticated, highlighting the grooming details in a high-end studio style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6qLQr7EfodtjyP7MU4GHGV4fAgmh1w6N8iDEjLhaeve5dEP6-YhLakgyQnYCRvT9c44Km82_BsYg79qJz85TPvZNGXnqGSrxkGEDJfPRMoSBcQeD8FInhEtWhqGTxI60PRDuRmt3cS9aIDZ79ZSnQ9Y2r4GziVgYt8ZIb8V0fXI_l1dHh9p1m27LEloxoWlczZtbI6w3U2UVqBgcLRqBzWwGgMXj90U1LMG-_qISJkJxDxvhX095tx2ihVLPplx8bg_etsSJ2dR4"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">David M.</span>
+</div>
+<div class="text-right">
+<div class="font-label-sm text-label-sm text-primary">KES 4,500</div>
+<div class="text-xs text-on-surface-variant">Confirmed</div>
+</div>
+</div>
+</div>
+<!-- Stop 2 -->
+<div class="relative bg-surface-container-low backdrop-blur-md rounded-xl p-5 border border-outline-variant flex flex-col md:flex-row justify-between items-start md:items-center gap-stack-md shadow-sm ml-6 md:ml-0 group hover:border-outline transition-colors">
+<div class="absolute -left-[30px] top-6 w-3 h-3 rounded-full bg-surface-container-highest ring-4 ring-background md:hidden"></div>
+<div class="flex items-center gap-4 w-full md:w-auto">
+<div class="w-14 h-14 rounded-lg bg-surface-container flex flex-col items-center justify-center border border-surface-container-highest flex-shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface">12:30</span>
+<span class="text-[10px] text-on-surface-variant uppercase">PM</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Kilimani</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Haircut &amp; Beard Trim</p>
+</div>
+</div>
+<div class="flex items-center justify-between w-full md:w-auto gap-stack-lg border-t border-surface-container-highest md:border-none pt-4 md:pt-0 mt-2 md:mt-0">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young Black male client smiling subtly, featuring a fresh fade haircut. The setting is minimal and dark, using a deep charcoal background with soft, diffused white lighting that creates a clean, premium visual aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBubvEpyFx-LuPKcYOMyUFCM-8cHZ4pO8nmtyIJZVuBnrbP0jm_JEZjkhW0FTbzYPs3fKNM7a16D2BRwRVvEh3mEWgEKgm0lUOOqJ0onRyTsKrTYeqwmhoCZd1H8LHrFiwLAhJcGmpiOiKKmc8yhSdkOFdOiDmwTg2imMFWH8sUgW9T9dJIsuHtCQps_er7neK_8OZ5ybzC3s4pOFEX2JQQ5Jw9fiYM_2WcqfC6jN6p44TDZr7iKzga-KVO3QKK0GCAy-jTQ2UNNwY"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Samuel K.</span>
+</div>
+<div class="text-right">
+<div class="font-label-sm text-label-sm text-on-surface">KES 3,000</div>
+<div class="text-xs text-on-surface-variant">Pending</div>
+</div>
+</div>
+</div>
+<!-- Stop 3 -->
+<div class="relative bg-surface-container-low backdrop-blur-md rounded-xl p-5 border border-outline-variant flex flex-col md:flex-row justify-between items-start md:items-center gap-stack-md shadow-sm ml-6 md:ml-0 group hover:border-outline transition-colors">
+<div class="absolute -left-[30px] top-6 w-3 h-3 rounded-full bg-surface-container-highest ring-4 ring-background md:hidden"></div>
+<div class="flex items-center gap-4 w-full md:w-auto">
+<div class="w-14 h-14 rounded-lg bg-surface-container flex flex-col items-center justify-center border border-surface-container-highest flex-shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface">03:00</span>
+<span class="text-[10px] text-on-surface-variant uppercase">PM</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">CBD</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">VIP Wedding Party (3 pax)</p>
+</div>
+</div>
+<div class="flex items-center justify-between w-full md:w-auto gap-stack-lg border-t border-surface-container-highest md:border-none pt-4 md:pt-0 mt-2 md:mt-0">
+<div class="flex items-center gap-2">
+<div class="flex -space-x-3">
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden border-2 border-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="A stylized group icon representing multiple clients, rendered in dark mode with gold accents. Instead of a real photo, this image generation prompt describes an abstract, high-end icon of three interconnected user silhouettes in subtle metallic tones against a pure black background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi8R4MoXTihT0tYdfc-kyssau3cX20GJioZ2Ed5DPHLrp8E4icnZi9XvuPKezJdDdjeL3P-Xa6658g5g8nov6HvgdivJVs891iFqr1FWKDm3nL0On3FN4RSx6YMkDeb61xHcfXm6vuc2tQ6MlhkoETFJRPZoW8riD4W_KHwhwqaw7a4rx3CuDV4rlDV5jAQPSYQO8SK3E5FqyjUijEZk9qfL4iypA0Osnkr-WvAopWfLqk8qdh9cIc1WoZUzK2zZxrtG7ht5wjx2s"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Group Booking</span>
+</div>
+<div class="text-right">
+<div class="font-label-sm text-label-sm text-primary">KES 7,000</div>
+<div class="text-xs text-on-surface-variant">Confirmed</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 pb-safe border-t border-[#1A1A1A] shadow-[0_-4px_30px_rgba(212,175,55,0.05)] bg-[#0A0A0A] flex justify-around items-center h-20 px-2">
+<!-- Explore -->
+<button class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 py-2 w-16">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Inter'] text-[10px] font-medium mt-1">Explore</span>
+</button>
+<!-- Bookings -->
+<button class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 py-2 w-16">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-['Inter'] text-[10px] font-medium mt-1">Bookings</span>
+</button>
+<!-- Travel (Active) -->
+<button class="flex flex-col items-center justify-center text-[#D4AF37] bg-[#D4AF37]/10 rounded-xl py-1 px-3 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 min-w-[64px]">
+<span class="material-symbols-outlined filled">near_me</span>
+<span class="font-['Inter'] text-[10px] font-medium mt-1">Travel</span>
+</button>
+<!-- Analytics -->
+<button class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 py-2 w-16">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-['Inter'] text-[10px] font-medium mt-1">Analytics</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center justify-center text-gray-500 hover:bg-[#1A1A1A] transition-all active:scale-90 duration-150 py-2 w-16">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] font-medium mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

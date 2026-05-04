@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BarberConnect - Schedule</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#d0c5af",
+                        "secondary-container": "#00b55d",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary-container": "#b2b3b3",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-tertiary-container": "#434546",
+                        "surface-tint": "#e9c349",
+                        "primary-container": "#d4af37",
+                        "secondary-fixed": "#6dfe9c",
+                        "on-secondary": "#003919",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#2f3131",
+                        "secondary": "#4de082",
+                        "primary": "#f2ca50",
+                        "on-surface": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-bright": "#3a3939",
+                        "surface-container": "#201f1f",
+                        "secondary-fixed-dim": "#4de082",
+                        "surface-container-low": "#1c1b1b",
+                        "outline": "#99907c",
+                        "inverse-primary": "#735c00",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary": "#cecece",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-variant": "#353534",
+                        "surface": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131313",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-secondary-container": "#003e1c",
+                        "surface-container-highest": "#353534",
+                        "on-primary-container": "#554300",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-dim": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-primary": "#3c2f00",
+                        "outline-variant": "#4d4635",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "primary-fixed": "#ffe088"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "stack-lg": "32px",
+                        "container-margin": "24px",
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "display-xl": ["Inter"],
+                        "label-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased pb-24">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 py-3 w-full bg-neutral-950 dark:bg-neutral-950 font-inter tracking-tight docked full-width top-0 sticky z-40 transition-opacity duration-200">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close-up portrait of a sophisticated modern Kenyan man with a pristine fade haircut, looking directly at the camera with confidence. The lighting is studio quality with deep shadows, emphasizing the exclusive, premium BarberConnect brand aesthetic. The background is pure dark charcoal, perfectly matching the UI dark mode palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnlxqK1DPsFtl0IWQkMfmWK8UuMqwIxo_h0mlphuCxGH5qmNx7RUG5PKq7iGUw5On_uSsn13Dh6su7AMrzTt4eRg7ltPqJGb5cxVG2T15WpgHRJbhqVP8xuH0e_0OYYBKTrKycBap04iw9BVofxCYZCWxfnEjqYS5QWKsum1HgvKGIccEmRepv_0Wsbybzon_i3iVYrGG-IDhNBaUYIieh_sT61VkN197qeq_iHtmo9mytl5ZBRWxM04YcPc2j7e79YawzK2YzutJF"/>
+</div>
+<h1 class="text-lg font-bold text-yellow-600 dark:text-yellow-500">BarberConnect</h1>
+</div>
+<button class="text-yellow-600 dark:text-yellow-500 hover:opacity-80 transition-opacity duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</button>
+</header>
+<!-- Page Header -->
+<section class="px-container-margin pt-stack-lg pb-stack-md">
+<div class="flex justify-between items-end">
+<div>
+<p class="font-label-sm text-primary mb-1 uppercase tracking-widest">Today</p>
+<h2 class="font-headline-lg text-on-surface">Aug 13</h2>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Schedule Timeline -->
+<main class="px-container-margin flex flex-col gap-unit relative">
+<!-- Timeline Line -->
+<div class="absolute left-[52px] top-0 bottom-0 w-px bg-surface-container-high -z-10"></div>
+<!-- 10:00 AM Slot - Booked -->
+<div class="flex gap-4 items-start relative group">
+<div class="w-[40px] pt-4 text-right">
+<span class="font-label-sm text-on-surface-variant block">10</span>
+<span class="text-[10px] text-tertiary-container block uppercase">AM</span>
+</div>
+<div class="flex-1 mt-2 mb-2 relative">
+<!-- Current Time Indicator (Simulated at ~10:20 AM) -->
+<div class="absolute top-[30%] -left-[14px] w-full flex items-center z-10 pointer-events-none">
+<div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(242,202,80,0.8)]"></div>
+<div class="h-px bg-primary w-full opacity-50"></div>
+</div>
+<div class="bg-surface-container border border-outline-variant rounded-xl p-4 shadow-[0_4px_20px_0_rgba(0,0,0,0.3)] relative overflow-hidden group-hover:border-primary transition-colors">
+<div class="absolute top-0 left-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary mb-1">Confirmed</span>
+<h3 class="font-headline-md text-on-surface text-lg">Samuel O.</h3>
+</div>
+<span class="font-label-sm text-primary">10:00 - 10:45</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">content_cut</span> Premium Fade &amp; Beard
+                    </p>
+</div>
+</div>
+</div>
+<!-- 11:00 AM Slot - Available -->
+<div class="flex gap-4 items-start relative">
+<div class="w-[40px] pt-4 text-right">
+<span class="font-label-sm text-on-surface-variant block">11</span>
+<span class="text-[10px] text-tertiary-container block uppercase">AM</span>
+</div>
+<div class="flex-1 mt-2 mb-2">
+<button class="w-full bg-transparent border border-dashed border-outline-variant rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-primary hover:bg-surface-container-high/50 transition-all min-h-[80px] group">
+<div class="w-8 h-8 rounded-full bg-surface-container border border-outline-variant flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors text-primary">
+<span class="material-symbols-outlined">add</span>
+</div>
+<span class="font-label-sm text-on-surface-variant group-hover:text-primary transition-colors">11:00 - 12:00 Available</span>
+</button>
+</div>
+</div>
+<!-- 12:00 PM Slot - Blocked -->
+<div class="flex gap-4 items-start relative">
+<div class="w-[40px] pt-4 text-right">
+<span class="font-label-sm text-on-surface-variant block">12</span>
+<span class="text-[10px] text-tertiary-container block uppercase">PM</span>
+</div>
+<div class="flex-1 mt-2 mb-2">
+<div class="bg-surface-container-low border border-surface-variant rounded-xl p-4 opacity-70">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container">block</span>
+<span class="font-label-sm text-on-surface">Personal Time</span>
+</div>
+<span class="font-label-sm text-tertiary-container">12:00 - 1:00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 1:00 PM Slot - Available -->
+<div class="flex gap-4 items-start relative">
+<div class="w-[40px] pt-4 text-right">
+<span class="font-label-sm text-on-surface-variant block">01</span>
+<span class="text-[10px] text-tertiary-container block uppercase">PM</span>
+</div>
+<div class="flex-1 mt-2 mb-2">
+<button class="w-full bg-transparent border border-dashed border-outline-variant rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-primary hover:bg-surface-container-high/50 transition-all min-h-[80px] group">
+<div class="w-8 h-8 rounded-full bg-surface-container border border-outline-variant flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors text-primary">
+<span class="material-symbols-outlined">add</span>
+</div>
+<span class="font-label-sm text-on-surface-variant group-hover:text-primary transition-colors">1:00 - 2:00 Available</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Sticky CTA -->
+<div class="fixed bottom-24 left-0 right-0 px-container-margin z-30 flex justify-end pointer-events-none">
+<button class="bg-surface-container border border-outline-variant text-on-surface font-label-sm py-3 px-6 rounded-full shadow-[0_8px_30px_0_rgba(0,0,0,0.6)] flex items-center gap-2 pointer-events-auto hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit_calendar</span>
+            Block Time
+        </button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 h-20 bg-neutral-950/90 backdrop-blur-md dark:bg-neutral-950/90 text-[10px] font-medium font-inter uppercase tracking-widest docked full-width bottom-0 rounded-t-2xl border-t border-neutral-900 shadow-[0_-4px_20px_0_rgba(0,0,0,0.5)] md:hidden">
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-yellow-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span>Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span>Profile</span>
+</a>
+</nav>
+<!-- Web Nav (Hidden on Mobile) -->
+<nav class="hidden md:flex fixed top-0 right-0 h-full w-64 bg-surface-container border-l border-outline-variant z-50 flex-col pt-20 px-4 gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors font-label-sm" href="#">
+<span class="material-symbols-outlined">home</span>
+            Home
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary transition-colors font-label-sm border border-primary/20" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+            Bookings
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors font-label-sm" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+            Messages
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors font-label-sm" href="#">
+<span class="material-symbols-outlined">person</span>
+            Profile
+        </a>
+</nav>
+</body></html>

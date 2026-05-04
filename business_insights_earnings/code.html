@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BarberConnect | Earnings Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#e9c349",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary-container": "#554300",
+                        "inverse-primary": "#735c00",
+                        "surface-container-highest": "#353534",
+                        "on-tertiary-container": "#434546",
+                        "background": "#131313",
+                        "secondary": "#4de082",
+                        "on-secondary-fixed": "#00210c",
+                        "secondary-container": "#00b55d",
+                        "surface-tint": "#e9c349",
+                        "on-secondary-container": "#003e1c",
+                        "secondary-fixed": "#6dfe9c",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-surface": "#e5e2e1",
+                        "primary": "#f2ca50",
+                        "surface-bright": "#3a3939",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#3c2f00",
+                        "surface-variant": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffe088",
+                        "on-primary-fixed": "#241a00",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-dim": "#131313",
+                        "on-secondary": "#003919",
+                        "tertiary": "#cecece",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#4de082",
+                        "outline-variant": "#4d4635",
+                        "on-tertiary": "#2f3131",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#e2e2e2",
+                        "tertiary-container": "#b2b3b3",
+                        "primary-container": "#d4af37",
+                        "on-secondary-fixed-variant": "#005227",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-surface-variant": "#d0c5af",
+                        "outline": "#99907c",
+                        "inverse-surface": "#e5e2e1",
+                        "surface": "#131313",
+                        "surface-container-low": "#1c1b1b",
+                        "on-background": "#e5e2e1",
+                        "inverse-on-surface": "#313030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "container-margin": "24px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "unit": "8px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "body-md": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full flex justify-between items-center px-6 h-16 bg-[#0A0A0A]/90 backdrop-blur-md z-50 border-b border-[#1A1A1A] shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 hover:opacity-80 transition-opacity text-[#D4AF37]">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-[#D4AF37] font-black tracking-tighter text-xl uppercase">BARBERCONNECT</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-[#D4AF37]/30">
+<img class="w-full h-full object-cover" data-alt="A close-up professional headshot of a stylish male barber with a well-groomed beard and a modern haircut. He is wearing a minimalist black apron in a high-end, dark-themed barbershop environment. The lighting is dramatic and warm, highlighting the gold accents of the shop's interior. The overall aesthetic is one of quiet luxury and premium craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGtpqagEYQu3xbCxaDcAFrBIxW_Etca2lU5d-b7YATTxqLx2XVzOclCWCoCT5Gnv6yjo1YJjlZFHaOfJzu2mAVhqClp27Biz6i29IEilZiYJoblEJPqEvO5aMB7oNGfHgOY2usOOn8GytV_TZGaCFP3h-91PSwkfJxW7AZDWd9RZAn59wO0N0n_yz5pw2UgHegzGEftKqbCdAfv31QkKc9S65fKLapSY4nV6GBNMUnJ15eBJjMQEifsyUpNM7WHVSPlSgRM8Yj_SE"/>
+</div>
+</header>
+<main class="mt-16 px-6 py-8 max-w-4xl mx-auto space-y-stack-lg">
+<!-- Period Navigation -->
+<nav class="flex p-1 bg-surface-container-low rounded-xl gap-1">
+<button class="flex-1 py-3 text-center rounded-lg font-label-sm text-label-sm bg-primary-container text-on-primary-container transition-all">Daily</button>
+<button class="flex-1 py-3 text-center rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container-highest transition-all">Weekly</button>
+<button class="flex-1 py-3 text-center rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container-highest transition-all">Monthly</button>
+</nav>
+<!-- Total Earnings Section -->
+<section class="text-center py-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">Total Earnings</p>
+<div class="flex items-baseline justify-center gap-2">
+<span class="font-display-xl text-display-xl text-primary-container">KES</span>
+<span class="font-display-xl text-display-xl text-on-surface">148,500</span>
+</div>
+<div class="mt-4 inline-flex items-center gap-2 px-3 py-1 bg-on-secondary-container/10 text-secondary-fixed rounded-full">
+<span class="material-symbols-outlined text-[18px]" data-icon="trending_up">trending_up</span>
+<span class="font-label-sm text-label-sm">+12.5% vs last week</span>
+</div>
+</section>
+<!-- Income Trends Chart (Mockup) -->
+<section class="bg-surface-container rounded-2xl p-6 shadow-xl border border-white/5">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Income Trends</h3>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+</div>
+<div class="h-48 flex items-end justify-between gap-2">
+<!-- Bar 1 -->
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-highest rounded-t-lg h-[40%] group-hover:bg-primary-container/40 transition-all relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-primary-container text-on-primary-container text-[10px] py-1 px-2 rounded whitespace-nowrap">KES 12k</div>
+</div>
+<span class="mt-3 font-label-sm text-[10px] text-on-surface-variant uppercase">Mon</span>
+</div>
+<!-- Bar 2 -->
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-highest rounded-t-lg h-[65%] group-hover:bg-primary-container/40 transition-all relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-primary-container text-on-primary-container text-[10px] py-1 px-2 rounded whitespace-nowrap">KES 18k</div>
+</div>
+<span class="mt-3 font-label-sm text-[10px] text-on-surface-variant uppercase">Tue</span>
+</div>
+<!-- Bar 3 -->
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-primary-container rounded-t-lg h-[95%] shadow-[0_0_20px_rgba(212,175,55,0.3)] relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-100 bg-on-surface text-surface text-[10px] py-1 px-2 rounded whitespace-nowrap font-bold">KES 24k</div>
+</div>
+<span class="mt-3 font-label-sm text-[10px] text-primary-container font-bold uppercase">Wed</span>
+</div>
+<!-- Bar 4 -->
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-highest rounded-t-lg h-[55%] group-hover:bg-primary-container/40 transition-all relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-primary-container text-on-primary-container text-[10px] py-1 px-2 rounded whitespace-nowrap">KES 15k</div>
+</div>
+<span class="mt-3 font-label-sm text-[10px] text-on-surface-variant uppercase">Thu</span>
+</div>
+<!-- Bar 5 -->
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-highest rounded-t-lg h-[80%] group-hover:bg-primary-container/40 transition-all relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-primary-container text-on-primary-container text-[10px] py-1 px-2 rounded whitespace-nowrap">KES 21k</div>
+</div>
+<span class="mt-3 font-label-sm text-[10px] text-on-surface-variant uppercase">Fri</span>
+</div>
+<!-- Bar 6 -->
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-highest rounded-t-lg h-[90%] group-hover:bg-primary-container/40 transition-all relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-primary-container text-on-primary-container text-[10px] py-1 px-2 rounded whitespace-nowrap">KES 23k</div>
+</div>
+<span class="mt-3 font-label-sm text-[10px] text-on-surface-variant uppercase">Sat</span>
+</div>
+<!-- Bar 7 -->
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-highest rounded-t-lg h-[30%] group-hover:bg-primary-container/40 transition-all relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-primary-container text-on-primary-container text-[10px] py-1 px-2 rounded whitespace-nowrap">KES 8k</div>
+</div>
+<span class="mt-3 font-label-sm text-[10px] text-on-surface-variant uppercase">Sun</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid for Commission & Expenses -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<!-- Commission Tracking Card -->
+<section class="bg-surface-container rounded-2xl p-6 border border-white/5 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<h3 class="font-headline-md text-[20px] text-on-surface">Commission</h3>
+</div>
+<div class="space-y-4 pt-2">
+<div class="relative pt-1">
+<div class="flex mb-2 items-center justify-between">
+<div>
+<span class="text-[10px] font-semibold inline-block py-1 px-2 uppercase rounded-full text-primary-container bg-primary-container/10">
+                                    Take-Home (70%)
+                                </span>
+</div>
+<div class="text-right">
+<span class="text-sm font-bold text-on-surface">KES 103,950</span>
+</div>
+</div>
+<div class="overflow-hidden h-2 mb-4 text-xs flex rounded-full bg-surface-container-highest">
+<div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-primary-container" style="width:70%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between py-3 border-t border-white/5">
+<span class="text-on-surface-variant font-body-md text-sm">Shop Cut (30%)</span>
+<span class="text-on-surface font-bold text-sm">KES 44,550</span>
+</div>
+</div>
+</section>
+<!-- Quick Stats/Expenses Preview -->
+<section class="bg-surface-container rounded-2xl p-6 border border-white/5 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-error/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+</div>
+<h3 class="font-headline-md text-[20px] text-on-surface">Net Profit</h3>
+</div>
+<div class="pt-2">
+<div class="flex items-center justify-between mb-4">
+<span class="text-on-surface-variant text-sm">Revenue</span>
+<span class="text-secondary-fixed text-sm font-bold">+ KES 148,500</span>
+</div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-on-surface-variant text-sm">Total Expenses</span>
+<span class="text-error text-sm font-bold">- KES 12,400</span>
+</div>
+<div class="pt-4 border-t border-white/5 flex items-center justify-between">
+<span class="text-on-surface font-bold">Monthly Net</span>
+<span class="text-primary-container text-xl font-black">KES 136,100</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Expenses Section -->
+<section class="bg-surface-container rounded-2xl overflow-hidden border border-white/5">
+<div class="p-6 border-b border-white/5 flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Expenses</h3>
+<button class="text-primary-container font-label-sm text-label-sm flex items-center gap-1 hover:underline">
+                    View All <span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="divide-y divide-white/5">
+<!-- Expense Item 1 -->
+<div class="p-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="sanitizer">sanitizer</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Premium Aftershave Bulk</p>
+<p class="text-[12px] text-on-surface-variant">Today • Supply Order</p>
+</div>
+</div>
+<span class="font-bold text-on-surface">KES 4,500</span>
+</div>
+<!-- Expense Item 2 -->
+<div class="p-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="content_cut">content_cut</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Blade Sharpening Service</p>
+<p class="text-[12px] text-on-surface-variant">Yesterday • Maintenance</p>
+</div>
+</div>
+<span class="font-bold text-on-surface">KES 2,200</span>
+</div>
+<!-- Expense Item 3 -->
+<div class="p-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Matte Texture Clay x5</p>
+<p class="text-[12px] text-on-surface-variant">Oct 24 • Hair Products</p>
+</div>
+</div>
+<span class="font-bold text-on-surface">KES 5,700</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-[#0A0A0A]/95 backdrop-blur-lg z-50 rounded-t-2xl border-t border-white/5 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
+<button class="flex flex-col items-center justify-center text-neutral-500 hover:text-white transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-neutral-500 hover:text-white transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider mt-1">Bookings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#D4AF37] drop-shadow-[0_0_8px_rgba(212,175,55,0.3)] active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="chat_bubble" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider mt-1">Messages</span>
+</button>
+<button class="flex flex-col items-center justify-center text-neutral-500 hover:text-white transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

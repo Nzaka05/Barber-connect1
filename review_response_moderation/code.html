@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Review Details - Elite Grooming Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&amp;family=Inter:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#e9c349",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#00210c",
+                        "on-primary-fixed-variant": "#574500",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-container": "#d4af37",
+                        "inverse-on-surface": "#313030",
+                        "primary": "#f2ca50",
+                        "on-background": "#e5e2e1",
+                        "on-primary": "#3c2f00",
+                        "surface-container-highest": "#353534",
+                        "outline": "#99907c",
+                        "background": "#131313",
+                        "surface-tint": "#e9c349",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "secondary": "#4de082",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-container": "#b2b3b3",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-container": "#00b55d",
+                        "surface-variant": "#353534",
+                        "surface-dim": "#131313",
+                        "secondary-fixed": "#6dfe9c",
+                        "error-container": "#93000a",
+                        "outline-variant": "#4d4635",
+                        "on-tertiary": "#2f3131",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-container": "#201f1f",
+                        "primary-fixed": "#ffe088",
+                        "on-tertiary-container": "#434546",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#4de082",
+                        "tertiary": "#cecece",
+                        "on-surface": "#e5e2e1",
+                        "on-primary-fixed": "#241a00",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-secondary-container": "#003e1c",
+                        "inverse-primary": "#735c00",
+                        "surface-bright": "#3a3939",
+                        "on-secondary": "#003919",
+                        "on-primary-container": "#554300",
+                        "error": "#ffb4ab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "stack-lg": "32px",
+                        "container-margin": "24px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0; }
+        .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row">
+<!-- TopAppBar (Mobile) -->
+<header class="md:hidden bg-[#0A0A0A] dark:bg-[#0A0A0A] fixed top-0 w-full z-50 border-b border-[#333333] shadow-xl shadow-black/50">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<img alt="Shop Manager Profile" class="w-10 h-10 rounded-full object-cover border border-outline" data-alt="A professional headshot of a stylish male barber manager in a dark, moody grooming salon. The lighting is cinematic with warm gold rim lights, highlighting sharp features and a crisp fade haircut. He wears a premium black apron over a crisp white shirt." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-H1nsscfxBCTiMuChu0R3BAf2a5k7KpgG7YXIbhgCK6D3981ZGB44O2HrPeHLoo0AM-7kR9EqxoVwNDO_4iCivVyOZWIqvhipbvAZJL9g1AjjEsmC4g2xkOJ1pr31CxKPbUHCv-osPPs2EhR8LNAhAy6ZfRUhFbCuDT3xz9CL3qjhUQ4A9vo1OtiGisCKJ807lxZ8Gmil_R8bxWQux-y_6SjdVigJmgyKiWO1EPhJmcReRRpNyBBFzhRG6B31ytXea9HJXc5bbqc"/>
+<h1 class="text-xl font-bold text-[#D4AF37] uppercase tracking-widest font-['Inter'] font-semibold tracking-tight">Elite Grooming Admin</h1>
+</div>
+<button class="text-[#D4AF37] dark:text-[#D4AF37] hover:bg-[#1A1A1A] transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- NavigationDrawer (Web) -->
+<nav class="hidden md:flex flex-col h-screen w-72 rounded-r-3xl divide-y divide-[#262626] shadow-2xl shadow-black bg-[#1A1A1A] dark:bg-[#1A1A1A] fixed left-0 top-0 z-40">
+<div class="flex flex-col h-full py-8">
+<div class="px-6 pb-6 text-left">
+<div class="flex items-center gap-4 mb-4">
+<img alt="Manager Portrait" class="w-12 h-12 rounded-full object-cover border-2 border-primary" data-alt="A professional headshot of a stylish male barber manager in a dark, moody grooming salon. The lighting is cinematic with warm gold rim lights, highlighting sharp features and a crisp fade haircut. He wears a premium black apron over a crisp white shirt." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCATB_X6GO2s8Ou_dGl-HYuaku5NMUXOMUc9toh5C_0Vf6UN8mTyk47k-yAKgjCYyDNyV6MImxPz_Ax7ZGijQz6wWivOEIV481jmFB8QOGdfeEvA3PjQBJWR6Ma0iSGgOPPIuR3ev7cQOS86H2QDaHXAA34voIjyQlq2CWrcWKTHSYNuFRtXgOrsFUECu51uqiQm7q4PrqRfjCa5P0b8fSLG61OAxBUfC7MaMz86u1hd81tb_b5q8wND7tComp5vipezDAX6KsVnH0"/>
+<div>
+<h2 class="text-[#D4AF37] font-black italic font-headline-md text-primary-container">Nairobi HQ</h2>
+<p class="font-label-sm text-tertiary">Shop Administrator</p>
+</div>
+</div>
+<span class="inline-block px-2 py-1 bg-surface-container-high rounded-full font-label-sm text-primary-fixed-dim text-xs">Premium Tier</span>
+</div>
+<div class="flex-1 overflow-y-auto px-4 py-4 space-y-2">
+<a class="flex items-center gap-4 text-gray-400 hover:text-[#D4AF37] p-4 hover:bg-[#262626] transition-all rounded-lg font-['Inter'] text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-gray-400 hover:text-[#D4AF37] p-4 hover:bg-[#262626] transition-all rounded-lg font-['Inter'] text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span>Shift Planner</span>
+</a>
+<a class="flex items-center gap-4 text-gray-400 hover:text-[#D4AF37] p-4 hover:bg-[#262626] transition-all rounded-lg font-['Inter'] text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+<span>Staff List</span>
+</a>
+<a class="flex items-center gap-4 bg-[#D4AF37] text-black font-bold rounded-lg p-4 m-2 hover:bg-[#262626] transition-all font-['Inter'] text-sm" href="#">
+<span class="material-symbols-outlined fill" data-icon="forum" data-weight="fill">forum</span>
+<span>Review Portal</span>
+</a>
+<a class="flex items-center gap-4 text-gray-400 hover:text-[#D4AF37] p-4 hover:bg-[#262626] transition-all rounded-lg font-['Inter'] text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Business Analytics</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-72 pt-24 md:pt-8 pb-28 md:pb-8 px-container-margin max-w-5xl mx-auto w-full">
+<div class="mb-stack-lg flex items-center justify-between">
+<div>
+<a class="inline-flex items-center text-primary-fixed-dim hover:text-primary transition-colors font-label-sm mb-stack-sm" href="#">
+<span class="material-symbols-outlined mr-2" data-icon="arrow_back">arrow_back</span>
+                    Back to Moderation Portal
+                </a>
+<h2 class="font-headline-lg text-on-background">Review Details</h2>
+</div>
+<div class="flex items-center gap-stack-sm bg-surface-container-high px-4 py-2 rounded-full border border-outline-variant">
+<span class="font-label-sm text-on-surface">Mark as Resolved</span>
+<button aria-checked="false" class="w-11 h-6 bg-surface-variant rounded-full relative inline-flex flex-shrink-0 cursor-pointer transition-colors duration-200 ease-in-out border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background" role="switch">
+<span aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-outline shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Review Content Column -->
+<div class="lg:col-span-7 flex flex-col gap-gutter">
+<!-- Customer Review Card -->
+<article class="bg-surface-container-low rounded-xl p-6 border border-outline-variant shadow-lg">
+<div class="flex items-start justify-between mb-stack-md">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center text-primary-fixed-dim font-headline-md border border-outline">
+                                JD
+                            </div>
+<div>
+<h3 class="font-headline-md text-on-surface text-lg">James Doe</h3>
+<div class="flex items-center text-primary mt-1">
+<span class="material-symbols-outlined fill text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined fill text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined fill text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm text-surface-variant" data-icon="star_half">star_half</span>
+<span class="material-symbols-outlined text-sm text-surface-variant" data-icon="star_border">star_border</span>
+<span class="ml-2 font-label-sm text-tertiary text-xs">3.5 / 5.0</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-tertiary">Oct 24, 2023</p>
+<span class="inline-block mt-1 px-2 py-0.5 bg-surface-variant rounded text-on-surface-variant text-xs font-label-sm">Executive Fade</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface mb-stack-md leading-relaxed">
+                        The cut itself is great, exactly what I asked for. The barber took his time and the fade is incredibly clean. However, I felt the wait time was a bit too long despite having an appointment. Also, the music in the shop was a bit loud for a relaxing experience. I'd definitely come back for the quality of the cut, but hope the ambiance is a bit more relaxed next time.
+                    </p>
+<!-- Attached Image -->
+<div class="mt-stack-md rounded-lg overflow-hidden border border-outline-variant bg-surface-dim aspect-video relative">
+<img alt="Customer Haircut Photo" class="object-cover w-full h-full absolute inset-0" data-alt="A close-up photograph of a fresh, sharp high-fade haircut on a male client in a dark, premium barbershop setting. The hair on top is neatly styled with texture. The lighting is dramatic, highlighting the clean lines of the fade against the dark background. The overall aesthetic is moody and masculine, featuring deep blacks and rich skin tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBksRZqIjdDNUm3HNdmb_gfulyfnvisgQiwDA5rZ7AvqwDuTAuupzzynZ4FWyi1o5HZqpF-_5lyO24Ncz1OcyD_rMQrc-y7zePoyHP6Ytu-LzeeUrjmJnAbIWSrv-jTZsf8lE3TXrJFRsimml4LUuenDdzCmklsDsJwYAGVLPhIM1RkDK3oXaVhMe7B0H1CFDKVduqRpmoLxgFD9ClY07oh3N9A3T1Hp_o0o5pskz7oIvVCYFCIaG87LhWX2QgpfxC35sTdScOdzlA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="flex items-center text-on-background font-label-sm text-xs bg-surface/50 backdrop-blur-sm px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="photo_camera">photo_camera</span>
+                                Customer attached photo
+                            </span>
+</div>
+</div>
+</article>
+</div>
+<!-- Action Column -->
+<div class="lg:col-span-5 flex flex-col gap-gutter">
+<!-- Service Details Meta Card -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant shadow-lg">
+<h4 class="font-headline-md text-sm text-primary mb-stack-md flex items-center">
+<span class="material-symbols-outlined mr-2" data-icon="info">info</span>
+                        Service Context
+                    </h4>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-2 border-b border-surface-variant">
+<span class="font-label-sm text-tertiary">Barber</span>
+<span class="font-body-md text-on-surface font-semibold">Michael 'Slick' O.</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-surface-variant">
+<span class="font-label-sm text-tertiary">Location</span>
+<span class="font-body-md text-on-surface">Westlands Branch</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-surface-variant">
+<span class="font-label-sm text-tertiary">Booking Time</span>
+<span class="font-body-md text-on-surface">14:00 (Arrived 14:15)</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="font-label-sm text-tertiary">Total Paid</span>
+<span class="font-body-md text-on-surface">KES 3,500</span>
+</div>
+</div>
+</div>
+<!-- Public Response Area -->
+<div class="bg-surface-container-high rounded-xl p-6 border border-primary/20 shadow-[0_0_15px_rgba(212,175,55,0.05)] flex-1 flex flex-col">
+<h4 class="font-headline-md text-sm text-primary mb-2 flex items-center">
+<span class="material-symbols-outlined mr-2" data-icon="reply">reply</span>
+                        Public Response
+                    </h4>
+<p class="font-label-sm text-tertiary text-xs mb-stack-md">This response will be visible on the public review profile.</p>
+<div class="flex-1 flex flex-col">
+<textarea class="w-full flex-1 min-h-[150px] bg-surface-dim border border-outline-variant rounded-lg p-4 font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none placeholder:text-surface-variant" placeholder="Draft your professional response here... e.g., 'Hi James, thank you for the feedback on the cut. We apologize for the wait time...'"></textarea>
+</div>
+<div class="mt-stack-md flex justify-end gap-4">
+<button class="px-6 py-3 rounded-lg font-label-sm text-primary border border-primary hover:bg-primary/10 transition-colors">
+                            Save Draft
+                        </button>
+<button class="px-6 py-3 rounded-lg font-label-sm text-on-primary bg-gradient-to-r from-primary to-primary-fixed-dim hover:opacity-90 transition-opacity shadow-[0_0_10px_rgba(212,175,55,0.2)]">
+                            Publish Response
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden bg-[#0A0A0A]/95 dark:bg-[#0A0A0A]/95 backdrop-blur-md fixed bottom-0 w-full z-50 rounded-t-2xl border-t border-[#333333] shadow-[0_-4px_20px_rgba(0,0,0,0.8)]">
+<div class="flex justify-around items-center h-20 pb-4 px-2">
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_month">calendar_month</span>
+<span class="text-[10px] font-medium font-['Inter']">Shifts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="group">group</span>
+<span class="text-[10px] font-medium font-['Inter']">Staff</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#D4AF37] bg-[#D4AF37]/10 rounded-xl px-3 py-1 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined fill mb-1" data-icon="rate_review" data-weight="fill">rate_review</span>
+<span class="text-[10px] font-medium font-['Inter']">Reviews</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="text-[10px] font-medium font-['Inter']">Settings</span>
+</a>
+</div>
+</nav>
+</body></html>

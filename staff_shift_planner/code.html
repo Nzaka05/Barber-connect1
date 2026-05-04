@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elite Grooming Admin - Shift Planner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#e9c349",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#00210c",
+                        "on-primary-fixed-variant": "#574500",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-container": "#d4af37",
+                        "inverse-on-surface": "#313030",
+                        "primary": "#f2ca50",
+                        "on-background": "#e5e2e1",
+                        "on-primary": "#3c2f00",
+                        "surface-container-highest": "#353534",
+                        "outline": "#99907c",
+                        "background": "#131313",
+                        "surface-tint": "#e9c349",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "secondary": "#4de082",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-container": "#b2b3b3",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-container": "#00b55d",
+                        "surface-variant": "#353534",
+                        "surface-dim": "#131313",
+                        "secondary-fixed": "#6dfe9c",
+                        "error-container": "#93000a",
+                        "outline-variant": "#4d4635",
+                        "on-tertiary": "#2f3131",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-container": "#201f1f",
+                        "primary-fixed": "#ffe088",
+                        "on-tertiary-container": "#434546",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#4de082",
+                        "tertiary": "#cecece",
+                        "on-surface": "#e5e2e1",
+                        "on-primary-fixed": "#241a00",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-secondary-container": "#003e1c",
+                        "inverse-primary": "#735c00",
+                        "surface-bright": "#3a3939",
+                        "on-secondary": "#003919",
+                        "on-primary-container": "#554300",
+                        "error": "#ffb4ab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "stack-lg": "32px",
+                        "container-margin": "24px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col md:flex-row">
+<!-- Navigation Drawer (Desktop) -->
+<aside class="hidden md:flex flex-col h-screen sticky top-0 w-72 rounded-r-3xl divide-y divide-[#262626] shadow-2xl shadow-black bg-[#1A1A1A] dark:bg-[#1A1A1A] text-[#D4AF37] dark:text-[#D4AF37] font-['Inter'] text-sm z-50 py-8">
+<div class="px-6 pb-8">
+<h1 class="text-[#D4AF37] font-black italic text-xl tracking-widest uppercase">Elite Grooming Admin</h1>
+<div class="mt-8 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="Manager Portrait" class="w-full h-full object-cover" data-alt="A professional headshot of a sophisticated shop manager wearing a tailored dark suit. The lighting is moody and premium, emphasizing a modern luxury grooming aesthetic with deep blacks and subtle gold accents. High-contrast photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3jbNsej1mTjkjc3owbO7vCYAycqedf2GgceablpZM2s8OjHuj96VUrJShEOjbriid5Miw32dVF6PLtyhqEc03K97tEsZBQCS1OsC5rgUJQ2YgOBALAudFv7GerR0NIr4Qawg_pfk56wmArpXhSg3nVs3PvYN-cMrft6tK60h7ajfnQRVbqHeyVADfG9zvnVSFrI3-Ok0DFIhedrmidiwWYhEb2w0LHtZobbGDgf-WzjyPmriv8Ij0NsrCMzRjZeov-JYDmLvZFj0"/>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Nairobi HQ</h2>
+<p class="font-body-md text-body-md text-surface-variant">Shop Administrator</p>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-primary-container/20 text-primary-container border border-primary-container/30">Premium Tier</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto py-4 px-2 space-y-2">
+<a class="flex items-center gap-4 text-gray-400 hover:text-[#D4AF37] p-4 hover:bg-[#262626] transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-4 bg-[#D4AF37] text-black font-bold rounded-lg m-2 p-4 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span>Shift Planner</span>
+</a>
+<a class="flex items-center gap-4 text-gray-400 hover:text-[#D4AF37] p-4 hover:bg-[#262626] transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+<span>Staff List</span>
+</a>
+<a class="flex items-center gap-4 text-gray-400 hover:text-[#D4AF37] p-4 hover:bg-[#262626] transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span>Review Portal</span>
+</a>
+<a class="flex items-center gap-4 text-gray-400 hover:text-[#D4AF37] p-4 hover:bg-[#262626] transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Business Analytics</span>
+</a>
+</nav>
+</aside>
+<!-- Top App Bar (Mobile) -->
+<header class="md:hidden fixed top-0 w-full z-50 bg-[#0A0A0A] dark:bg-[#0A0A0A] border-b border-[#333333] shadow-xl shadow-black/50 text-[#D4AF37] dark:text-[#D4AF37] font-['Inter'] font-semibold tracking-tight">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img alt="Manager Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a sophisticated shop manager wearing a tailored dark suit. The lighting is moody and premium, emphasizing a modern luxury grooming aesthetic with deep blacks and subtle gold accents. High-contrast photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqZFAhlNW_hwW5LQNUKnpbAOiMxb__deDPdfevkWPHO5VGF89jK2P4T_YUzYV_Kt0RDMLNdjw940fajpDFDzB0-I6RrkBB9__3Amd7E9X5PDNKlMBk1c69iB_hATy54XzakCmcrHicA0wQ7l4yRn0wysWQsTE4VwhJfe7qGMmhVbl9ondV0aamFbQsAYqNQlsohj_Thp-q-IVfej_-lOkh-6caB2tMFe16tXL88b3CQQDn8Gc4wjRtFIOQYntIyI8Ialrn8rFEg7s"/>
+</div>
+<h1 class="text-xl font-bold text-[#D4AF37] uppercase tracking-widest">Elite Grooming Admin</h1>
+<button class="text-gray-400 hover:bg-[#1A1A1A] transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col pt-[72px] md:pt-0 pb-[80px] md:pb-0 h-screen overflow-hidden">
+<!-- Header Section -->
+<div class="px-container-margin py-stack-lg border-b border-surface-container-high bg-surface flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-sm">Weekly Shift Planner</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage staff schedules for Oct 12 - Oct 18</p>
+</div>
+<div class="flex gap-gutter">
+<div class="flex bg-surface-container-high rounded-lg p-1 border border-outline-variant">
+<button class="px-4 py-2 rounded bg-surface-variant text-on-surface font-label-sm text-label-sm shadow-sm">Week</button>
+<button class="px-4 py-2 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors">Day</button>
+</div>
+<button class="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-primary-container to-[#B8860B] text-on-primary-fixed font-label-sm text-label-sm rounded-lg hover:opacity-90 transition-opacity shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Add Shift
+                </button>
+</div>
+</div>
+<!-- Scheduling Canvas -->
+<div class="flex-1 overflow-auto bg-surface p-container-margin">
+<div class="min-w-[1000px] h-full flex flex-col bg-surface-container rounded-xl border border-outline-variant overflow-hidden shadow-2xl shadow-black/40">
+<!-- Calendar Header -->
+<div class="grid grid-cols-[200px_1fr_1fr_1fr_1fr_1fr_1fr_1fr] border-b border-outline-variant bg-surface-container-high">
+<div class="p-4 flex items-center text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">Staff Member</div>
+<div class="p-4 border-l border-outline-variant text-center flex flex-col gap-1">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Mon</span>
+<span class="font-headline-md text-headline-md text-on-surface">12</span>
+</div>
+<!-- Repeat for other days ... simplified for minimal layout demo -->
+<div class="p-4 border-l border-outline-variant text-center flex flex-col gap-1 bg-surface-container-highest">
+<span class="text-primary-container font-label-sm text-label-sm">Tue</span>
+<span class="font-headline-md text-headline-md text-primary-container">13</span>
+</div>
+<div class="p-4 border-l border-outline-variant text-center flex flex-col gap-1">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Wed</span>
+<span class="font-headline-md text-headline-md text-on-surface">14</span>
+</div>
+<div class="p-4 border-l border-outline-variant text-center flex flex-col gap-1">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Thu</span>
+<span class="font-headline-md text-headline-md text-on-surface">15</span>
+</div>
+<div class="p-4 border-l border-outline-variant text-center flex flex-col gap-1">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Fri</span>
+<span class="font-headline-md text-headline-md text-on-surface">16</span>
+</div>
+<div class="p-4 border-l border-outline-variant text-center flex flex-col gap-1">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Sat</span>
+<span class="font-headline-md text-headline-md text-on-surface">17</span>
+</div>
+<div class="p-4 border-l border-outline-variant text-center flex flex-col gap-1">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Sun</span>
+<span class="font-headline-md text-headline-md text-on-surface">18</span>
+</div>
+</div>
+<!-- Schedule Grid Body -->
+<div class="flex-1 overflow-y-auto divide-y divide-outline-variant">
+<!-- Row 1: Sarah K. -->
+<div class="grid grid-cols-[200px_1fr_1fr_1fr_1fr_1fr_1fr_1fr] min-h-[120px] bg-surface-container group hover:bg-surface-container-high transition-colors">
+<div class="p-4 border-r border-outline-variant flex flex-col justify-center gap-2">
+<div class="flex items-center gap-3">
+<img alt="Sarah" class="w-10 h-10 rounded-full border border-primary-container/50 object-cover" data-alt="A portrait of a female barber with styled hair, set against a dark background. She wears a professional black apron. The lighting highlights a premium, luxurious barbershop environment with deep tones and warm accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNjl2TSsbZqIMk_Tgb4U2ICOEkvKLiGhcDneNMGmBAEPAPAFbvoMW4RmxoNAJpe1UiC-KZDFzN-_7Xo2jhDNIPKT_G_gSyq6hOvoaB1QCTvQ-i0rNMb0AlRz9CmhqjRQ77To3_71hZ3QrnlcvvATSZ-Dyjqdyr9f4d71_IFakILUKLzLpCUlGfTi_4Qmpe22JXTv7cEtPeHMvavBlrsH3E0VIiL8R1IKiaCGYYEDwV5xfuLxfsiQBiC_6B1BdY7QCR089VVEwh15M"/>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface">Sarah K.</div>
+<div class="text-[12px] text-on-surface-variant flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Available</div>
+</div>
+</div>
+<div class="text-[11px] text-on-surface-variant border border-outline-variant rounded px-2 py-1 bg-surface-container w-fit">Chair 1 • CBD</div>
+</div>
+<!-- Monday Shift -->
+<div class="p-2 border-r border-outline-variant relative">
+<div class="absolute inset-2 bg-surface-variant rounded-lg border border-outline flex flex-col justify-between p-2 shadow-sm cursor-pointer hover:border-primary-container transition-colors">
+<div class="font-label-sm text-[12px] text-on-surface">09:00 - 17:00</div>
+<div class="text-[11px] text-on-surface-variant">Haircuts &amp; Fades</div>
+</div>
+</div>
+<!-- Tuesday Shift -->
+<div class="p-2 border-r border-outline-variant relative bg-surface-container-highest">
+<div class="absolute inset-2 bg-gradient-to-br from-primary-container/20 to-surface-variant rounded-lg border border-primary-container flex flex-col justify-between p-2 shadow-[0_0_10px_rgba(212,175,55,0.1)] cursor-pointer">
+<div class="font-label-sm text-[12px] text-primary-container">10:00 - 18:00</div>
+<div class="text-[11px] text-on-surface-variant">Full Service</div>
+</div>
+</div>
+<!-- Wed Off -->
+<div class="p-2 border-r border-outline-variant flex items-center justify-center bg-surface-dim/50">
+<span class="text-on-surface-variant text-[12px] font-medium">OFF</span>
+</div>
+<!-- Thu Shift -->
+<div class="p-2 border-r border-outline-variant relative">
+<div class="absolute inset-2 bg-surface-variant rounded-lg border border-outline flex flex-col justify-between p-2 shadow-sm cursor-pointer hover:border-primary-container transition-colors">
+<div class="font-label-sm text-[12px] text-on-surface">09:00 - 17:00</div>
+<div class="text-[11px] text-on-surface-variant">Haircuts &amp; Fades</div>
+</div>
+</div>
+<!-- Fri Shift -->
+<div class="p-2 border-r border-outline-variant relative">
+<div class="absolute inset-2 bg-surface-variant rounded-lg border border-outline flex flex-col justify-between p-2 shadow-sm cursor-pointer hover:border-primary-container transition-colors">
+<div class="font-label-sm text-[12px] text-on-surface">09:00 - 19:00</div>
+<div class="text-[11px] text-on-surface-variant">Extended Shift</div>
+</div>
+</div>
+<!-- Sat Shift -->
+<div class="p-2 border-r border-outline-variant relative">
+<div class="absolute inset-2 bg-surface-variant rounded-lg border border-outline flex flex-col justify-between p-2 shadow-sm cursor-pointer hover:border-primary-container transition-colors">
+<div class="font-label-sm text-[12px] text-on-surface">10:00 - 16:00</div>
+<div class="text-[11px] text-on-surface-variant">Weekend Cover</div>
+</div>
+</div>
+<!-- Sun Off -->
+<div class="p-2 flex items-center justify-center bg-surface-dim/50">
+<span class="text-on-surface-variant text-[12px] font-medium">OFF</span>
+</div>
+</div>
+<!-- Row 2: David M. -->
+<div class="grid grid-cols-[200px_1fr_1fr_1fr_1fr_1fr_1fr_1fr] min-h-[120px] bg-surface-container group hover:bg-surface-container-high transition-colors">
+<div class="p-4 border-r border-outline-variant flex flex-col justify-center gap-2">
+<div class="flex items-center gap-3">
+<img alt="David" class="w-10 h-10 rounded-full border border-outline object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A portrait of a male barber with a neat beard, set against a dark background. He wears a professional apron over a dark shirt. The lighting highlights a premium, luxurious barbershop environment with deep tones and warm accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2T5V0uqKEcQHdcb1Ls4wQinP5JPKXUsAS66R3o5qTDRl2i-lwwC1UxAbdRM8khfBJyTfO3xXLGQpdzzhynkAnVbRgsxCKJmRo0v3oBlL5aXbqokTr-JmVBjX1Kvh1Tg9-bVuCjAbw8B3yVBmIqojEwlLaAH554dUlBrj-xxQ2OI677IHO57YAt6e-CAuq6irEYfAUneeeN0oG9s3-t5AFlJjUNmFhzLcrVAj-oY_V4DlnWqozZUek8mF2ykh_Ajpu_JKW0KIyilM"/>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface">David M.</div>
+<div class="text-[12px] text-on-surface-variant flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-error"></span> On Break</div>
+</div>
+</div>
+<div class="text-[11px] text-on-surface-variant border border-outline-variant rounded px-2 py-1 bg-surface-container w-fit">Chair 3 • Westlands</div>
+</div>
+<!-- Shifts... -->
+<div class="p-2 border-r border-outline-variant flex items-center justify-center bg-surface-dim/50">
+<span class="text-on-surface-variant text-[12px] font-medium">OFF</span>
+</div>
+<div class="p-2 border-r border-outline-variant relative bg-surface-container-highest">
+<div class="absolute inset-2 bg-surface-variant rounded-lg border border-outline flex flex-col justify-between p-2 shadow-sm cursor-pointer hover:border-primary-container transition-colors">
+<div class="font-label-sm text-[12px] text-on-surface">12:00 - 20:00</div>
+<div class="text-[11px] text-on-surface-variant">Late Shift</div>
+</div>
+</div>
+<!-- ... rest empty for layout demonstration ... -->
+<div class="p-2 border-r border-outline-variant"></div>
+<div class="p-2 border-r border-outline-variant"></div>
+<div class="p-2 border-r border-outline-variant"></div>
+<div class="p-2 border-r border-outline-variant"></div>
+<div class="p-2 border-outline-variant"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-2xl bg-[#0A0A0A]/95 dark:bg-[#0A0A0A]/95 backdrop-blur-md border-t border-[#333333] shadow-[0_-4px_20px_rgba(0,0,0,0.8)] text-[10px] font-medium font-['Inter']">
+<div class="flex justify-around items-center h-20 pb-4 px-2">
+<a class="flex flex-col items-center justify-center text-[#D4AF37] bg-[#D4AF37]/10 rounded-xl px-3 py-1 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_month">calendar_month</span>
+<span>Shifts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-white transition-all active:scale-90 duration-150 px-3 py-1" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="group">group</span>
+<span>Staff</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-white transition-all active:scale-90 duration-150 px-3 py-1" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="rate_review">rate_review</span>
+<span>Reviews</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-white transition-all active:scale-90 duration-150 px-3 py-1" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elite Inventory - Product Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary": "#cecece",
+                        "outline": "#99907c",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-primary": "#735c00",
+                        "surface-tint": "#e9c349",
+                        "primary": "#f2ca50",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#005227",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-container": "#434546",
+                        "on-secondary-fixed": "#00210c",
+                        "tertiary-container": "#b2b3b3",
+                        "surface": "#131313",
+                        "secondary": "#4de082",
+                        "on-secondary-container": "#003e1c",
+                        "on-primary-fixed": "#241a00",
+                        "on-surface": "#e5e2e1",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-primary": "#3c2f00",
+                        "background": "#131313",
+                        "on-tertiary": "#2f3131",
+                        "surface-container-highest": "#353534",
+                        "secondary-fixed": "#6dfe9c",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "primary-fixed": "#ffe088",
+                        "inverse-on-surface": "#313030",
+                        "surface-variant": "#353534",
+                        "on-primary-container": "#554300",
+                        "surface-container": "#201f1f",
+                        "surface-bright": "#3a3939",
+                        "primary-container": "#d4af37",
+                        "on-error": "#690005",
+                        "outline-variant": "#4d4635",
+                        "on-secondary": "#003919",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-fixed-dim": "#4de082",
+                        "secondary-container": "#00b55d",
+                        "on-surface-variant": "#d0c5af",
+                        "inverse-surface": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#574500",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-dim": "#131313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Manrope"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .soft-shadow {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .gold-glow {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col md:flex-row font-body-md text-body-md">
+<!-- TopAppBar (Mobile & Web) -->
+<header class="bg-[#0A0A0A]/90 backdrop-blur-xl docked full-width top-0 border-b border-zinc-800/50 shadow-2xl shadow-black flex justify-between items-center w-full px-6 py-4 md:hidden z-50 fixed">
+<div class="flex items-center gap-3">
+<button class="text-zinc-500 hover:text-[#D4AF37] transition-colors duration-300 ease-in-out">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<span class="text-lg font-bold tracking-widest text-[#D4AF37] uppercase">Elite Inventory</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-zinc-500 hover:text-[#D4AF37] transition-colors duration-300 ease-in-out">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant">
+<img alt="Barber Shop Owner Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5WHY1G327R8R6gPn6HSpJP0Ef3NYoGjEZ3ecyrBy8ptZsTMB0Y2CZEGGPSKwE6ElTHji6Hohypkln2PCNMvP1VMFcANpqVfCHs8o8EXw9QsEeTMK4-Rbj1Rwv-sRHXGsIpAS9kMtD8vvHHefjg4CBIp8vpMR28dG3LFQGd2hORetkgSi_YfhvHvxnPP-EdEEMRsBB5rkw6_Jv1ALUBcikRwTS38KyAj_qt-J6xJfISH1-Wk2yg8LLYGfmqZE5NnlhC7WWjcwViuk"/>
+</div>
+</div>
+</header>
+<!-- Side Navigation (Web Only) -->
+<nav class="hidden md:flex flex-col h-screen py-8 bg-[#0A0A0A] h-full w-80 border-r border-zinc-900 shadow-none sticky top-0 shrink-0">
+<div class="px-6 mb-8 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="Shop Owner" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqd3yA0s6ygmfUrjwVavUjWwlOOrR6uGorZXXmgt7skyBRNhytXC2tKDiNpi78PD7W3xfMahrBR0zgs1XmPjTZ664bYdyloDarAM-RolhYez7ad8iSK5w6DvxMKlZgJJdvcUlKpSyyoS2QrAHExVRS8iKYXlNNRYp56diCezcqd5a6xCTzWhIM6m8oNIaSMSoSSGyUbY9qdEsc5COJtn6rAaZKEZuikh1Ep9m7uUnStuW5CcjgYnl-SIoWhZK92tfSIdIrOsZlvu8"/>
+</div>
+<div>
+<h2 class="text-lg font-bold tracking-widest text-[#D4AF37] uppercase">Elite Grooming</h2>
+<p class="font-['Inter'] text-sm font-light text-zinc-400">Inventory Manager</p>
+<p class="font-['Inter'] text-xs font-light text-zinc-500">Nairobi Central</p>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<a class="text-zinc-400 px-6 py-4 hover:bg-zinc-900/50 hover:text-white transition-all duration-200 flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Inter'] text-sm font-light">Overview</span>
+</a>
+<a class="text-[#D4AF37] bg-gradient-to-r from-[#D4AF37]/10 to-transparent border-l-2 border-[#D4AF37] font-bold px-6 py-4 duration-200 flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span class="font-['Inter'] text-sm font-light">Product Catalog</span>
+</a>
+<a class="text-zinc-400 px-6 py-4 hover:bg-zinc-900/50 hover:text-white transition-all duration-200 flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">contacts</span>
+<span class="font-['Inter'] text-sm font-light">Supplier Directory</span>
+</a>
+<a class="text-zinc-400 px-6 py-4 hover:bg-zinc-900/50 hover:text-white transition-all duration-200 flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">rebase_edit</span>
+<span class="font-['Inter'] text-sm font-light">Restock Logs</span>
+</a>
+<a class="text-zinc-400 px-6 py-4 hover:bg-zinc-900/50 hover:text-white transition-all duration-200 flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-['Inter'] text-sm font-light">Analytics</span>
+</a>
+<a class="text-zinc-400 px-6 py-4 hover:bg-zinc-900/50 hover:text-white transition-all duration-200 flex items-center gap-4 mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] text-sm font-light">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col pt-[72px] md:pt-0 pb-[80px] md:pb-0 overflow-y-auto">
+<!-- Top App Bar for Desktop Context -->
+<div class="hidden md:flex items-center justify-between px-8 py-6 border-b border-surface-container-highest bg-surface/80 backdrop-blur-md sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-variant transition-colors text-on-surface">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Product Detail</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-4 py-2 rounded-full border border-error text-error hover:bg-error/10 transition-colors font-label-sm text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">delete</span>
+                    Delete Item
+                </button>
+<button class="px-6 py-2 rounded-full bg-primary-container text-on-primary-container hover:bg-primary-fixed transition-colors font-label-sm text-label-sm flex items-center gap-2 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+<span class="material-symbols-outlined text-sm">save</span>
+                    Save Changes
+                </button>
+</div>
+</div>
+<div class="p-4 md:p-8 max-w-7xl mx-auto w-full flex flex-col gap-8">
+<!-- Hero Product Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Product Image & Basic Info (Bento Style) -->
+<div class="lg:col-span-5 flex flex-col gap-4">
+<div class="w-full aspect-[4/5] rounded-xl overflow-hidden glass-panel relative soft-shadow group">
+<img alt="Product Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A premium bottle of dark amber beard oil with a minimalist black and gold label, sitting on a sleek dark slate surface. The lighting is moody and dramatic, highlighting the rich golden liquid inside the frosted glass. The background is a soft, out-of-focus charcoal grey, enhancing the exclusive, luxurious grooming aesthetic of the product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC20eMSVpjIM10JBIsgZoGppwbMJW5nlBZGjvsVgQjBEno2b9w4ULRbnXVGOP0ZleT7HvmbF8C54eQJGzzzU8vrxiJ1Ek6T9Q66U7YR6PeNXnMzsledNeGpldZQ9XgWQPzn7HkmO4GpM7cGzdpwEsTTjBpJZZ7ZDIBCt8WTxd7dNOdOpzc1aVboZaxZtL2RobxW8cl4uVtucsrA91rTm3RrKpMYVM34BreXtxb3CaqEeVlY38ihfMbTZcu7-bF9HKpG1qTDkUL0RZ0"/>
+<div class="absolute top-4 right-4 bg-secondary/10 text-secondary px-3 py-1 rounded-full backdrop-blur-md border border-secondary/20 font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                            In Stock
+                        </div>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-tertiary font-label-sm text-label-sm uppercase tracking-wider mb-1">Beard Care</p>
+<h2 class="font-headline-md text-headline-md text-on-surface">Oud Wood Beard Oil</h2>
+</div>
+<span class="text-primary-container font-headline-md text-headline-md">KES 2,500</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mt-2">Premium conditioning oil with notes of sandalwood, amber, and dark oud. Fast-absorbing formula.</p>
+<div class="mt-4 flex items-center gap-4 text-sm text-tertiary-fixed-dim">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">inventory_2</span> SKU: BW-OU-050</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">scale</span> 50ml</div>
+</div>
+</div>
+</div>
+<!-- Interactive Controls & Details -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Stock Level Control Widget -->
+<div class="glass-panel p-8 rounded-xl soft-shadow gold-glow flex flex-col gap-6 relative overflow-hidden">
+<!-- Decorative gradient background blob -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+<div class="flex justify-between items-center relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">speed</span>
+                                Current Stock Level
+                            </h3>
+<span class="text-sm text-on-surface-variant">Last updated: 2 hrs ago</span>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-8 relative z-10">
+<!-- Large Number Display -->
+<div class="w-48 h-48 rounded-full border-4 border-surface-container-highest flex items-center justify-center relative shadow-inner">
+<svg class="absolute inset-0 w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-container-highest" cx="50" cy="50" fill="none" r="46" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-primary-container transition-all duration-1000" cx="50" cy="50" fill="none" r="46" stroke="currentColor" stroke-dasharray="289" stroke-dashoffset="86" stroke-width="4"></circle>
+</svg>
+<div class="flex flex-col items-center">
+<span class="font-display-xl text-display-xl text-on-surface">42</span>
+<span class="text-tertiary font-label-sm text-label-sm">Units</span>
+</div>
+</div>
+<!-- Adjustment Controls -->
+<div class="flex-1 flex flex-col gap-6 w-full">
+<div class="bg-surface-container-high p-2 rounded-xl flex items-center justify-between border border-surface-container-highest">
+<button class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center text-on-surface hover:bg-surface-bright transition-colors border border-outline-variant">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<input class="bg-transparent border-none text-center font-headline-md text-headline-md text-on-surface w-24 focus:ring-0" type="number" value="42"/>
+<button class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center text-on-surface hover:bg-surface-bright transition-colors border border-outline-variant">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<div class="flex gap-4">
+<div class="flex-1 bg-surface-container-low p-4 rounded-lg border border-surface-container-highest">
+<label class="block text-xs text-tertiary uppercase tracking-wider mb-2">Reorder Point</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-warning text-[18px]">warning</span>
+<input class="bg-transparent border-b border-outline-variant text-on-surface w-full p-1 focus:ring-0 focus:border-primary-container font-headline-md text-headline-md" type="number" value="15"/>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-low p-4 rounded-lg border border-surface-container-highest">
+<label class="block text-xs text-tertiary uppercase tracking-wider mb-2">Target Stock</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">flag</span>
+<input class="bg-transparent border-b border-outline-variant text-on-surface w-full p-1 focus:ring-0 focus:border-primary-container font-headline-md text-headline-md" type="number" value="60"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Usage Trends Chart Area -->
+<div class="glass-panel p-6 rounded-xl soft-shadow flex flex-col gap-4 h-64">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">trending_down</span>
+                                Usage Trends (30 Days)
+                            </h3>
+<select class="bg-surface-container-low border border-surface-container-highest text-on-surface rounded-lg px-3 py-1 text-sm focus:ring-primary-container focus:border-primary-container">
+<option>Last 30 Days</option>
+<option>Last 90 Days</option>
+</select>
+</div>
+<!-- Mock Chart Representation (CSS Based) -->
+<div class="flex-1 w-full border-b border-l border-surface-container-highest relative flex items-end justify-between pt-4 pr-2">
+<!-- Y-axis labels -->
+<div class="absolute left-0 top-0 bottom-0 flex flex-col justify-between -ml-6 text-[10px] text-tertiary-fixed-dim">
+<span>20</span><span>10</span><span>0</span>
+</div>
+<!-- Bars -->
+<div class="w-8 bg-surface-container-high rounded-t-sm h-[40%] hover:bg-primary-container/50 transition-colors relative group"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-surface text-xs p-1 rounded border border-surface-container-highest">W1: 8</div></div>
+<div class="w-8 bg-surface-container-high rounded-t-sm h-[60%] hover:bg-primary-container/50 transition-colors relative group"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-surface text-xs p-1 rounded border border-surface-container-highest">W2: 12</div></div>
+<div class="w-8 bg-surface-container-high rounded-t-sm h-[30%] hover:bg-primary-container/50 transition-colors relative group"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-surface text-xs p-1 rounded border border-surface-container-highest">W3: 6</div></div>
+<div class="w-8 bg-primary-container/80 rounded-t-sm h-[80%] hover:bg-primary-container transition-colors relative group"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-surface text-xs p-1 rounded border border-surface-container-highest z-10">W4: 16</div></div>
+<!-- X-axis labels -->
+<div class="absolute -bottom-6 w-full flex justify-between text-[10px] text-tertiary-fixed-dim pr-2 pl-4">
+<span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Current</span>
+</div>
+</div>
+</div>
+<!-- Supplier Info -->
+<div class="glass-panel p-6 rounded-xl soft-shadow flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-primary-container">local_shipping</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">Nairobi Grooming Supplies Ltd.</h4>
+<p class="text-sm text-tertiary-fixed-dim">Lead time: 2-3 Days • Min Order: KES 10,000</p>
+</div>
+</div>
+<button class="px-4 py-2 rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">mail</span>
+                            Contact
+                        </button>
+</div>
+</div>
+</div>
+<!-- Mobile Action Buttons (Sticky Bottom) -->
+<div class="md:hidden fixed bottom-[80px] left-0 w-full p-4 bg-surface/90 backdrop-blur-md border-t border-surface-container-highest flex gap-4 z-40">
+<button class="flex-1 py-3 rounded-xl border border-error text-error hover:bg-error/10 transition-colors font-label-sm text-label-sm flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+<button class="flex-[3] py-3 rounded-xl bg-primary-container text-on-primary-container hover:bg-primary-fixed transition-colors font-label-sm text-label-sm flex justify-center items-center gap-2 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+<span class="material-symbols-outlined text-sm">save</span>
+                    Save Changes
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) - Suppressed due to task focus (Product Detail with Back Action), but strictly implementing instructions: "Automatic Suppression: You MUST exclude the navigation shell if the page intent is... Task-Focused: Any sub-page featuring a 'Close' or 'Back' action"
+         However, the user asked to generate the predicted components, but the rules state to suppress it. I will follow the suppression rule to prioritize the canvas as per the blueprint instructions. -->
+</body></html>

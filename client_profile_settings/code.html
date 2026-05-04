@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BarberConnect - Client Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#d0c5af",
+                        "secondary-container": "#00b55d",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary-container": "#b2b3b3",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-tertiary-container": "#434546",
+                        "surface-tint": "#e9c349",
+                        "primary-container": "#d4af37",
+                        "secondary-fixed": "#6dfe9c",
+                        "on-secondary": "#003919",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#2f3131",
+                        "secondary": "#4de082",
+                        "primary": "#f2ca50",
+                        "on-surface": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-bright": "#3a3939",
+                        "surface-container": "#201f1f",
+                        "secondary-fixed-dim": "#4de082",
+                        "surface-container-low": "#1c1b1b",
+                        "outline": "#99907c",
+                        "inverse-primary": "#735c00",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary": "#cecece",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-variant": "#353534",
+                        "surface": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131313",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-secondary-container": "#003e1c",
+                        "surface-container-highest": "#353534",
+                        "on-primary-container": "#554300",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-dim": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-primary": "#3c2f00",
+                        "outline-variant": "#4d4635",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "primary-fixed": "#ffe088"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "stack-lg": "32px",
+                        "container-margin": "24px",
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "display-xl": ["Inter"],
+                        "label-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-neutral-950 dark:bg-neutral-950 text-yellow-600 dark:text-yellow-500 font-inter tracking-tight docked full-width top-0 border-b border-neutral-900 shadow-none flex justify-between items-center px-6 py-3 w-full sticky z-40 hidden md:flex">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close up portrait of a modern Kenyan professional man with a stylish haircut, looking confident. The lighting is moody and premium, emphasizing a quiet luxury aesthetic. Deep black background with high-contrast, subtle gold lighting accents. Exclusive accessibility vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1aQWzXFwbHY8gYO2cgG3rOJ9wS4vMXAmjd4tlBu-ub5PlkITKyTDCvh34bpoILxadfXn85lMC5b_RMPnWqq-n-EMlHM8SDcBYcJJS1GhIX4vj3YWivi5arqn3kDyElY9CLmG2qVmJQrp5ubn7DCH_bhjibwL_J2IjrnOKujDVyBmXL7U4IMC0lyu7JiJnto5vyVFOJzodT1tjTkTQUmChYc77p6plA9pFLF2g3p6LFORcMHaZKJfOA0DVSItfhBVugo5f3bPORU0q"/>
+</div>
+<span class="text-lg font-bold text-yellow-600 dark:text-yellow-500">BarberConnect</span>
+</div>
+<nav class="flex gap-6">
+<a class="text-neutral-400 hover:opacity-80 transition-opacity duration-200 font-label-sm text-label-sm" href="#">Home</a>
+<a class="text-neutral-400 hover:opacity-80 transition-opacity duration-200 font-label-sm text-label-sm" href="#">Bookings</a>
+<a class="text-neutral-400 hover:opacity-80 transition-opacity duration-200 font-label-sm text-label-sm" href="#">Messages</a>
+<a class="text-yellow-500 hover:opacity-80 transition-opacity duration-200 font-label-sm text-label-sm" href="#">Profile</a>
+</nav>
+<button class="hover:opacity-80 transition-opacity duration-200">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</button>
+</header>
+<main class="max-w-3xl mx-auto px-container-margin pt-stack-lg md:pt-stack-lg">
+<!-- Profile Header Bento -->
+<section class="bg-surface-container rounded-[16px] p-container-margin mb-stack-lg flex flex-col items-center sm:flex-row sm:items-start gap-gutter relative overflow-hidden">
+<!-- Glassmorphism subtle accent -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-[40px] -mr-10 -mt-10 pointer-events-none"></div>
+<div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-primary/20 bg-surface-container-high flex-shrink-0 z-10">
+<img alt="Jomo's Profile Picture" class="w-full h-full object-cover" data-alt="A portrait of a modern Kenyan professional man named Jomo, looking sophisticated. The background is a deep charcoal grey. Soft, ambient lighting highlights his clean haircut and confident expression, fitting a premium, exclusive barber booking app aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw8LRkW-7MVRMkEYpJ9tFgQvLqzHr6bzZKmCul3y4h-6An5g7ubrUwjoasPUf8o9F9ZFiQZDeXeC3OFGxGjkioH_18xi7LBZc9zO1fJ_ZxJGEPq362nk-SOenXwPHoqFJivalnDdLi-HsLCF3btJhf0jwFSZYvowNS5Och2qT2eH8KMJZWecp2Q50Roy3LaPk9xDPFJfO-2MAhfSgmsgyNTotFjSL0kVLa1juNAdKVHBrDdsK4pPNyChRlYbHJtPjXfJ3JrV2I9vtR"/>
+</div>
+<div class="flex-1 text-center sm:text-left z-10">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-unit">Jomo</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant flex items-center justify-center sm:justify-start gap-2 mb-stack-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="phone_iphone">phone_iphone</span>
+                    +254 712 345 678
+                </p>
+<button class="mt-stack-sm px-6 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 font-label-sm text-label-sm hover:bg-primary/20 transition-colors inline-flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+                    Edit Profile
+                </button>
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<!-- Account Settings -->
+<section class="bg-surface-container rounded-[16px] overflow-hidden flex flex-col">
+<div class="p-gutter border-b border-surface-container-highest bg-surface-container-low/50">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Account Settings</h2>
+</div>
+<div class="flex flex-col p-unit">
+<a class="flex items-center gap-gutter p-gutter rounded-lg hover:bg-surface-container-high transition-colors group" href="#">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="manage_accounts">manage_accounts</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface flex-1">Personal Details</span>
+<span class="material-symbols-outlined text-tertiary-container" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center gap-gutter p-gutter rounded-lg hover:bg-surface-container-high transition-colors group" href="#">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface flex-1">Payment Methods</span>
+<span class="material-symbols-outlined text-tertiary-container" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- My Activity -->
+<section class="bg-surface-container rounded-[16px] overflow-hidden flex flex-col">
+<div class="p-gutter border-b border-surface-container-highest bg-surface-container-low/50">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">My Activity</h2>
+</div>
+<div class="flex flex-col p-unit">
+<a class="flex items-center gap-gutter p-gutter rounded-lg hover:bg-surface-container-high transition-colors group" href="#">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface flex-1">Review History</span>
+<span class="material-symbols-outlined text-tertiary-container" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center gap-gutter p-gutter rounded-lg hover:bg-surface-container-high transition-colors group" href="#">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface flex-1">Saved Barbers</span>
+<span class="material-symbols-outlined text-tertiary-container" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- App Settings -->
+<section class="bg-surface-container rounded-[16px] overflow-hidden flex flex-col md:col-span-2">
+<div class="p-gutter border-b border-surface-container-highest bg-surface-container-low/50">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">App Settings</h2>
+</div>
+<div class="flex flex-col p-unit">
+<a class="flex items-center gap-gutter p-gutter rounded-lg hover:bg-surface-container-high transition-colors group" href="#">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface flex-1">Notifications</span>
+<span class="material-symbols-outlined text-tertiary-container" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center gap-gutter p-gutter rounded-lg hover:bg-surface-container-high transition-colors group" href="#">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface flex-1">Help &amp; Support</span>
+<span class="material-symbols-outlined text-tertiary-container" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</section>
+</div>
+<!-- Logout -->
+<div class="mt-stack-lg mb-stack-lg flex justify-center">
+<button class="flex items-center gap-2 px-6 py-3 rounded-full bg-surface-container text-error hover:bg-error/10 hover:text-error-container transition-colors font-label-sm text-label-sm border border-transparent hover:border-error/20">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-neutral-950/90 backdrop-blur-md dark:bg-neutral-950/90 text-yellow-600 dark:text-yellow-500 text-[10px] font-medium font-inter uppercase tracking-widest docked full-width bottom-0 rounded-t-2xl border-t border-neutral-900 shadow-[0_-4px_20px_0_rgba(0,0,0,0.5)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 h-20 md:hidden">
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span>Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span>Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-yellow-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+</nav>
+</body></html>

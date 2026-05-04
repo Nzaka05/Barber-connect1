@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BarberConnect - Discovery</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#d0c5af",
+                        "secondary-container": "#00b55d",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary-container": "#b2b3b3",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-tertiary-container": "#434546",
+                        "surface-tint": "#e9c349",
+                        "primary-container": "#d4af37",
+                        "secondary-fixed": "#6dfe9c",
+                        "on-secondary": "#003919",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#2f3131",
+                        "secondary": "#4de082",
+                        "primary": "#f2ca50",
+                        "on-surface": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-bright": "#3a3939",
+                        "surface-container": "#201f1f",
+                        "secondary-fixed-dim": "#4de082",
+                        "surface-container-low": "#1c1b1b",
+                        "outline": "#99907c",
+                        "inverse-primary": "#735c00",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary": "#cecece",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-variant": "#353534",
+                        "surface": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131313",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-secondary-container": "#003e1c",
+                        "surface-container-highest": "#353534",
+                        "on-primary-container": "#554300",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-dim": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-primary": "#3c2f00",
+                        "outline-variant": "#4d4635",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "primary-fixed": "#ffe088"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "stack-lg": "32px",
+                        "container-margin": "24px",
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "display-xl": ["Inter"],
+                        "label-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Custom image placeholders for visual structure since actual generation happens later */
+        .img-placeholder { background-color: #1a1a1a; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased pb-[100px] selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-neutral-950 dark:bg-neutral-950 font-inter tracking-tight docked full-width top-0 shadow-none flex justify-between items-center px-6 py-3 w-full sticky z-40">
+<div class="flex items-center gap-gutter">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-surface-variant flex-shrink-0 relative">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A cinematic, high-contrast portrait of a stylish Black man in Nairobi. The lighting is moody with subtle gold rim lights, reflecting a premium, luxurious grooming brand identity. Deep blacks and rich skin tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq7CGA-a_kkdG0N0xI3HV3C98AsPGRM4RYViW5ZlMoWFtoQwA4aKVMBgYmkGkYvaLRDRrBmKqHeJ7I0sZLZHwgCNN7hIT8a9NUV7kUhobgu7ExZCyXI21_eykBkjEeaAaSUqD0YJ4Bx0Z14zIGWoFEE3gMO9C4usM16VuIeX4dnbzoq_kee_IpSqK9j-a2H0pdoEkYuDvGXZzrhfU18n-MohZhY62rpdr6khDi1c0V0dleFgzDRTez6cHhkgrTOAZ3iKX6XXmLpzve"/>
+</div>
+<h1 class="text-lg font-bold text-yellow-600 dark:text-yellow-500 font-headline-md text-headline-md">BarberConnect</h1>
+</div>
+<div class="flex items-center gap-unit text-neutral-400 hover:opacity-80 transition-opacity duration-200 cursor-pointer">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Nairobi</span>
+<span class="material-symbols-outlined text-yellow-600 dark:text-yellow-500" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</header>
+<main class="max-w-7xl mx-auto flex flex-col gap-stack-lg px-container-margin pt-stack-md">
+<!-- Search & Filter Area -->
+<section class="flex gap-unit w-full sticky top-[72px] z-30 bg-background/80 backdrop-blur-xl py-unit -mx-container-margin px-container-margin">
+<div class="relative flex-grow h-14 bg-surface-container rounded-xl border border-surface-variant focus-within:border-primary transition-colors flex items-center px-4 overflow-hidden shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant mr-3">search</span>
+<input class="bg-transparent border-none outline-none text-on-surface font-body-md text-body-md w-full placeholder:text-on-surface-variant/50 focus:ring-0 p-0" placeholder="Find barbers or styles..." type="text"/>
+</div>
+<button class="h-14 w-14 flex-shrink-0 bg-surface-container border border-surface-variant rounded-xl flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</section>
+<!-- Top Rated Barbers (Horizontal Scroll) -->
+<section class="flex flex-col gap-stack-md">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-md text-headline-md text-on-surface">Top Rated Barbers</h2>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container" href="#">See all</a>
+</div>
+<div class="flex overflow-x-auto hide-scrollbar gap-gutter snap-x pb-4 -mx-container-margin px-container-margin">
+<!-- Card 1 -->
+<div class="min-w-[280px] w-[280px] bg-surface-container rounded-xl overflow-hidden snap-center flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.4)] border border-surface-variant/30">
+<div class="h-[320px] w-full relative img-placeholder">
+<img alt="Barber Cutting Hair" class="w-full h-full object-cover" data-alt="A master barber carefully detailing a sharp fade on a client. Shot in a luxurious, dark-themed barbershop in Nairobi with ambient warm gold lighting. High-end photography style, deep shadows, professional tools visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsZHzU8uYNZY-WdoIBnAPAom8zKDGPSKUNd_LGLYbDSB5QMovRGA5hPlTMAgMYTgN9oKgCcPsoAfzX-G9MBXtUA6BR7eEZPStgxm9lnGCj9VhLNWYSUky8vRrLNv9Dt-WBRX9YV_Wf2eXeH_pMJ_59-z0Xx-OyH_hDN4Zub2_V-ALhDrD1EfnETJwLpezS9DnyhStkyNJofM5yU1k0ccBy3Qu1wyVIdEQjlyNbOi-cFnMN3Lo-vWA9sQE25IHgKeTs93Ua-Ku4Xvg-"/>
+<div class="absolute top-3 right-3 bg-background/80 backdrop-blur-md px-2 py-1 rounded-DEFAULT flex items-center gap-1 border border-surface-variant/50">
+<span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface">4.9</span>
+</div>
+</div>
+<div class="p-gutter flex flex-col gap-unit">
+<h3 class="font-headline-md text-headline-md text-on-surface text-[20px] leading-tight">The Grooming Lounge</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Kilimani, 2.4km</span>
+<span class="font-label-sm text-label-sm text-primary">From KES 800</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[280px] w-[280px] bg-surface-container rounded-xl overflow-hidden snap-center flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.4)] border border-surface-variant/30">
+<div class="h-[320px] w-full relative img-placeholder">
+<img alt="Precision Barber" class="w-full h-full object-cover" data-alt="A highly stylized close-up of a straight razor shave in progress. The environment is dark and moody, representing an exclusive VIP barber suite. Lighting highlights the precision of the blade and the rich texture of the gold accents in the room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4Z7GFcBucF-NsUe1gIQVscI7o_HDgc5BY_B-18wBfYvkR2TDUPRYCLVpMsKQvXhqKXSfIrjgr9oD39XDDIfmHe3rD_WraJhUoQSexmzWSHCvdwXHGQ9xNmc5fMZCapUI6MEeevNpp6zcT_CJCpfb5JAKR5saylNvub-4vLOuoasGVVZbuNiINpzkhnirTeKSCa0i_vjMoBNp95_I-YqjQro0klLq5FWXwiBJhSlyz8E-T__9PIs5K8dJSqPHyd9PHk1Kuh53BWWPB"/>
+<div class="absolute top-3 right-3 bg-background/80 backdrop-blur-md px-2 py-1 rounded-DEFAULT flex items-center gap-1 border border-surface-variant/50">
+<span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface">4.8</span>
+</div>
+</div>
+<div class="p-gutter flex flex-col gap-unit">
+<h3 class="font-headline-md text-headline-md text-on-surface text-[20px] leading-tight">Elite Cuts Kinyozi</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Westlands, 3.1km</span>
+<span class="font-label-sm text-label-sm text-primary">From KES 1000</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Available Now (Bento Grid Style) -->
+<section class="flex flex-col gap-stack-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Available Now</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Bento Item 1 -->
+<div class="bg-surface-container rounded-xl p-gutter flex items-center gap-gutter relative overflow-hidden group border border-surface-variant/20 hover:border-primary/50 transition-colors">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 img-placeholder">
+<img alt="Barber Profile" class="w-full h-full object-cover" data-alt="Portrait of a confident Kenyan barber standing in his premium dark-themed shop. Soft overhead lighting creates a sophisticated rim light effect. High contrast, emphasizing quality and professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChYZvl9ztUjc18DMO4O-NS66qwT0y5at9jESPGmOevw1WIm_hrbLxK2hZySCgwNTpXb_C-yECW5XDR_odaJ5F6bchseHvDdeTG0b3Db3Y4D-v3bXSbXdXu7AwN3elBiQCUb_dNHtgKDsFixnEwtiIeopwQsLSpY-T18vX5cz8XEsX2Z_vtSE9ePBK99zIAviEBfexIp_d0Uq6_Bv91M0GfHCut34t801iKseiXw9Chl8f4KYLMciWdYaWcGRxvLRZ6k4jHpI6M7QVc"/>
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-label-sm text-label-sm text-on-surface text-base">Supreme Fade Studio</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">CBD • Expert Fades</p>
+<div class="mt-3 flex items-center gap-2">
+<span class="bg-secondary-container/10 text-secondary-fixed font-label-sm text-label-sm px-2 py-1 rounded-DEFAULT text-[12px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                                In 15 mins
+                            </span>
+</div>
+</div>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Bento Item 2 -->
+<div class="bg-surface-container rounded-xl p-gutter flex items-center gap-gutter relative overflow-hidden group border border-surface-variant/20 hover:border-primary/50 transition-colors">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 img-placeholder">
+<img alt="Barber Profile 2" class="w-full h-full object-cover" data-alt="Close up of clippers resting on a dark marble countertop next to a golden comb. The background is softly blurred showing a luxury dark-mode barbershop interior in Nairobi. Mood is exclusive and high-end." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClbzfl-a24GGEYAWYTNTGXilYYhPLwln3lNPkOCTGYXBX4kSboH1X6mthIEsW6EPpDqJSTu8xuo3AICanjQJKQjwILK8TrfbrdQpYtVW3oXMKswSGSxRcxgzEHBEx4aUsuuwArPSQdpaIO2O4V6CPs5KTdDntJQurqBP8atyFng7UaTCCOER0rIGFFIicNA2Y2jjqLXei4SveVcuRBbHFKn2mgSmVqZhS6mgYD2OcKld94Wg5E8dKFEHIFAkR4IvR1sQtagIKdnxMs"/>
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-label-sm text-label-sm text-on-surface text-base">Kingsman Grooming</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Lavington • Full Service</p>
+<div class="mt-3 flex items-center gap-2">
+<span class="bg-secondary-container/10 text-secondary-fixed font-label-sm text-label-sm px-2 py-1 rounded-DEFAULT text-[12px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                                In 30 mins
+                            </span>
+</div>
+</div>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-[100px] right-container-margin z-40 bg-gradient-to-r from-primary to-primary-container text-on-primary shadow-[0_0_20px_rgba(242,202,80,0.3)] flex items-center gap-2 px-6 py-4 rounded-full font-label-sm text-label-sm hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+        Find Available Barber Now
+    </button>
+<!-- BottomNavBar -->
+<nav class="bg-neutral-950/90 backdrop-blur-md dark:bg-neutral-950/90 shadow-[0_-4px_20px_0_rgba(0,0,0,0.5)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 h-20 rounded-t-2xl md:hidden">
+<!-- Active Tab: Home -->
+<div class="flex flex-col items-center justify-center text-yellow-500 space-y-1 active:scale-95 transition-transform duration-150 cursor-pointer w-16">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Home</span>
+</div>
+<!-- Inactive Tab: Bookings -->
+<div class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 duration-150 cursor-pointer w-16">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Bookings</span>
+</div>
+<!-- Inactive Tab: Messages -->
+<div class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 duration-150 cursor-pointer w-16">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Messages</span>
+</div>
+<!-- Inactive Tab: Profile -->
+<div class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 duration-150 cursor-pointer w-16">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Profile</span>
+</div>
+</nav>
+</body></html>

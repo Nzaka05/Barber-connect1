@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Suggestions - Elite Grooming</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#93000a",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "surface-variant": "#353534",
+                      "secondary": "#4de082",
+                      "on-secondary-fixed-variant": "#005227",
+                      "on-primary-container": "#554300",
+                      "on-tertiary": "#2f3131",
+                      "secondary-container": "#00b55d",
+                      "on-error": "#690005",
+                      "inverse-primary": "#735c00",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-container": "#003e1c",
+                      "inverse-on-surface": "#313030",
+                      "tertiary": "#cecece",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-secondary-fixed": "#00210c",
+                      "on-surface": "#e5e2e1",
+                      "error": "#ffb4ab",
+                      "on-primary": "#3c2f00",
+                      "primary-fixed": "#ffe088",
+                      "on-primary-fixed": "#241a00",
+                      "tertiary-container": "#b2b3b3",
+                      "on-background": "#e5e2e1",
+                      "outline": "#99907c",
+                      "inverse-surface": "#e5e2e1",
+                      "background": "#131313",
+                      "surface-container": "#201f1f",
+                      "on-tertiary-container": "#434546",
+                      "surface-tint": "#e9c349",
+                      "surface-container-low": "#1c1b1b",
+                      "surface-container-high": "#2a2a2a",
+                      "surface-container-highest": "#353534",
+                      "surface": "#131313",
+                      "secondary-fixed-dim": "#4de082",
+                      "on-secondary": "#003919",
+                      "tertiary-fixed": "#e2e2e2",
+                      "surface-bright": "#3a3939",
+                      "on-primary-fixed-variant": "#574500",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "primary-container": "#d4af37",
+                      "outline-variant": "#4d4635",
+                      "primary-fixed-dim": "#e9c349",
+                      "primary": "#f2ca50",
+                      "on-surface-variant": "#d0c5af",
+                      "surface-dim": "#131313",
+                      "secondary-fixed": "#6dfe9c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "container-margin": "24px",
+                      "gutter": "16px",
+                      "unit": "8px",
+                      "stack-lg": "32px",
+                      "stack-md": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Manrope"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "display-xl": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Manrope"
+                      ],
+                      "body-md": [
+                              "Manrope"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        /* Custom scrollbar for web */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.background');
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.surface-container-highest');
+            border-radius: 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<img class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A cinematic, high-contrast headshot of a modern Kenyan barber. The lighting is moody and dramatic, highlighting facial features against a very dark, exclusive salon environment. Deep black tones contrast heavily with subtle warm gold highlights, embodying a sense of professional craftsmanship, quiet luxury, and an elite service atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbVH-SipVbdEzpkhMiOfC7XX5CbBNfl8qpBeips6WR-QMP1YO1I-f4Mvnd063VitclQqhgZmXWt-0RXJccVy2708oQv210jvkUWhRerbmWaEysLH_wYk8kil4qt84JNf1L47OjRR6qIRJRqD3wkD0J6skE4klALh3fu58lYIdatlQn1ff9YryffXiKzHVlMVPYzB_XSVKV5qPD5wxMOnKyut2z5QXSRvstBBPatv79rEiO8e8zr8Q7zWJ6shS0y3-0ciSuZomiU38"/>
+</div>
+<h1 class="text-xl font-black text-yellow-500 tracking-tighter font-['Inter'] font-semibold uppercase">
+            ELITE GROOMING
+        </h1>
+<button class="text-yellow-500 hover:bg-white/5 transition-colors active:scale-95 duration-200 rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[88px] pb-[100px] px-container-margin w-full max-w-5xl mx-auto flex flex-col gap-stack-lg">
+<!-- Header Section -->
+<section class="flex flex-col gap-stack-sm mt-stack-md">
+<h2 class="font-display-xl text-display-xl text-on-background">My Suggestions</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Track the impact you're making on the shop. Your insights help us refine the Elite Grooming experience.
+            </p>
+</section>
+<!-- Bento Stats Grid -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="bg-surface-container rounded-xl p-gutter border border-outline-variant/50 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary-container opacity-50"></div>
+<div class="flex flex-col gap-unit">
+<span class="material-symbols-outlined text-on-surface-variant text-[28px]">lightbulb</span>
+<span class="font-display-xl text-headline-lg text-on-background mt-2">12</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Ideas</span>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-gutter border border-outline-variant/50 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-secondary-container opacity-50"></div>
+<div class="flex flex-col gap-unit">
+<span class="material-symbols-outlined text-secondary text-[28px]">check_circle</span>
+<span class="font-display-xl text-headline-lg text-on-background mt-2">4</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Implemented</span>
+</div>
+</div>
+<div class="col-span-2 bg-surface-container-high rounded-xl p-gutter border border-outline-variant/30 flex items-center justify-between">
+<div class="flex flex-col gap-unit max-w-[70%]">
+<h3 class="font-headline-md text-headline-md text-on-background">Have a new idea?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Submit feedback on operations, client experience, or shop amenities.</p>
+</div>
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-6 py-3 rounded-full hover:bg-primary-container transition-colors shadow-[0_0_20px_rgba(242,202,80,0.15)] flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Submit
+                </button>
+</div>
+</section>
+<!-- Suggestions List -->
+<section class="flex flex-col gap-gutter">
+<h3 class="font-headline-md text-headline-md text-on-background mb-unit border-b border-outline-variant/30 pb-4">Submission History</h3>
+<!-- Item: Implemented -->
+<article class="bg-surface-container rounded-xl p-gutter border border-outline-variant/50 flex flex-col gap-stack-md transition-all hover:bg-surface-container-high">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+<div class="flex flex-col gap-unit flex-grow">
+<div class="flex items-center gap-3">
+<h4 class="font-headline-md text-body-lg text-on-background">Upgrade waiting area espresso machine</h4>
+<span class="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full font-label-sm text-[12px] uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">done</span>
+                                Implemented
+                            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Clients are requesting stronger roasts and alternative milk options. The current machine is slow during peak Saturday hours.
+                        </p>
+<span class="font-label-sm text-label-sm text-outline mt-1">Submitted on Oct 12, 2023</span>
+</div>
+</div>
+<!-- Owner Feedback Box -->
+<div class="bg-surface-container-lowest border-l-2 border-secondary rounded-r-lg p-gutter mt-2 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary">forum</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Owner Note</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+                        "Great insight. We ordered the La Marzocco Linea Mini, arriving next Tuesday. Will schedule a brief training session for the team."
+                    </p>
+</div>
+</article>
+<!-- Item: In Review -->
+<article class="bg-surface-container rounded-xl p-gutter border border-outline-variant/50 flex flex-col gap-stack-md transition-all hover:bg-surface-container-high">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+<div class="flex flex-col gap-unit flex-grow">
+<div class="flex items-center gap-3">
+<h4 class="font-headline-md text-body-lg text-on-background">Premium beard oil upselling protocol</h4>
+<span class="bg-primary/10 text-primary border border-primary/20 px-3 py-1 rounded-full font-label-sm text-[12px] uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+                                In Review
+                            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Suggesting a standardized 2-minute consultation script to upsell our new line of sandalwood beard oils during hot towel treatments.
+                        </p>
+<span class="font-label-sm text-label-sm text-outline mt-1">Submitted on Nov 05, 2023</span>
+</div>
+</div>
+<!-- Owner Feedback Box -->
+<div class="bg-surface-container-lowest border-l-2 border-primary rounded-r-lg p-gutter mt-2 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">forum</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Owner Note</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+                        "Reviewing the margins with suppliers now. Let's discuss a potential commission structure for this at the next all-hands meeting."
+                    </p>
+</div>
+</article>
+<!-- Item: Received -->
+<article class="bg-surface-container rounded-xl p-gutter border border-outline-variant/50 flex flex-col gap-stack-md transition-all hover:bg-surface-container-high">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+<div class="flex flex-col gap-unit flex-grow">
+<div class="flex items-center gap-3">
+<h4 class="font-headline-md text-body-lg text-on-background">Adjust weekend shift start times by 30 mins</h4>
+<span class="bg-surface-variant text-on-surface border border-outline/30 px-3 py-1 rounded-full font-label-sm text-[12px] uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">inbox</span>
+                                Received
+                            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Moving the opening shift from 8:00 AM to 8:30 AM on Sundays. Foot traffic is virtually zero before 9:00 AM, saving on operational costs.
+                        </p>
+<span class="font-label-sm text-label-sm text-outline mt-1">Submitted on Nov 18, 2023</span>
+</div>
+</div>
+<!-- No feedback box yet for 'Received' state to show variation -->
+</article>
+</section>
+</main>
+<!-- BottomNavBar (Hidden on md/web as per shell logic, visible on mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 rounded-t-2xl bg-[#0A0A0A]/95 backdrop-blur-lg border-t border-white/5 shadow-[0_-10px_40px_rgba(0,0,0,0.8)] flex justify-around items-center pt-3 pb-6 px-4 md:hidden">
+<!-- Inactive Tab: Dashboard -->
+<button class="flex flex-col items-center justify-center text-gray-500 hover:text-yellow-200 transition-all active:translate-y-[-2px] duration-300 w-16">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest mt-1">Dashboard</span>
+</button>
+<!-- Inactive Tab: Staff -->
+<button class="flex flex-col items-center justify-center text-gray-500 hover:text-yellow-200 transition-all active:translate-y-[-2px] duration-300 w-16">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="groups">groups</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest mt-1">Staff</span>
+</button>
+<!-- Active Tab: Profile (Personal view for "My Suggestions") -->
+<button class="flex flex-col items-center justify-center text-yellow-500 drop-shadow-[0_0_8px_rgba(212,175,55,0.3)] hover:text-yellow-200 transition-all active:translate-y-[-2px] duration-300 w-16">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="person" data-weight="fill" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest mt-1 text-yellow-500">Profile</span>
+</button>
+</nav>
+</body></html>

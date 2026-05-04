@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elite Inventory - History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error": "#ffb4ab",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "tertiary": "#cecece",
+                      "outline": "#99907c",
+                      "surface-container-low": "#1c1b1b",
+                      "inverse-primary": "#735c00",
+                      "surface-tint": "#e9c349",
+                      "primary": "#f2ca50",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-secondary-fixed-variant": "#005227",
+                      "surface-container-high": "#2a2a2a",
+                      "on-tertiary-container": "#434546",
+                      "on-secondary-fixed": "#00210c",
+                      "tertiary-container": "#b2b3b3",
+                      "surface": "#131313",
+                      "secondary": "#4de082",
+                      "on-secondary-container": "#003e1c",
+                      "on-primary-fixed": "#241a00",
+                      "on-surface": "#e5e2e1",
+                      "primary-fixed-dim": "#e9c349",
+                      "on-primary": "#3c2f00",
+                      "background": "#131313",
+                      "on-tertiary": "#2f3131",
+                      "surface-container-highest": "#353534",
+                      "secondary-fixed": "#6dfe9c",
+                      "on-background": "#e5e2e1",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "primary-fixed": "#ffe088",
+                      "inverse-on-surface": "#313030",
+                      "surface-variant": "#353534",
+                      "on-primary-container": "#554300",
+                      "surface-container": "#201f1f",
+                      "surface-bright": "#3a3939",
+                      "primary-container": "#d4af37",
+                      "on-error": "#690005",
+                      "outline-variant": "#4d4635",
+                      "on-secondary": "#003919",
+                      "error-container": "#93000a",
+                      "surface-container-lowest": "#0e0e0e",
+                      "secondary-fixed-dim": "#4de082",
+                      "secondary-container": "#00b55d",
+                      "on-surface-variant": "#d0c5af",
+                      "inverse-surface": "#e5e2e1",
+                      "on-error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#574500",
+                      "tertiary-fixed": "#e2e2e2",
+                      "surface-dim": "#131313"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-md": "16px",
+                      "stack-sm": "8px",
+                      "stack-lg": "32px",
+                      "gutter": "16px",
+                      "unit": "8px",
+                      "container-margin": "24px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Manrope"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "display-xl": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Manrope"
+                      ],
+                      "body-lg": [
+                              "Manrope"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col md:flex-row">
+<!-- TopAppBar (Mobile) / Web Nav embedded in TopAppBar if we were doing top nav, but design says use SideNav for Web -->
+<header class="md:hidden sticky z-50 bg-[#0A0A0A]/90 backdrop-blur-xl border-b border-zinc-800/50 shadow-2xl shadow-black full-width top-0 flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Barber Shop Owner Profile" class="w-8 h-8 rounded-full object-cover border border-zinc-800" data-alt="A close-up portrait of a stylish barber shop owner in a modern, dark-themed salon. The lighting is moody with soft gold accents highlighting their features. They exude professionalism and luxury, fitting the premium aesthetic of the application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHj50puvuT2pJ_lFPHQimrtuJUho3VzToxUIvuzzeqQg1yuAFy4p50H6VIUlVAQsrvtNrP2NJHol26AqtrMrYwTN-5YvQlHLjDyA9QCzAUdxSCsT2qACfBFxGJE--eWO2VtD0r14ioIPebFuNLqfhY9RMVhDGg3sjn-QFT-vgIUeuRJDRb7xFFN0Y1Gv_SfXKm8kgYWMouf-eWRCGB-rTAQXcGkAPavgMzim1tzo1RtCF2wFQhEKNaej0oRnfNsr_v4kzPp0or9nE"/>
+<span class="text-lg font-bold tracking-widest text-[#D4AF37] uppercase font-['Inter']">Elite Inventory</span>
+</div>
+<button class="text-[#D4AF37] hover:text-[#D4AF37] transition-colors duration-300 ease-in-out">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- NavigationDrawer (Web) -->
+<aside class="hidden md:flex flex-col h-screen py-8 bg-[#0A0A0A] h-full w-80 border-r border-zinc-900 shadow-none sticky top-0 shrink-0">
+<div class="px-6 mb-8">
+<h1 class="text-xl font-black text-[#D4AF37] mb-8 font-['Inter']">Elite Inventory</h1>
+<div class="flex items-center gap-4 mb-8">
+<img alt="Shop Owner" class="w-12 h-12 rounded-full object-cover border-2 border-zinc-800" data-alt="A stylish portrait of a barber shop owner, 'Elite Grooming', looking confident in a dimly lit, high-end grooming studio. Warm ambient light catches the edges of the modern salon equipment in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByhgyMqJ6CrXKLWj9rhTGLUpM3-3V5TndojNrWf2dQVbuVkaUCzeWmze9NpNb9Bppcv5vQe6RGn0ORF8NcJsBl7jBucxpKzq8i5FXlOkqTlw1wPTuHRu0g4mrq8KvyhnaMyUFvvnxD90qtxBmvkNHUVpwigBnz33kXbVCZww3UH57Gy89bbjuP33v-hcEnKOIfXsX4FXd5iaODZYZrKS3VgsE5Xr2HNWLLhEm6mUEHkGQv--jQ7LETs66WDwU6zRyDoa3iSNpfZlM"/>
+<div>
+<h2 class="text-on-background font-body-md font-semibold">Elite Grooming</h2>
+<p class="text-on-surface-variant font-label-sm text-xs">Inventory Manager</p>
+<p class="text-zinc-500 text-xs mt-0.5">Nairobi Central</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-4 text-zinc-400 px-6 py-4 hover:bg-zinc-900/50 hover:text-white transition-all duration-200 font-['Inter'] text-sm font-light" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-4 text-zinc-400 px-6 py-4 hover:bg-zinc-900/50 hover:text-white transition-all duration-200 font-['Inter'] text-sm font-light" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span>Product Catalog</span>
+</a>
+<a class="flex items-center gap-4 text-zinc-400 px-6 py-4 hover:bg-zinc-900/50 hover:text-white transition-all duration-200 font-['Inter'] text-sm font-light" href="#">
+<span class="material-symbols-outlined">contacts</span>
+<span>Supplier Directory</span>
+</a>
+<a class="flex items-center gap-4 text-[#D4AF37] bg-gradient-to-r from-[#D4AF37]/10 to-transparent border-l-2 border-[#D4AF37] font-bold px-6 py-4 font-['Inter'] text-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">rebase_edit</span>
+<span>Restock Logs</span>
+</a>
+<a class="flex items-center gap-4 text-zinc-400 px-6 py-4 hover:bg-zinc-900/50 hover:text-white transition-all duration-200 font-['Inter'] text-sm font-light" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-4 text-zinc-400 px-6 py-4 hover:bg-zinc-900/50 hover:text-white transition-all duration-200 font-['Inter'] text-sm font-light" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col min-w-0 pb-24 md:pb-0">
+<div class="px-container-margin py-stack-lg max-w-4xl w-full mx-auto">
+<!-- Page Header -->
+<div class="mb-stack-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-stack-sm">Restock and Order History</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">A comprehensive timeline of your inventory activity.</p>
+</div>
+<!-- Timeline Filter/Search (Utility) -->
+<div class="flex flex-col sm:flex-row gap-gutter mb-stack-lg">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-high border border-zinc-800 rounded-lg py-3 pl-12 pr-4 text-on-background font-body-md focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none placeholder:text-zinc-600" placeholder="Search logs..." type="text"/>
+</div>
+<button class="flex items-center justify-center gap-2 px-6 py-3 bg-surface-container-high border border-zinc-800 rounded-lg text-on-background hover:bg-surface-variant transition-colors font-label-sm text-label-sm">
+<span class="material-symbols-outlined">filter_list</span>
+                    Filter
+                </button>
+</div>
+<!-- Vertical Timeline Bento Pattern -->
+<div class="relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-primary/50 before:via-zinc-800 before:to-transparent">
+<!-- Timeline Item 1 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active mb-stack-lg">
+<!-- Icon -->
+<div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-primary bg-surface-container-lowest text-primary shadow-[0_0_15px_rgba(212,175,55,0.2)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+</div>
+<!-- Content Card -->
+<div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-stack-md rounded-xl bg-surface-container-low border border-zinc-800 shadow-xl shadow-black/40 hover:border-zinc-700 transition-colors">
+<div class="flex items-center justify-between mb-stack-sm">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-secondary/10 text-secondary border border-secondary/20">
+                                Restock Received
+                            </span>
+<time class="font-label-sm text-xs text-on-surface-variant">Today, 09:41 AM</time>
+</div>
+<h3 class="font-headline-md text-lg text-on-background mb-stack-sm">20x Matte Clay</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-stack-md">Delivery confirmed and added to main storage shelf B.</p>
+<div class="flex items-center gap-2 pt-stack-sm border-t border-zinc-800/50">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-xs font-bold text-on-surface">JD</div>
+<span class="font-label-sm text-xs text-on-surface-variant">Processed by John Doe</span>
+</div>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-stack-lg">
+<!-- Icon -->
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-zinc-700 bg-surface-container-highest text-error shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+<span class="material-symbols-outlined text-sm">remove_circle_outline</span>
+</div>
+<!-- Content Card -->
+<div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-stack-md rounded-xl bg-surface-container border border-zinc-800 shadow-lg shadow-black/20 hover:border-zinc-700 transition-colors">
+<div class="flex items-center justify-between mb-stack-sm">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-error/10 text-error border border-error/20">
+                                Stock Adjustment
+                            </span>
+<time class="font-label-sm text-xs text-on-surface-variant">Yesterday, 16:30 PM</time>
+</div>
+<h3 class="font-headline-md text-lg text-on-background mb-stack-sm">-5 Clippers</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-stack-md">Sent for routine maintenance and blade sharpening.</p>
+<div class="flex items-center gap-2 pt-stack-sm border-t border-zinc-800/50">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-xs font-bold text-on-surface">EG</div>
+<span class="font-label-sm text-xs text-on-surface-variant">Processed by Elite Grooming</span>
+</div>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-stack-lg">
+<!-- Icon -->
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-zinc-700 bg-surface-container-highest text-tertiary shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+<span class="material-symbols-outlined text-sm">local_shipping</span>
+</div>
+<!-- Content Card -->
+<div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-stack-md rounded-xl bg-surface-container border border-zinc-800 shadow-lg shadow-black/20 hover:border-zinc-700 transition-colors">
+<div class="flex items-center justify-between mb-stack-sm">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-zinc-800 text-zinc-300 border border-zinc-700">
+                                Order Placed
+                            </span>
+<time class="font-label-sm text-xs text-on-surface-variant">Oct 12, 11:15 AM</time>
+</div>
+<h3 class="font-headline-md text-lg text-on-background mb-stack-sm">Aftershave Bulk (5L)</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-stack-md">PO-2023-4892 sent to Premium Barber Supplies Ltd. Expected delivery Oct 15.</p>
+<div class="flex items-center gap-2 pt-stack-sm border-t border-zinc-800/50">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-xs font-bold text-on-surface">EG</div>
+<span class="font-label-sm text-xs text-on-surface-variant">Processed by Elite Grooming</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="mt-stack-lg flex justify-center">
+<button class="px-8 py-3 rounded-full border border-zinc-700 text-on-surface-variant hover:text-primary hover:border-primary transition-colors font-label-sm text-sm">
+                    Load More History
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden bg-[#1A1A1A]/95 backdrop-blur-lg fixed bottom-0 w-full z-50 rounded-t-2xl border-t border-zinc-800 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] flex justify-around items-center px-4 pb-6 pt-3">
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-800 transition-all active:scale-95 duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-800 transition-all active:scale-95 duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1">inventory_2</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">Stock</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-800 transition-all active:scale-95 duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1">local_shipping</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">Suppliers</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#D4AF37] bg-[#D4AF37]/10 rounded-xl py-1 px-3 hover:bg-zinc-800 transition-all active:scale-95 duration-150 p-2" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">History</span>
+</a>
+</nav>
+</body></html>

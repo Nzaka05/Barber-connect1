@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BarberConnect - My Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "on-surface-variant": "#d0c5af",
+                            "secondary-container": "#00b55d",
+                            "tertiary-fixed-dim": "#c6c6c7",
+                            "tertiary-container": "#b2b3b3",
+                            "on-tertiary-fixed": "#1a1c1c",
+                            "on-secondary-fixed-variant": "#005227",
+                            "on-tertiary-container": "#434546",
+                            "surface-tint": "#e9c349",
+                            "primary-container": "#d4af37",
+                            "secondary-fixed": "#6dfe9c",
+                            "on-secondary": "#003919",
+                            "error": "#ffb4ab",
+                            "on-tertiary": "#2f3131",
+                            "secondary": "#4de082",
+                            "primary": "#f2ca50",
+                            "on-surface": "#e5e2e1",
+                            "inverse-surface": "#e5e2e1",
+                            "surface-bright": "#3a3939",
+                            "surface-container": "#201f1f",
+                            "secondary-fixed-dim": "#4de082",
+                            "surface-container-low": "#1c1b1b",
+                            "outline": "#99907c",
+                            "inverse-primary": "#735c00",
+                            "on-primary-fixed": "#241a00",
+                            "tertiary": "#cecece",
+                            "inverse-on-surface": "#313030",
+                            "on-secondary-fixed": "#00210c",
+                            "surface-variant": "#353534",
+                            "surface": "#131313",
+                            "on-error-container": "#ffdad6",
+                            "background": "#131313",
+                            "error-container": "#93000a",
+                            "primary-fixed-dim": "#e9c349",
+                            "on-primary-fixed-variant": "#574500",
+                            "on-secondary-container": "#003e1c",
+                            "surface-container-highest": "#353534",
+                            "on-primary-container": "#554300",
+                            "surface-container-high": "#2a2a2a",
+                            "surface-dim": "#131313",
+                            "surface-container-lowest": "#0e0e0e",
+                            "on-error": "#690005",
+                            "tertiary-fixed": "#e2e2e2",
+                            "on-primary": "#3c2f00",
+                            "outline-variant": "#4d4635",
+                            "on-background": "#e5e2e1",
+                            "on-tertiary-fixed-variant": "#454747",
+                            "primary-fixed": "#ffe088"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "unit": "8px",
+                            "stack-lg": "32px",
+                            "container-margin": "24px",
+                            "gutter": "16px",
+                            "stack-md": "16px",
+                            "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                            "headline-md": ["Inter", "sans-serif"],
+                            "headline-lg": ["Inter", "sans-serif"],
+                            "body-lg": ["Manrope", "sans-serif"],
+                            "body-md": ["Manrope", "sans-serif"],
+                            "display-xl": ["Inter", "sans-serif"],
+                            "label-sm": ["Manrope", "sans-serif"]
+                    },
+                    "fontSize": {
+                            "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                            "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                            "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                            "display-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                            "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-overlay {
+            background: linear-gradient(180deg, rgba(19, 19, 19, 0) 0%, rgba(19, 19, 19, 0.8) 100%);
+        }
+        .action-blur {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-[100px] md:pb-0 md:pt-[72px] selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar (Web Only) -->
+<nav class="hidden md:flex justify-between items-center px-6 py-3 w-full bg-neutral-950 border-b border-neutral-900 shadow-none fixed top-0 z-50 transition-opacity duration-200">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<span class="text-lg font-bold text-yellow-500 font-inter tracking-tight">BarberConnect</span>
+</div>
+<div class="flex items-center gap-6">
+<a class="text-neutral-400 hover:opacity-80 transition-colors font-label-sm text-label-sm uppercase" href="#">Home</a>
+<a class="text-neutral-400 hover:opacity-80 transition-colors font-label-sm text-label-sm uppercase" href="#">Bookings</a>
+<a class="text-neutral-400 hover:opacity-80 transition-colors font-label-sm text-label-sm uppercase" href="#">Messages</a>
+<a class="text-yellow-500 hover:opacity-80 transition-colors font-label-sm text-label-sm uppercase" href="#">Profile</a>
+<button class="text-neutral-400 hover:text-yellow-500 transition-colors ml-4">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</button>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-container-margin pt-stack-lg md:pt-stack-lg">
+<!-- Header Section -->
+<header class="mb-stack-lg flex flex-col md:flex-row md:items-end justify-between gap-stack-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-unit">My Portfolio</h1>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<p class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Good photos = more bookings</p>
+</div>
+</div>
+</header>
+<!-- Upload Action Area -->
+<section class="mb-stack-lg">
+<button class="w-full relative overflow-hidden group rounded-xl border-2 border-dashed border-outline-variant bg-surface-container hover:border-primary hover:bg-surface-container-high transition-all duration-300 min-h-[160px] flex flex-col items-center justify-center gap-stack-sm p-container-margin outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background">
+<div class="w-14 h-14 rounded-full bg-surface-variant flex items-center justify-center group-hover:bg-primary/10 transition-colors duration-300 mb-2 shadow-[0_4px_20px_0_rgba(0,0,0,0.3)]">
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-3xl transition-colors duration-300">add_a_photo</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors duration-300">Upload New Style</h2>
+<p class="font-body-md text-body-md text-on-surface-variant text-center max-w-md">Supported formats: JPG, PNG. Max file size: 10MB. High-resolution images recommended.</p>
+</button>
+</section>
+<!-- Portfolio Grid -->
+<section class="grid grid-cols-2 md:grid-cols-3 gap-gutter">
+<!-- Grid Item 1 -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden bg-surface-container shadow-[0_8px_30px_0_rgba(0,0,0,0.4)]">
+<img alt="Skin Fade" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up, high-quality photograph of a perfectly executed skin fade haircut on a male model. The styling is sharp and contemporary, suitable for a premium barbershop portfolio. The lighting is dramatic and moody, emphasizing the clean lines and texture of the hair against a dark background. The image evokes a sense of exclusive luxury and professional craftsmanship, fitting perfectly into a dark-mode, minimalist user interface with subtle gold accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw-NmJfX-kv94SCzYHNAdGH8DQZeInqOSukPTU1wt9hUXLVT3Ektcsry4Xhx1_2MjdhegZdkHDtASitzk86LsstBuf5ZOd9XpPvRjSgzyH2zSRmWv0jyh-zjijXBwaHPEg-lmDuTHTPTqwiAEvBbNrFr3qnWbU9YzW73XDzlkLiuOK-C9CVeCQ0WEFuZOkQaHgQVXSluEME-wuDFGICoZGuXkLn0ZnHEicIY1S8pko71bgTm_ST-RQUuVtWo4KuLOHH0LxsIQR4wD3"/>
+<div class="absolute inset-0 glass-overlay opacity-60 transition-opacity duration-300"></div>
+<!-- Action Overlay -->
+<div class="absolute top-3 right-3 flex gap-2 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button aria-label="Edit photo" class="w-10 h-10 rounded-full action-blur flex items-center justify-center text-on-background hover:text-primary hover:bg-surface-container-high transition-all border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">edit</span>
+</button>
+<button aria-label="Delete photo" class="w-10 h-10 rounded-full action-blur flex items-center justify-center text-on-background hover:text-error hover:bg-error/10 transition-all border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="inline-block px-3 py-1 rounded-full bg-surface/80 backdrop-blur-sm border border-outline-variant/50 font-label-sm text-label-sm text-on-surface shadow-sm">Skin Fade</span>
+</div>
+</div>
+<!-- Grid Item 2 -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden bg-surface-container shadow-[0_8px_30px_0_rgba(0,0,0,0.4)]">
+<img alt="Beard Trim" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A detailed portrait highlighting a meticulously sculpted beard and sharp lineup on a modern professional man. The rich, dark tones of the facial hair contrast beautifully with the subject's skin, shot in studio lighting with a slight warm rim light. The overall mood is sophisticated and high-end, projecting an image of premium grooming services. This aesthetic aligns with a VIP concierge app design, relying on deep blacks and crisp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz-qFRLeGlg8RTj8FSblRoLR2bkSYbZKwHt9HfdhVkH9DQIRVkCKutm-2mS1ZIEx_afFxBvTkMitc12qVHQav-F4RFoSh5bZGvrTpcAyAKjVVdEsAyVKNNekVYhFDVipxIPIDKLkvOTE9fXJMgxjE1j1ULiXvTwbDWejPwb6WAaXTob6Iwutl3l-DA7swkKDN5DuR7B5zSu7M3ZITt1xiUp-ig8zwwNOe2D4xHwnnf3JyXUN0J4z_XAbzyDzZWsh-t_ZbXZTiB4UWE"/>
+<div class="absolute inset-0 glass-overlay opacity-60 transition-opacity duration-300"></div>
+<div class="absolute top-3 right-3 flex gap-2 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button aria-label="Edit photo" class="w-10 h-10 rounded-full action-blur flex items-center justify-center text-on-background hover:text-primary hover:bg-surface-container-high transition-all border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">edit</span>
+</button>
+<button aria-label="Delete photo" class="w-10 h-10 rounded-full action-blur flex items-center justify-center text-on-background hover:text-error hover:bg-error/10 transition-all border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="inline-block px-3 py-1 rounded-full bg-surface/80 backdrop-blur-sm border border-outline-variant/50 font-label-sm text-label-sm text-on-surface shadow-sm">Executive Beard</span>
+</div>
+</div>
+<!-- Grid Item 3 -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden bg-surface-container shadow-[0_8px_30px_0_rgba(0,0,0,0.4)]">
+<img alt="Precision Lineup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An artistic, side-profile shot focusing on a razor-sharp hairline and textured crop haircut. The image is captured with professional clarity, showcasing the barber's extreme precision. Soft, ambient background lighting isolates the subject, creating a striking visual perfect for an 'Instagram-style' portfolio grid. The visual tone is quietly luxurious, meant to sit seamlessly within a dark-themed UI featuring glassmorphism and exclusive styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrQ-EQZxKPTevOVxiGeDsKa7zrhsw6Zc1MXRbnEAEw94UDUNwEHr9Etx86C-WieFwMZUeeu9daDCMmeqG_7GApSQMxmxMu2cOELSThLyuifBFWGt1t7yIC2SStx7ty-NL03HExOA1M5sDgGFST3TnT8_0c-TTrbu25Ebqw4gTUpqbe0bjkOGs3tQlp83T78yizZOef-AVPNf563HPNBU6BOQl-orjhD9paxG64N_k8haoBUomb5p-1JT0CO9VvbXrnqlNIUpmO-P5U"/>
+<div class="absolute inset-0 glass-overlay opacity-60 transition-opacity duration-300"></div>
+<div class="absolute top-3 right-3 flex gap-2 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button aria-label="Edit photo" class="w-10 h-10 rounded-full action-blur flex items-center justify-center text-on-background hover:text-primary hover:bg-surface-container-high transition-all border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">edit</span>
+</button>
+<button aria-label="Delete photo" class="w-10 h-10 rounded-full action-blur flex items-center justify-center text-on-background hover:text-error hover:bg-error/10 transition-all border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="inline-block px-3 py-1 rounded-full bg-surface/80 backdrop-blur-sm border border-outline-variant/50 font-label-sm text-label-sm text-on-surface shadow-sm">Textured Crop &amp; Lineup</span>
+</div>
+</div>
+<!-- Grid Item 4 -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden bg-surface-container shadow-[0_8px_30px_0_rgba(0,0,0,0.4)]">
+<img alt="Twists with Fade" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A stylized photograph of fresh two-strand twists or braids, paired with a clean temple fade. The texture of the hair is the focal point, illuminated by high-contrast lighting that creates depth and dimension. The moody, dark atmosphere of the shot communicates an expensive, bespoke grooming experience. Designed to visually anchor a premium dark-mode application focused on high-end male aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDm7yqk0W-E9zKtauBjn1lkbIgDRz-BkOW8eWiEMXCBmCquNLQT1PS1ESFXVcudWmNXuj_kdl8fLlFTrSIyh3jp7YzIIJbcdZsbBAx3ggvBWREr19IxY_tv-onydOrU9Gqe4X3dtNefM8ym_fVlmTzpZEc5Nh42XdxcRGAINrP7H6RURPEbmRgC9yv3eSqiAZ0mSgq0f4RwO39uyJfqWR9Mt4yijS_ssX3h4K9eh5EFrt9Ic0WEgMM8EsGwFDhTZ66X9eejRuFe2iF"/>
+<div class="absolute inset-0 glass-overlay opacity-60 transition-opacity duration-300"></div>
+<div class="absolute top-3 right-3 flex gap-2 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button aria-label="Edit photo" class="w-10 h-10 rounded-full action-blur flex items-center justify-center text-on-background hover:text-primary hover:bg-surface-container-high transition-all border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">edit</span>
+</button>
+<button aria-label="Delete photo" class="w-10 h-10 rounded-full action-blur flex items-center justify-center text-on-background hover:text-error hover:bg-error/10 transition-all border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="inline-block px-3 py-1 rounded-full bg-surface/80 backdrop-blur-sm border border-outline-variant/50 font-label-sm text-label-sm text-on-surface shadow-sm">Twists &amp; Taper</span>
+</div>
+</div>
+<!-- Grid Item 5 (Loading/Skeleton State example) -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden bg-surface-container border border-outline-variant/20 flex flex-col items-center justify-center gap-4">
+<div class="w-12 h-12 rounded-full border-2 border-primary/20 border-t-primary animate-spin"></div>
+<p class="font-body-sm text-on-surface-variant text-sm">Uploading...</p>
+<div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-transparent animate-pulse"></div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 h-20 bg-neutral-950/90 backdrop-blur-md rounded-t-2xl border-t border-neutral-900 shadow-[0_-4px_20px_0_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">calendar_month</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">chat_bubble</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-yellow-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</body></html>

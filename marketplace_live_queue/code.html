@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grooming Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#b2b3b3",
+                        "on-tertiary-container": "#434546",
+                        "on-secondary-container": "#003e1c",
+                        "tertiary": "#cecece",
+                        "primary-fixed": "#ffe088",
+                        "on-primary": "#3c2f00",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-on-surface": "#313030",
+                        "error-container": "#93000a",
+                        "surface-tint": "#e9c349",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-container-highest": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary": "#4de082",
+                        "surface": "#131313",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#4d4635",
+                        "outline": "#99907c",
+                        "background": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-variant": "#353534",
+                        "secondary-container": "#00b55d",
+                        "on-secondary-fixed-variant": "#005227",
+                        "secondary-fixed-dim": "#4de082",
+                        "on-error": "#690005",
+                        "primary-container": "#d4af37",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary": "#2f3131",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container": "#201f1f",
+                        "primary": "#f2ca50",
+                        "surface-container-low": "#1c1b1b",
+                        "on-surface": "#e5e2e1",
+                        "on-primary-container": "#554300",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary-fixed-variant": "#574500",
+                        "inverse-primary": "#735c00",
+                        "primary-fixed-dim": "#e9c349",
+                        "surface-bright": "#3a3939",
+                        "on-secondary": "#003919",
+                        "on-secondary-fixed": "#00210c",
+                        "on-primary-fixed": "#241a00",
+                        "secondary-fixed": "#6dfe9c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Manrope"],
+                        "headline-lg": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #0A0A0A; color: #e5e2e1; }
+        .glass-card { background: rgba(26, 26, 26, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md antialiased pb-24">
+<!-- TopAppBar -->
+<header class="bg-neutral-950 dark:bg-neutral-950 text-yellow-600 dark:text-yellow-500 font-inter tracking-tight docked full-width top-0 border-b border-neutral-900 shadow-none flex justify-between items-center px-6 py-3 w-full sticky z-50">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-neutral-800">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close up portrait of a confident modern professional man with a well-groomed beard, set against a dark, moody background. The lighting is cinematic, highlighting the sharp contours of his face and emphasizing a premium, luxurious aesthetic consistent with a high-end exclusive grooming brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxt9mqr-1eLHIdgAFQI-K7KlsYtcDCv6K0dQmA8GjDXplFoU2kVXeGVWkWeVXKKC3c0kcxDFVjkhWz_EV6q1FegmbYuUHMNbR9j3j-7ov1QtRxpX49KVUG9ckM8zl0adh21BEJEyqwsSQtFmAhisZwsQ73JDNpzOssj42gDl9zlZdRcJgcvpHenk9Z2gSk0oYDBqixteudErYNEYKfKxx-XActK_7PHof5XQ5iNJsKmsHlQKhI1wz6WkLLoE_GA37zGRwfovmPOt0"/>
+</div>
+<h1 class="text-lg font-bold text-yellow-600 dark:text-yellow-500">BarberConnect</h1>
+</div>
+<button class="text-neutral-400 hover:opacity-80 transition-opacity duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">location_on</span>
+</button>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin py-stack-md flex flex-col gap-stack-lg">
+<!-- Live Queue Widget -->
+<section class="glass-card rounded-xl p-stack-md flex flex-col md:flex-row items-start md:items-center justify-between gap-stack-md shadow-[0_4px_30px_rgba(0,0,0,0.4)]">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary text-[24px]">hourglass_empty</span>
+</div>
+<div>
+<p class="font-label-sm text-primary uppercase tracking-widest text-[12px] mb-1">Live Booking Status</p>
+<h2 class="font-headline-md text-on-surface">2 people ahead of you</h2>
+<p class="font-body-md text-on-surface-variant mt-1">Est. wait time: <span class="text-on-surface font-semibold">15 mins</span> • The Executive Cut</p>
+</div>
+</div>
+<button class="bg-surface-container-highest border border-outline-variant text-on-surface px-6 py-2 rounded-full font-label-sm hover:border-primary transition-colors w-full md:w-auto">
+                View Details
+            </button>
+</section>
+<!-- Categories & Search -->
+<section class="flex flex-col gap-stack-md">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container border border-surface-variant rounded-full py-3 pl-12 pr-4 text-on-surface font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline" placeholder="Search premium grooming products..." type="text"/>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-sm whitespace-nowrap">All Products</button>
+<button class="bg-surface-container border border-surface-variant text-on-surface px-6 py-2 rounded-full font-label-sm whitespace-nowrap hover:border-primary transition-colors">Beard Care</button>
+<button class="bg-surface-container border border-surface-variant text-on-surface px-6 py-2 rounded-full font-label-sm whitespace-nowrap hover:border-primary transition-colors">Hair Styling</button>
+<button class="bg-surface-container border border-surface-variant text-on-surface px-6 py-2 rounded-full font-label-sm whitespace-nowrap hover:border-primary transition-colors">Professional Tools</button>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-[#1A1A1A] rounded-xl overflow-hidden border border-surface-variant flex flex-col group hover:border-primary/50 transition-colors">
+<div class="aspect-square relative overflow-hidden bg-surface-container-low">
+<img alt="Beard Oil" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500" data-alt="A premium glass bottle of artisanal beard oil resting on a dark slate surface. The lighting is dramatic and moody, with a subtle golden rim light highlighting the amber liquid inside the bottle. The aesthetic is luxurious, masculine, and sophisticated, perfectly aligned with an exclusive grooming brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtf9uzCuLrKqGp3Ffm5Gm0apl91Dv2t2gsPfhWKmjZQDbG7tTTtxPM1EyUjJywDk6QTzoHA-IS76Hf6jjoUGFq9L55onqU8N-4pbUTlmmHFB1mMTZhlHIALphwvVprRhBZ_61fU1kJsU8y9U4Bvzv5Nt5L0CIGhK_2A_sMTuOH1JmQncWXDtritJFXhLsLtMy58KEwETjm_TAHujeNhg7JfKA_AUs1bxKrHpoxHYvpUuE84lGWgDn4vqe6KbwlZEWhF1PpIa3jdDA"/>
+<div class="absolute top-4 right-4 bg-[#0A0A0A]/80 backdrop-blur-sm px-3 py-1 rounded-full border border-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-on-surface text-[12px]">4.9</span>
+</div>
+</div>
+<div class="p-stack-md flex flex-col flex-grow justify-between gap-4">
+<div>
+<p class="font-label-sm text-outline uppercase text-[11px] tracking-widest mb-2">Beard Care</p>
+<h3 class="font-body-lg text-on-surface font-semibold leading-tight">Sandalwood Reserve Beard Oil</h3>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-headline-md text-primary">KES 2,500</span>
+<button class="w-10 h-10 rounded-full bg-surface-container-high border border-surface-variant flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-[#1A1A1A] rounded-xl overflow-hidden border border-surface-variant flex flex-col group hover:border-primary/50 transition-colors">
+<div class="aspect-square relative overflow-hidden bg-surface-container-low">
+<img alt="Pomade" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, matte black tin of high-hold hair pomade positioned on a textured dark marble counter. Soft, directional light creates elegant shadows, emphasizing the premium quality and minimalist design of the packaging. The mood is modern, sharp, and exclusive, reflecting a top-tier barbershop aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw9rwjvrku2xEuzDNJQyNaHkwGYvFHv0wVdqAJ5TWje8EKQzjztkARozdafQRDEfzzLg7AzYNaHWeDrjhxgOp_wp3cBlZvlx9dFcuujG-wAgrkKrKUrw_Alv-wFo96mi5bfpETb1_ZxXNDSSLkU9hCkeA4W3dOyqEM2_4crjruOX3geZeVt4Nbbn624X8QIAycsjnvTLA4M2tUG5dYKjSGzta46SuRsyfDeTkGvFO72UbMaYdJlAiFVNfTDkieqLNoBQfw_-gQ7j4"/>
+<div class="absolute top-4 right-4 bg-[#0A0A0A]/80 backdrop-blur-sm px-3 py-1 rounded-full border border-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-on-surface text-[12px]">4.8</span>
+</div>
+</div>
+<div class="p-stack-md flex flex-col flex-grow justify-between gap-4">
+<div>
+<p class="font-label-sm text-outline uppercase text-[11px] tracking-widest mb-2">Hair Styling</p>
+<h3 class="font-body-lg text-on-surface font-semibold leading-tight">Matte Clay Pomade - Strong Hold</h3>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-headline-md text-primary">KES 1,800</span>
+<button class="w-10 h-10 rounded-full bg-surface-container-high border border-surface-variant flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-[#1A1A1A] rounded-xl overflow-hidden border border-surface-variant flex flex-col group hover:border-primary/50 transition-colors">
+<div class="aspect-square relative overflow-hidden bg-surface-container-low">
+<img alt="Clippers" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500" data-alt="A professional-grade cordless hair clipper with a metallic gold and black finish, elegantly displayed on a dark, reflective surface. The lighting highlights the sharp metal blades and premium build quality. The overall composition is sleek, industrial, and highly aspirational, suited for a luxury grooming context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_V4JgiJNp3xR87ASNCT1OtvY1EMtXo5FMTWwJMFL2oEQATRO0wnCSykkvJIyGJHj9jLjJ87VchLABPelIB1ezkaafWHbEQILpyFnKMuvJRCwEiLZ0kmDMKQiBs0kH8zJKF_CF8c8qyy8B9hpll4RgZ5EzcPUcreUp0ZzakQgoT4nei2n2qD7z-Zao-c4S8hyJGE3F3Ui9kz2oUuYetq1tUwrQk4fVj68-HMGnnEhXYbJA-tlxaDr9s6qzwWHVByFDr72UIxQheNE"/>
+<div class="absolute top-4 right-4 bg-[#0A0A0A]/80 backdrop-blur-sm px-3 py-1 rounded-full border border-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-on-surface text-[12px]">5.0</span>
+</div>
+</div>
+<div class="p-stack-md flex flex-col flex-grow justify-between gap-4">
+<div>
+<p class="font-label-sm text-outline uppercase text-[11px] tracking-widest mb-2">Professional Tools</p>
+<h3 class="font-body-lg text-on-surface font-semibold leading-tight">ProSeries Cordless Detailer</h3>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-headline-md text-primary">KES 15,500</span>
+<button class="w-10 h-10 rounded-full bg-surface-container-high border border-surface-variant flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden bg-neutral-950/90 backdrop-blur-md dark:bg-neutral-950/90 text-yellow-600 dark:text-yellow-500 text-[10px] font-medium font-inter uppercase tracking-widest docked full-width bottom-0 rounded-t-2xl border-t border-neutral-900 shadow-[0_-4px_20px_0_rgba(0,0,0,0.5)] fixed left-0 w-full z-50 flex justify-around items-center px-4 h-20">
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">calendar_month</span>
+<span>Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-yellow-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+<span>Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span>Profile</span>
+</a>
+</nav>
+</body></html>

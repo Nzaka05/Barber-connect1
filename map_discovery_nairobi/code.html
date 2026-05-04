@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nairobi Barber Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e5e2e1",
+                        "primary": "#f2ca50",
+                        "inverse-surface": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-secondary": "#003919",
+                        "secondary-container": "#00b55d",
+                        "surface": "#131313",
+                        "on-primary": "#3c2f00",
+                        "on-primary-container": "#554300",
+                        "on-primary-fixed-variant": "#574500",
+                        "primary-container": "#d4af37",
+                        "inverse-on-surface": "#313030",
+                        "outline": "#99907c",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary": "#4de082",
+                        "surface-container": "#201f1f",
+                        "error-container": "#93000a",
+                        "surface-variant": "#353534",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-tertiary-container": "#434546",
+                        "outline-variant": "#4d4635",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-fixed": "#ffe088",
+                        "on-surface": "#e5e2e1",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-tint": "#e9c349",
+                        "surface-dim": "#131313",
+                        "secondary-fixed": "#6dfe9c",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-error": "#690005",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-container": "#b2b3b3",
+                        "on-secondary-fixed": "#00210c",
+                        "on-tertiary": "#2f3131",
+                        "surface-bright": "#3a3939",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-container": "#003e1c",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#4de082",
+                        "inverse-primary": "#735c00",
+                        "tertiary": "#cecece",
+                        "surface-container-lowest": "#0e0e0e",
+                        "background": "#131313",
+                        "surface-container-highest": "#353534"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "stack-sm": "8px",
+                        "container-margin": "24px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-md": ["Manrope"],
+                        "headline-lg": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "body-lg": ["Manrope"],
+                        "label-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased overflow-hidden selection:bg-primary/30 selection:text-primary">
+<div class="relative h-screen w-full flex flex-col">
+<!-- Interactive Map Background -->
+<div class="absolute inset-0 z-0 bg-surface-container-lowest" data-alt="A highly detailed, stylized digital map interface of Nairobi city rendered in a deep dark mode aesthetic. The map features rich black backgrounds with subtle charcoal grey road networks and infrastructure lines. Specific locations are subtly highlighted with faint, glowing gold accents. The overall mood is sleek, premium, and functional, evoking an exclusive concierge application. Lighting is ambient and low-key." data-location="Nairobi, Kenya" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSQrgS_mhlIyWiNnf2bEzr5BIh983ekv4B0EzXtfDt6O46dLd6WNOkU7m1RKMqI30ahxFZtvOavF6o89FWWpk7OEE-tIdQJ2HvsdhljV-JHMff75x6vXYEizgGwROYkAtOBiKyUqP1bINH2Da1ydfKsGUsI4tamlOpgDa89L1m-yL_ZdCZ_a4lfZ8jqmNpdezVfoPBMPT57NKFcC-DqRPf6JTQbTF1iBuZMuqpUEdbewhBETzZMkyn8-lqVqxQozNBNUawzpN6Pdc'); background-size: cover; background-position: center; mix-blend-mode: luminosity; opacity: 0.8;">
+<!-- Overlay to darken map for contrast -->
+<div class="absolute inset-0 bg-background/60 backdrop-blur-[2px]"></div>
+</div>
+<!-- Top Controls Overlay -->
+<div class="absolute top-0 left-0 w-full pt-12 px-container-margin flex flex-col gap-stack-md z-10 pointer-events-none">
+<!-- Search Bar -->
+<div class="flex items-center bg-surface-container/80 backdrop-blur-xl border border-outline-variant rounded-full px-4 py-3 shadow-[0_8px_30px_rgb(0,0,0,0.4)] pointer-events-auto">
+<span class="material-symbols-outlined text-on-surface-variant mr-3">pin_drop</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md text-on-background placeholder-on-surface-variant flex-1 p-0" placeholder="Search Nairobi locations..." type="text"/>
+<div class="w-px h-6 bg-outline-variant mx-3"></div>
+<button class="text-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+<!-- Live Now Toggle -->
+<button class="flex items-center gap-2 bg-surface-container/80 backdrop-blur-xl border border-outline-variant rounded-full px-4 py-2 w-max shadow-lg pointer-events-auto hover:bg-surface-container-high transition-colors">
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(77,224,130,0.6)] animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-background">Live Now</span>
+</button>
+</div>
+<!-- Map Markers -->
+<!-- Marker 1 -->
+<div class="absolute top-[35%] left-[25%] z-10 transform -translate-x-1/2 -translate-y-1/2">
+<div class="bg-surface-container border border-outline-variant rounded-full px-3 py-1.5 flex items-center gap-1 shadow-[0_4px_12px_rgba(0,0,0,0.6)] cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-background">4.8</span>
+</div>
+<div class="w-1 h-3 bg-outline-variant mx-auto mt-1 rounded-full"></div>
+</div>
+<!-- Marker 2 (Active/Nearest) -->
+<div class="absolute top-[50%] left-[55%] z-20 transform -translate-x-1/2 -translate-y-1/2 scale-110">
+<div class="bg-primary text-on-primary rounded-full px-3 py-1.5 flex items-center gap-1 shadow-[0_0_20px_rgba(242,202,80,0.3)] cursor-pointer">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold">4.9</span>
+</div>
+<div class="w-1.5 h-4 bg-primary mx-auto mt-1 rounded-full"></div>
+</div>
+<!-- Marker 3 -->
+<div class="absolute top-[65%] left-[30%] z-10 transform -translate-x-1/2 -translate-y-1/2">
+<div class="bg-surface-container border border-outline-variant rounded-full px-3 py-1.5 flex items-center gap-1 shadow-[0_4px_12px_rgba(0,0,0,0.6)] cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-background">4.7</span>
+</div>
+<div class="w-1 h-3 bg-outline-variant mx-auto mt-1 rounded-full"></div>
+</div>
+<!-- Floating Locate Me Button -->
+<button class="absolute bottom-[240px] right-container-margin z-30 bg-surface-container border border-outline-variant rounded-full p-3 shadow-[0_4px_16px_rgba(0,0,0,0.5)] text-on-background hover:text-primary transition-colors">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+<!-- Sliding Bottom Card (Nearest Shop) -->
+<div class="absolute bottom-[90px] left-0 w-full px-container-margin z-20">
+<div class="bg-surface-container/90 backdrop-blur-xl border border-outline-variant rounded-2xl p-4 flex items-center gap-4 shadow-[0_-8px_30px_rgb(0,0,0,0.6)] w-full">
+<!-- Shop Image -->
+<div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 border border-outline-variant/50 relative">
+<img alt="Barber Studio Interior" class="w-full h-full object-cover" data-alt="A high-quality, professional photograph of a luxury barber shop interior. The setting features dark, masculine tones with matte black walls, polished concrete floors, and rich bronze and gold accents. A vintage leather barber chair sits center stage under warm, focused spotlighting. The aesthetic is 'Exclusive Accessibility', conveying premium craftsmanship and a VIP grooming experience. The mood is sophisticated and clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfSbsh2IsxpCqKcQyuG8S9upX6UThdyh1VpazxH4IcPONBI9lh7v2COaFvk6WfgG063YkCrI8nNd1dy7zZbdbd4t6gKbjBGAeIJQnG3SKB37h5DOnouHH5KLLcQYvs-ykKnkAlqVbmCsRO-8kEDNT-Arn5o8ROyvULelUvQDATxB9a6vZkh8eapim7twuVpRKOOH7AQGeo8vcJcW16HPpHSkjU80iTZHMRI8gFf9SrBCAylfhhe-GxhIgg6y0q6NbbnrQ6F8Ou0TY"/>
+<div class="absolute top-1 left-1 bg-background/80 backdrop-blur-sm rounded px-1.5 py-0.5 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-primary text-[10px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] font-bold text-on-background">4.9</span>
+</div>
+</div>
+<!-- Shop Details -->
+<div class="flex-1 flex flex-col justify-center">
+<h2 class="font-headline-md text-[20px] leading-tight font-semibold text-on-background mb-1">The Barber Studio</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-[14px]">directions_walk</span>
+                        0.8 km away • Open
+                    </p>
+<p class="font-body-md text-body-md text-primary font-medium">KES 2,500</p>
+</div>
+<!-- Quick Book Action -->
+<button class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-[0_0_15px_rgba(242,202,80,0.4)] hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+</button>
+</div>
+</div>
+<!-- Shared Component: BottomNavBar -->
+<nav class="bg-neutral-950/90 backdrop-blur-md dark:bg-neutral-950/90 docked full-width bottom-0 rounded-t-2xl border-t border-neutral-900 shadow-[0_-4px_20px_0_rgba(0,0,0,0.5)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 h-20">
+<!-- Active Item: Home (Mapping to Map/Explore context) -->
+<a class="flex flex-col items-center justify-center text-yellow-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150 w-16 group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Home</span>
+</a>
+<!-- Inactive Items -->
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150 w-16 group" href="#">
+<span class="material-symbols-outlined group-hover:text-yellow-400 transition-colors">calendar_month</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150 w-16 group" href="#">
+<span class="material-symbols-outlined group-hover:text-yellow-400 transition-colors">chat_bubble</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 space-y-1 hover:text-yellow-400 transition-colors active:scale-95 transition-transform duration-150 w-16 group" href="#">
+<span class="material-symbols-outlined group-hover:text-yellow-400 transition-colors">person</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>

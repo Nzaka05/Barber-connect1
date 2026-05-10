@@ -27,17 +27,53 @@
                         <img src="<%= shop.gallery[0] %>" class="w-full h-full object-cover">
                     <% } %>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute top-3 left-3 flex gap-1">
+                        <% if (shop.isPremium) { %>
+                            <span class="bg-primary text-on-primary-fixed text-[10px] font-bold px-2 py-0.5 rounded-full uppercase luxury-shadow">Premium</span>
+                        <% } %>
+                        <% if (shop.isVerified) { %>
+                            <span class="bg-secondary-container/80 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase luxury-shadow">Verified</span>
+                        <% } %>
+                    </div>
                 </div>
                 <div class="p-4">
-                    <h3 class="text-lg font-bold text-on-surface"><%= shop.name %></h3>
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-lg font-bold text-on-surface"><%= shop.name %></h3>
+                        <% if (shop.isTopRated) { %>
+                            <span class="material-symbols-outlined text-primary text-sm" title="Top Rated">verified</span>
+                        <% } %>
+                    </div>
                     <p class="text-on-surface-variant text-sm"><%= shop.address %></p>
                     <div class="flex items-center gap-1 text-primary mt-2">
                         <span class="material-symbols-outlined text-sm">star</span>
                         <span class="text-sm"><%= shop.rating %></span>
                     </div>
+                    <div class="mt-4 flex items-center justify-between border-t border-white/5 pt-3">
+                        <span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest"><%= shop.numReviews %> Reviews</span>
+                        <div class="flex items-center gap-1">
+                            <div class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></div>
+                            <span class="text-[10px] text-secondary uppercase font-bold">Active Now</span>
+                        </div>
+                    </div>
                 </div>
             </a>
         <% }) %>
     </div>
+
+    <% if (mobileBarbers && mobileBarbers.length > 0) { %>
+        <h2 class="text-2xl font-bold text-primary mt-12 mb-6">Mobile Barbers (Home Service)</h2>
+        <div class="flex overflow-x-auto gap-4 pb-4 no-scrollbar">
+            <% mobileBarbers.forEach(barber => { %>
+                <div class="glass min-w-[200px] p-4 rounded-2xl luxury-shadow text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary/20 mx-auto mb-4 flex items-center justify-center text-primary text-xl font-bold">
+                        <%= barber.name.charAt(0) %>
+                    </div>
+                    <h3 class="text-on-surface font-bold text-sm"><%= barber.name %></h3>
+                    <p class="text-xs text-on-surface-variant"><%= barber.travelRadius %>km Radius</p>
+                    <button class="mt-4 bg-primary text-on-primary-fixed text-xs font-bold px-4 py-2 rounded-lg">Request Home Service</button>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
 </main>
 <%- include('partials/footer', { activePage: 'home' }) %>

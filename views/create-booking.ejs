@@ -13,10 +13,13 @@
         <div>
             <label class="block text-on-surface-variant mb-1">Select Barber</label>
             <select name="barberId" required class="w-full bg-surface border border-surface-variant rounded-lg p-3 text-on-surface">
-                <% barbers.forEach(barber => { %>
-                    <option value="<%= barber._id %>"><%= barber.name %></option>
+                <% barbers.forEach((barber, index) => { %>
+                    <option value="<%= barber._id %>">
+                        <%= barber.name %> <%= index === 0 ? '(Recommended - Least Busy)' : '' %>
+                    </option>
                 <% }) %>
             </select>
+            <p class="text-[10px] text-primary mt-2 uppercase font-bold tracking-widest">Barbers sorted by availability & ranking</p>
         </div>
         <div>
             <label class="block text-on-surface-variant mb-1">Date</label>

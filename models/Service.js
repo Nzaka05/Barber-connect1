@@ -5,7 +5,9 @@ const serviceSchema = new mongoose.Schema({
     name: { type: String, required: true },
     description: { type: String },
     duration: { type: Number, required: true }, // in minutes
-    price: { type: Number, required: true }
+    price: { type: Number, required: true },
+    image: { type: String },
+    category: { type: String, enum: ['Haircut', 'Beard', 'Facial', 'Massage', 'Other'], default: 'Haircut' }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Service', serviceSchema);

@@ -1,0 +1,88 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main class="max-w-6xl mx-auto p-container-margin">
+    <div class="flex justify-between items-center mb-stack-lg">
+        <h2 class="font-headline-md text-headline-md text-primary">Staff Management</h2>
+        <button onclick="document.getElementById('assignShiftModal').classList.remove('hidden')" class="bg-primary text-on-primary px-6 py-2 rounded-xl font-bold luxury-shadow">Assign New Shift</button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-12">
+        <% shop.staff.forEach(member => { %>
+            <div class="glass p-gutter rounded-3xl luxury-shadow flex flex-col items-center text-center">
+                <div class="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl font-bold mb-4">
+                    <%= member.name.charAt(0) %>
+                </div>
+                <h3 class="text-on-surface font-bold text-lg"><%= member.name %></h3>
+                <p class="text-on-surface-variant text-sm"><%= member.email %></p>
+                <div class="mt-4 flex gap-2">
+                    <span class="bg-secondary/10 text-secondary text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Active</span>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+    <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Upcoming Shifts</h3>
+    <div class="bg-surface-container rounded-2xl border border-surface-variant overflow-hidden luxury-shadow">
+        <table class="w-full text-left">
+            <thead class="bg-surface-variant/50 text-on-surface-variant text-xs uppercase">
+                <tr>
+                    <th class="px-6 py-4">Barber</th>
+                    <th class="px-6 py-4">Date</th>
+                    <th class="px-6 py-4">Time</th>
+                    <th class="px-6 py-4">Status</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-surface-variant">
+                <% shifts.forEach(shift => { %>
+                    <tr class="text-sm">
+                        <td class="px-6 py-4 text-on-surface font-bold"><%= shift.barber.name %></td>
+                        <td class="px-6 py-4 text-on-surface-variant"><%= shift.date.toDateString() %></td>
+                        <td class="px-6 py-4 text-primary font-bold"><%= shift.startTime %> - <%= shift.endTime %></td>
+                        <td class="px-6 py-4">
+                            <span class="px-2 py-1 rounded-full bg-secondary/10 text-secondary text-[10px] uppercase font-bold">Scheduled</span>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Assign Shift Modal -->
+    <div id="assignShiftModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-surface-container-high w-full max-w-md rounded-3xl border border-surface-variant p-8 luxury-shadow">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-primary">Assign Shift</h3>
+                <button onclick="document.getElementById('assignShiftModal').classList.add('hidden')" class="text-on-surface-variant"><span class="material-symbols-outlined">close</span></button>
+            </div>
+            <form action="/barber/assign-shift" method="POST" class="flex flex-col gap-4">
+                <input type="hidden" name="shopId" value="<%= shop._id %>">
+                <div>
+                    <label class="block text-on-surface-variant mb-1 text-sm font-bold">Select Staff</label>
+                    <select name="barberId" required class="w-full bg-surface border border-surface-variant rounded-xl p-3 text-on-surface outline-none focus:border-primary">
+                        <% shop.staff.forEach(member => { %>
+                            <option value="<%= member._id %>"><%= member.name %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-on-surface-variant mb-1 text-sm font-bold">Date</label>
+                    <input type="date" name="date" required class="w-full bg-surface border border-surface-variant rounded-xl p-3 text-on-surface outline-none focus:border-primary">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-on-surface-variant mb-1 text-sm font-bold">Start Time</label>
+                        <input type="time" name="startTime" required class="w-full bg-surface border border-surface-variant rounded-xl p-3 text-on-surface outline-none focus:border-primary">
+                    </div>
+                    <div>
+                        <label class="block text-on-surface-variant mb-1 text-sm font-bold">End Time</label>
+                        <input type="time" name="endTime" required class="w-full bg-surface border border-surface-variant rounded-xl p-3 text-on-surface outline-none focus:border-primary">
+                    </div>
+                </div>
+                <button type="submit" class="bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-bold py-4 rounded-xl mt-6 shadow-lg uppercase tracking-widest text-sm">Assign Shift</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer', { activePage: 'dashboard' }) %>

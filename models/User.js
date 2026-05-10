@@ -16,7 +16,13 @@ const userSchema = new mongoose.Schema({
     location: {
         type: { type: String, default: 'Point' },
         coordinates: [Number] // [longitude, latitude]
-    }
+    },
+    isMobile: { type: Boolean, default: false },
+    travelRadius: { type: Number, default: 5 }, // in km
+    mobileServiceFee: { type: Number, default: 0 },
+    country: { type: String, default: 'Kenya' },
+    currency: { type: String, default: 'KES' },
+    followers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
 }, { timestamps: true });
 
 userSchema.pre('save', async function(next) {

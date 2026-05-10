@@ -6,9 +6,29 @@ const User = require('../models/User');
 exports.getBookingPage = async (req, res) => {
     try {
         const { shopId, serviceId } = req.query;
-        const shop = await Shop.findById(shopId);
+        const shop = await Shop.findById(shopId).populate('staff');
         const service = await Service.findById(serviceId);
-        const barbers = await User.find({ role: 'barber' });
+
+        // Intelligent Slot Suggestion Logic
+        // Find most available barber for the day
+        const today = new Date();
+        today.setHours(0,0,0,0);
+
+        const barbers = await Promise.all(shop.staff.map(async (barber) => {
+            const bookingCount = await Booking.countDocuments({
+                barber: barber._id,
+                date: { $gte: today, $lt: new Date(today.getTime() + 86400000) },
+                status: { $ne: 'cancelled' }
+            });
+            return {
+                ...barber.toObject(),
+                workload: bookingCount
+            };
+        }));
+
+        // Sort by workload (ascending) and then by rating (descending)
+        barbers.sort((a, b) => a.workload - b.workload || b.rating - a.rating);
+
         res.render('create-booking', { shop, service, barbers });
     } catch (err) {
         console.error(err);

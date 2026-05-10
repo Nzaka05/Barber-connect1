@@ -1,6 +1,7 @@
 const Booking = require('../models/Booking');
 const Service = require('../models/Service');
 const Shop = require('../models/Shop');
+const Shift = require('../models/Shift');
 const User = require('../models/User');
 const { createNotification } = require('./notificationController');
 
@@ -71,10 +72,45 @@ exports.getManageServices = async (req, res) => {
     }
 };
 
+exports.getStaffManagement = async (req, res) => {
+    try {
+        const shop = await Shop.findOne({ owner: req.session.user.id }).populate('staff');
+        if (!shop) return res.redirect('/barber/dashboard');
+        const shifts = await Shift.find({ shop: shop._id }).populate('barber').sort({ date: 1 });
+        res.render('manage-staff', { shop, shifts });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server Error');
+    }
+};
+
+exports.assignShift = async (req, res) => {
+    try {
+        const { barberId, date, startTime, endTime, shopId } = req.body;
+        const shift = new Shift({ barber: barberId, date, startTime, endTime, shop: shopId });
+        await shift.save();
+        req.flash('success_msg', 'Shift assigned successfully');
+        res.redirect('/barber/manage-staff');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server Error');
+    }
+};
+
 exports.addService = async (req, res) => {
     try {
-        const { name, description, duration, price, shopId } = req.body;
-        const service = new Service({ name, description, duration, price, shop: shopId });
+        const { name, description, duration, price, shopId, category } = req.body;
+        const serviceData = {
+            name,
+            description,
+            duration,
+            price,
+            shop: shopId,
+            category
+        };
+        if (req.file) serviceData.image = `/uploads/${req.file.filename}`;
+
+        const service = new Service(serviceData);
         await service.save();
         req.flash('success_msg', 'Service added successfully');
         res.redirect('/barber/manage-services');

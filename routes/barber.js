@@ -11,6 +11,7 @@ router.get('/dashboard', barberController.getDashboard);
 router.post('/update-booking', barberController.updateBookingStatus);
 router.get('/manage-services', barberController.getManageServices);
 router.post('/add-service', upload.single('image'), barberController.addService);
+router.post('/update-profile', barberController.updateProfile);
 router.get('/manage-staff', barberController.getStaffManagement);
 router.post('/assign-shift', barberController.assignShift);
 

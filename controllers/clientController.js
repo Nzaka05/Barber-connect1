@@ -4,6 +4,7 @@ const User = require('../models/User');
 const Booking = require('../models/Booking');
 const Waitlist = require('../models/Waitlist');
 const Review = require('../models/Review');
+const { predictDuration } = require('../utils/timeEstimator');
 
 exports.getDiscover = async (req, res) => {
     try {
@@ -66,13 +67,18 @@ exports.getShopProfile = async (req, res) => {
         const activeBookings = await Booking.find({
             shop: shop._id,
             date: { $gte: today, $lt: tomorrow },
-            status: 'confirmed'
-        });
+            status: { $in: ['confirmed', 'in-progress'] }
+        }).populate('service barber');
 
         const queueSize = activeBookings.length;
-        const avgServiceTime = 30; // mins
+        let totalQueueDuration = 0;
+
+        activeBookings.forEach(b => {
+            totalQueueDuration += predictDuration(b.service, b.barber);
+        });
+
         const staffCount = shop.staff.length || 1;
-        const estimatedWaitTime = Math.max(0, Math.ceil((queueSize * avgServiceTime) / staffCount));
+        const estimatedWaitTime = Math.max(0, Math.ceil(totalQueueDuration / staffCount));
 
         res.render('shop-profile', {
             shop,

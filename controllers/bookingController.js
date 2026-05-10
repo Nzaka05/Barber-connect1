@@ -2,6 +2,7 @@ const Booking = require('../models/Booking');
 const Service = require('../models/Service');
 const Shop = require('../models/Shop');
 const User = require('../models/User');
+const { predictDuration } = require('../utils/timeEstimator');
 
 exports.getBookingPage = async (req, res) => {
     try {
@@ -54,6 +55,7 @@ exports.createBooking = async (req, res) => {
         }
 
         const service = await Service.findById(serviceId);
+        const barber = await User.findById(barberId);
         const depositAmount = service.price * 0.2;
 
         const booking = new Booking({
@@ -63,7 +65,8 @@ exports.createBooking = async (req, res) => {
             shop: shopId,
             date: new Date(date),
             time,
-            depositAmount
+            depositAmount,
+            estimatedDuration: predictDuration(service, barber)
         });
 
         await booking.save();

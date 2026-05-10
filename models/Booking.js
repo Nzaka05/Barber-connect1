@@ -18,7 +18,10 @@ const bookingSchema = new mongoose.Schema({
         default: 'unpaid'
     },
     depositAmount: { type: Number, default: 0 },
-    mpesaReceiptNumber: { type: String }
+    mpesaReceiptNumber: { type: String },
+    actualStartTime: { type: Date },
+    actualEndTime: { type: Date },
+    estimatedDuration: { type: Number } // Final duration used for this specific booking
 }, { timestamps: true });
 
 module.exports = mongoose.model('Booking', bookingSchema);

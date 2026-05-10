@@ -44,7 +44,12 @@
             <div class="bg-surface-container p-4 rounded-xl border border-surface-variant flex justify-between items-center">
                 <div>
                     <h4 class="font-bold text-on-surface"><%= service.name %></h4>
-                    <p class="text-on-surface-variant text-sm"><%= service.duration %> mins</p>
+                    <p class="text-on-surface-variant text-xs mb-1">
+                        Est: <%= service.duration || '30' %> mins
+                        <% if (shop.owner && shop.owner.performanceMetrics && shop.owner.performanceMetrics.avgSpeedFactor < 0.9) { %>
+                            <span class="text-secondary ml-1 font-bold">• Expert Speed</span>
+                        <% } %>
+                    </p>
                     <p class="text-primary font-bold">KES <%= service.price %></p>
                 </div>
                 <a href="/bookings/create?shopId=<%= shop._id %>&serviceId=<%= service._id %>" class="bg-primary text-on-primary px-4 py-2 rounded-lg font-bold">Book</a>

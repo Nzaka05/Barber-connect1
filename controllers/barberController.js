@@ -4,6 +4,7 @@ const Shop = require('../models/Shop');
 const Shift = require('../models/Shift');
 const User = require('../models/User');
 const { createNotification } = require('./notificationController');
+const { updatePerformance } = require('../utils/timeEstimator');
 
 exports.getDashboard = async (req, res) => {
     try {
@@ -41,11 +42,22 @@ exports.updateBookingStatus = async (req, res) => {
             `Your booking for ${booking.service.name} has been ${status}.`
         );
 
-        // If completed, award final loyalty points (if not already awarded by deposit)
+        // If completed, award final loyalty points and update performance
         if (status === 'completed') {
-            const user = await User.findById(booking.client._id);
-            user.loyaltyPoints += 50; // Bonus for completion
-            await user.save();
+            booking.actualEndTime = new Date();
+            await booking.save();
+
+            const client = await User.findById(booking.client._id);
+            client.loyaltyPoints += 50;
+            await client.save();
+
+            const barber = await User.findById(req.session.user.id);
+            await updatePerformance(barber, booking);
+        }
+
+        if (status === 'in-progress') {
+            booking.actualStartTime = new Date();
+            await booking.save();
         }
 
         req.flash('success_msg', `Booking ${status} successfully`);
@@ -91,6 +103,22 @@ exports.assignShift = async (req, res) => {
         await shift.save();
         req.flash('success_msg', 'Shift assigned successfully');
         res.redirect('/barber/manage-staff');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server Error');
+    }
+};
+
+exports.updateProfile = async (req, res) => {
+    try {
+        const { bufferTime, isPaused, isBusy } = req.body;
+        await User.findByIdAndUpdate(req.session.user.id, {
+            bufferTime,
+            isPaused: isPaused === 'on',
+            isBusy: isBusy === 'on'
+        });
+        req.flash('success_msg', 'Profile updated successfully');
+        res.redirect('/barber/dashboard');
     } catch (err) {
         console.error(err);
         res.status(500).send('Server Error');

@@ -22,7 +22,14 @@ const userSchema = new mongoose.Schema({
     mobileServiceFee: { type: Number, default: 0 },
     country: { type: String, default: 'Kenya' },
     currency: { type: String, default: 'KES' },
-    followers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
+    followers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+    bufferTime: { type: Number, default: 5 }, // in minutes
+    isPaused: { type: Boolean, default: false },
+    isBusy: { type: Boolean, default: false },
+    performanceMetrics: {
+        avgSpeedFactor: { type: Number, default: 1.0 }, // 1.0 = average, 0.8 = fast, 1.2 = slow
+        completedBookings: { type: Number, default: 0 }
+    }
 }, { timestamps: true });
 
 userSchema.pre('save', async function(next) {

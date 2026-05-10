@@ -20,7 +20,9 @@ const shopSchema = new mongoose.Schema({
     staff: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
     seats: { type: Number, default: 2 },
     country: { type: String, default: 'Kenya' },
-    currency: { type: String, default: 'KES' }
+    currency: { type: String, default: 'KES' },
+    walletBalance: { type: Number, default: 0 },
+    totalEarnings: { type: Number, default: 0 }
 }, { timestamps: true });
 
 shopSchema.index({ location: '2dsphere' });

@@ -29,7 +29,9 @@ const userSchema = new mongoose.Schema({
     performanceMetrics: {
         avgSpeedFactor: { type: Number, default: 1.0 }, // 1.0 = average, 0.8 = fast, 1.2 = slow
         completedBookings: { type: Number, default: 0 }
-    }
+    },
+    walletBalance: { type: Number, default: 0 },
+    totalEarnings: { type: Number, default: 0 }
 }, { timestamps: true });
 
 userSchema.pre('save', async function(next) {

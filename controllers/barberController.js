@@ -20,7 +20,8 @@ exports.getDashboard = async (req, res) => {
             totalBookings: bookings.length,
             confirmedBookings: bookings.filter(b => b.status === 'confirmed').length,
             pendingBookings: bookings.filter(b => b.status === 'pending').length,
-            totalEarnings: bookings.filter(b => b.status === 'completed').reduce((acc, b) => acc + (b.service ? b.service.price : 0), 0)
+            totalEarnings: shop ? shop.totalEarnings : 0,
+            walletBalance: shop ? shop.walletBalance : 0
         };
 
         res.render('barber-dashboard', { bookings, stats, shop });

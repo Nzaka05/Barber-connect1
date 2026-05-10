@@ -1,0 +1,8 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main class="max-w-md mx-auto mt-20 p-8 bg-surface-container rounded-xl border border-surface-variant text-center">
+    <h1 class="text-4xl font-bold text-on-surface mb-2"><%= status %></h1>
+    <p class="text-on-surface-variant text-lg mb-8"><%= message %></p>
+    <a href="/" class="bg-primary text-on-primary px-8 py-3 rounded-lg font-bold">Go Home</a>
+</main>
+<%- include('partials/footer', { activePage: '' }) %>

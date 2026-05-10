@@ -1,0 +1,5 @@
+
+> barber-connect@1.0.0 dev
+> nodemon app.js
+
+sh: 1: nodemon: not found

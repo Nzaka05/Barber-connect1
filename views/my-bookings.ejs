@@ -1,0 +1,20 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main class="max-w-4xl mx-auto p-4">
+    <h2 class="text-2xl font-bold text-primary mb-6">My Bookings</h2>
+    <div class="flex flex-col gap-4">
+        <% bookings.forEach(booking => { %>
+            <div class="bg-surface-container p-4 rounded-xl border border-surface-variant flex justify-between items-center">
+                <div>
+                    <h3 class="font-bold text-on-surface"><%= booking.service.name %></h3>
+                    <p class="text-on-surface-variant text-sm"><%= booking.shop.name %> • <%= booking.barber.name %></p>
+                    <p class="text-primary text-sm font-bold"><%= booking.date.toDateString() %> at <%= booking.time %></p>
+                </div>
+                <span class="px-3 py-1 rounded-full text-xs font-bold uppercase <%= booking.status === 'confirmed' ? 'bg-secondary/10 text-secondary' : 'bg-primary/10 text-primary' %>">
+                    <%= booking.status %>
+                </span>
+            </div>
+        <% }) %>
+    </div>
+</main>
+<%- include('partials/footer', { activePage: 'bookings' }) %>

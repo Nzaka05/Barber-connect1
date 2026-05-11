@@ -33,11 +33,22 @@ app.use(session({
 
 app.use(flash());
 
-app.use((req, res, next) => {
+const User = require('./models/User');
+app.use(async (req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
-    res.locals.user = req.session.user || null;
+
+    if (req.session.user) {
+        try {
+            const user = await User.findById(req.session.user.id);
+            res.locals.user = user;
+        } catch (err) {
+            res.locals.user = null;
+        }
+    } else {
+        res.locals.user = null;
+    }
     next();
 });
 

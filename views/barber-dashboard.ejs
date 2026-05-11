@@ -1,0 +1,76 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main class="max-w-4xl mx-auto p-4">
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold text-primary">Barber Dashboard</h2>
+        <button onclick="document.getElementById('settingsModal').classList.remove('hidden')" class="text-on-surface-variant"><span class="material-symbols-outlined">settings</span></button>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-surface-container-high w-full max-w-md rounded-3xl border border-surface-variant p-8 luxury-shadow">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-primary">Dashboard Settings</h3>
+                <button onclick="document.getElementById('settingsModal').classList.add('hidden')" class="text-on-surface-variant"><span class="material-symbols-outlined">close</span></button>
+            </div>
+            <form action="/barber/update-profile" method="POST" class="flex flex-col gap-6">
+                <div class="flex items-center justify-between">
+                    <label class="text-on-surface font-bold">Accepting Bookings</label>
+                    <input type="checkbox" name="isPaused" class="w-12 h-6 rounded-full bg-surface border-none outline-none text-primary" <%= user.isPaused ? '' : 'checked' %>>
+                </div>
+                <div class="flex items-center justify-between">
+                    <label class="text-on-surface font-bold">Mark as Busy</label>
+                    <input type="checkbox" name="isBusy" class="w-12 h-6 rounded-full bg-surface border-none outline-none text-primary" <%= user.isBusy ? 'checked' : '' %>>
+                </div>
+                <div>
+                    <label class="block text-on-surface-variant mb-1 text-sm font-bold">Buffer Time (mins)</label>
+                    <input type="number" name="bufferTime" value="<%= user.bufferTime %>" class="w-full bg-surface border border-surface-variant rounded-xl p-3 text-on-surface outline-none focus:border-primary">
+                </div>
+                <button type="submit" class="bg-primary text-on-primary-fixed font-bold py-4 rounded-xl shadow-lg">Save Settings</button>
+            </form>
+        </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="bg-surface-container p-4 rounded-xl border border-surface-variant">
+            <p class="text-on-surface-variant text-xs">Total Earnings</p>
+            <h3 class="text-xl font-bold text-secondary">KES <%= stats.totalEarnings %></h3>
+        </div>
+        <div class="bg-surface-container p-4 rounded-xl border border-surface-variant">
+            <p class="text-on-surface-variant text-xs">Wallet Balance</p>
+            <h3 class="text-xl font-bold text-primary">KES <%= stats.walletBalance %></h3>
+        </div>
+        <div class="bg-surface-container p-4 rounded-xl border border-surface-variant">
+            <p class="text-on-surface-variant text-xs">Total Bookings</p>
+            <h3 class="text-xl font-bold text-on-surface"><%= stats.totalBookings %></h3>
+        </div>
+    </div>
+    <h3 class="text-lg font-bold text-on-surface mb-4">Current Bookings</h3>
+    <div class="flex flex-col gap-4">
+        <% bookings.forEach(booking => { %>
+            <div class="bg-surface-container p-4 rounded-xl border border-surface-variant flex justify-between items-center">
+                <div>
+                    <h4 class="font-bold text-on-surface"><%= booking.client.name %></h4>
+                    <p class="text-on-surface-variant text-sm"><%= booking.service.name %> • <%= booking.time %></p>
+                </div>
+                <div class="flex gap-2">
+                    <% if (booking.status === 'pending') { %>
+                        <form action="/barber/update-booking" method="POST">
+                            <input type="hidden" name="bookingId" value="<%= booking._id %>">
+                            <input type="hidden" name="status" value="confirmed">
+                            <button class="bg-secondary text-on-secondary px-3 py-1 rounded text-sm font-bold">Accept</button>
+                        </form>
+                    <% } else if (booking.status === 'confirmed') { %>
+                        <form action="/barber/update-booking" method="POST">
+                            <input type="hidden" name="bookingId" value="<%= booking._id %>">
+                            <input type="hidden" name="status" value="completed">
+                            <button class="bg-primary text-on-primary px-3 py-1 rounded text-sm font-bold">Complete</button>
+                        </form>
+                    <% } else { %>
+                        <span class="text-xs font-bold uppercase text-on-surface-variant"><%= booking.status %></span>
+                    <% } %>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</main>
+<%- include('partials/footer', { activePage: 'dashboard' }) %>

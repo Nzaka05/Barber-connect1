@@ -1,0 +1,24 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main class="max-w-4xl mx-auto p-4">
+    <h2 class="text-2xl font-bold text-primary mb-6">Marketplace</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <% if (products.length === 0) { %>
+            <p class="text-on-surface-variant">No products available.</p>
+        <% } %>
+        <% products.forEach(product => { %>
+            <div class="bg-surface-container rounded-xl border border-surface-variant p-4">
+                <div class="h-40 bg-surface-variant rounded-lg mb-4"></div>
+                <h3 class="font-bold text-on-surface"><%= product.name %></h3>
+                <p class="text-on-surface-variant text-sm"><%= product.supplier.name %></p>
+                <p class="text-primary font-bold mt-2">KES <%= product.price %></p>
+                <p class="text-xs text-outline mt-1"><%= product.stock %> in stock</p>
+                <form action="/client/marketplace/order" method="POST">
+                    <input type="hidden" name="productId" value="<%= product._id %>">
+                    <button type="submit" class="w-full bg-primary text-on-primary text-sm font-bold py-2 rounded-lg mt-4 transition-colors hover:bg-primary-container">Order Now</button>
+                </form>
+            </div>
+        <% }) %>
+    </div>
+</main>
+<%- include('partials/footer', { activePage: '' }) %>

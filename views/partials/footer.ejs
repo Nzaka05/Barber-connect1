@@ -1,0 +1,16 @@
+<nav class="bg-neutral-950/90 backdrop-blur-md fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 rounded-t-2xl md:hidden">
+    <a href="/discover" class="flex flex-col items-center <%= (typeof activePage !== 'undefined' && activePage === 'home') ? 'text-yellow-500' : 'text-neutral-500' %>">
+        <span class="material-symbols-outlined">home</span>
+        <span class="text-[10px] uppercase font-bold">Home</span>
+    </a>
+    <a href="/bookings/my-bookings" class="flex flex-col items-center <%= (typeof activePage !== 'undefined' && activePage === 'bookings') ? 'text-yellow-500' : 'text-neutral-500' %>">
+        <span class="material-symbols-outlined">calendar_month</span>
+        <span class="text-[10px] uppercase font-bold">Bookings</span>
+    </a>
+    <a href="/barber/dashboard" class="flex flex-col items-center <%= (typeof activePage !== 'undefined' && activePage === 'dashboard') ? 'text-yellow-500' : 'text-neutral-500' %>">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span class="text-[10px] uppercase font-bold">Dash</span>
+    </a>
+</nav>
+</body>
+</html>
